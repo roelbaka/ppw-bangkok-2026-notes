@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="PPW Bangkok 2026 — navigation hub for management summary, day syntheses, and session notes.">
+  <title>PPW Bangkok 2026 — notes hub</title>
+  <style>
+    :root {
+      --bg: #f1f5f9;
+      --card: #fff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --shadow: 0 8px 28px rgba(15, 23, 42, 0.08);
+      --blue: #2563eb;
+      --blue-dark: #1e40af;
+      --violet: #7c3aed;
+      --teal: #0d9488;
+    }
+    html { scroll-behavior: smooth; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #e0e7ff 0%, var(--bg) 320px);
+      color: var(--text);
+      line-height: 1.55;
+      font-size: 0.98rem;
+    }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 20px 18px 64px; }
+    /* Top nav */
+    .topnav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      margin: 0 -18px 20px;
+      padding: 10px 18px;
+    }
+    .topnav-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 14px;
+    }
+    .topnav-brand {
+      font-weight: 800;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--blue-dark);
+      margin-right: auto;
+    }
+    .topnav a {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--blue);
+      text-decoration: none;
+      padding: 6px 10px;
+      border-radius: 8px;
+    }
+    .topnav a:hover { background: #eff6ff; text-decoration: none; }
+    header.hero {
+      background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 42%, #6d28d9 100%);
+      color: #fff;
+      border-radius: 20px;
+      padding: 28px 26px 30px;
+      margin-bottom: 22px;
+      box-shadow: var(--shadow);
+    }
+    header.hero h1 {
+      margin: 0 0 10px;
+      font-size: clamp(1.35rem, 3.5vw, 1.75rem);
+      line-height: 1.2;
+      font-weight: 800;
+    }
+    header.hero p {
+      margin: 0;
+      opacity: 0.93;
+      max-width: 62ch;
+      font-size: 0.98rem;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px 22px 20px;
+      margin-bottom: 18px;
+      box-shadow: var(--shadow);
+    }
+    .card h2 {
+      margin: 0 0 14px;
+      font-size: 1.08rem;
+      color: var(--blue-dark);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .card h2 .tag {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      background: #e0e7ff;
+      color: #4338ca;
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+    h3 {
+      margin: 20px 0 10px;
+      font-size: 0.95rem;
+      color: #3730a3;
+      font-weight: 700;
+    }
+    h3:first-child { margin-top: 0; }
+    p { margin: 0 0 12px; }
+    .muted { font-size: 0.88rem; color: var(--muted); }
+    /* Big entry cards */
+    .entry-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    @media (min-width: 640px) {
+      .entry-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    a.entry {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      border-radius: 14px;
+      padding: 18px 16px;
+      border: 2px solid transparent;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s;
+    }
+    a.entry:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(37, 99, 235, 0.15);
+    }
+    a.entry strong {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+    a.entry span {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+    .entry.mgmt { background: linear-gradient(145deg, #f8fafc 0%, #fff 100%); border-color: #cbd5e1; }
+    .entry.mgmt:hover { border-color: #64748b; }
+    .entry.d1 { background: linear-gradient(145deg, #eff6ff 0%, #fff 50%); border-color: #bfdbfe; }
+    .entry.d1:hover { border-color: var(--blue); }
+    .entry.d2 { background: linear-gradient(145deg, #f5f3ff 0%, #fff 50%); border-color: #ddd6fe; }
+    .entry.d2:hover { border-color: var(--violet); }
+    /* Session lists */
+    .session-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .session-list li {
+      border-bottom: 1px solid var(--border);
+      margin: 0;
+    }
+    .session-list li:last-child { border-bottom: none; }
+    .session-list a {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      padding: 12px 4px;
+      text-decoration: none;
+      color: var(--text);
+      border-radius: 8px;
+      margin: 0 -4px;
+    }
+    .session-list a:hover { background: #f8fafc; }
+    .session-list .who { font-weight: 600; color: var(--blue-dark); }
+    .session-list .what { font-size: 0.86rem; color: var(--muted); }
+    .time { font-size: 0.75rem; font-weight: 700; color: var(--teal); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 2px; }
+    table.agenda {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      margin-top: 8px;
+    }
+    table.agenda th, table.agenda td {
+      border: 1px solid var(--border);
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+    table.agenda th { background: #f8fafc; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
+    table.agenda a { font-weight: 600; color: var(--blue); text-decoration: none; }
+    table.agenda a:hover { text-decoration: underline; }
+    .back-top {
+      display: inline-block;
+      margin-top: 14px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--blue);
+      text-decoration: none;
+    }
+    .back-top:hover { text-decoration: underline; }
+    footer {
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    code { font-size: 0.85em; background: #f1f5f9; padding: 2px 6px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="topnav" aria-label="Page sections">
+      <div class="topnav-inner">
+        <span class="topnav-brand">PPW Bangkok 2026</span>
+        <a href="#start">Start</a>
+        <a href="#day1">Day 1</a>
+        <a href="#day2">Day 2</a>
+        <a href="#closing">Closing</a>
+        <a href="README.md">README</a>
+      </div>
+    </nav>
+
+    <header class="hero" id="top">
+      <h1>Property Portal Watch — Bangkok notes</h1>
+      <p>Internal learning notes (18–19 March 2026). Use the <strong>management summary</strong> for exec synthesis, or jump straight into <strong>Day 1</strong> / <strong>Day 2</strong> session write-ups.</p>
+    </header>
+
+    <section class="card" id="start">
+      <h2><span class="tag">Start here</span> Syntheses &amp; masters</h2>
+      <p class="muted" style="margin-bottom:16px;">One click each — then use in-page links on the masters for themes and deep dives.</p>
+      <div class="entry-grid">
+        <a class="entry mgmt" href="ppw-bangkok-management-learning-summary.html">
+          <strong>Management &amp; learning</strong>
+          <span>Executive takeaways, merged themes, leadership questions, conference “AI” lexicon chart.</span>
+        </a>
+        <a class="entry d1" href="ppw-bangkok-day-1-master-summary.html">
+          <strong>Day 1 master</strong>
+          <span>Themes + index of all Day 1 talks + unofficial “AI” meter for Day 1.</span>
+        </a>
+        <a class="entry d2" href="ppw-bangkok-day-2-master-summary.html">
+          <strong>Day 2 master</strong>
+          <span>Agenda-style index, themes, conference learnings digest, Day 2 “AI” stats.</span>
+        </a>
+      </div>
+      <a class="back-top" href="#top">↑ Back to top</a>
+    </section>
+
+    <section class="card" id="day1">
+      <h2><span class="tag">Day 1</span> Session notes <span class="muted" style="font-weight:500;font-size:0.85rem;">15 write-ups</span></h2>
+      <p class="muted">Full HTML notes in <code>day 1/</code> — decks, Q&amp;A, transcripts where captured.</p>
+      <ul class="session-list">
+        <li><a href="day%201/patrick-grove-fdv-summary.html"><span class="who">Patrick Grove</span><span class="what">FDV — AI, emerging-market portals, strategy</span></a></li>
+        <li><a href="day%201/malcolm-myers-ai-asia-portals-summary.html"><span class="who">Malcolm Myers</span><span class="what">Will AI build or break Asia’s property portals?</span></a></li>
+        <li><a href="day%201/satoshi-murakami-metaprop-investment-mandate.html"><span class="who">Satoshi Murakami</span><span class="what">Metaprop — investment mandate, AI &amp; marketplaces</span></a></li>
+        <li><a href="day%201/ryan-gallagher-iovox-ai-communications.html"><span class="who">Ryan Gallagher</span><span class="what">iovox — data, AI &amp; communications</span></a></li>
+        <li><a href="day%201/russell-wee-jean-yip-proptech-ai-real-estate.html"><span class="who">Russell Wee</span><span class="what">Jean Yip — what industry wants from PropTech / AI (P&amp;L)</span></a></li>
+        <li><a href="day%201/steve-coleman-snow-only-ai-human-touch.html"><span class="who">Steve Coleman</span><span class="what">Snow Only — automation vs human touch, high-ticket deals</span></a></li>
+        <li><a href="day%201/lamerton-gray-proptexx-ai-retail-media-portal-intelligence.html"><span class="who">Lamerton Gray</span><span class="what">PropTexx — retail media &amp; portal intelligence</span></a></li>
+        <li><a href="day%201/paruey-anadirekkul-spacely-ai-adoption-outcomes.html"><span class="who">Paruey Anadirekkul</span><span class="what">Spacely AI — adoption → outcomes</span></a></li>
+        <li><a href="day%201/lukas-rose-properbird-ai-data-intelligence-layer.html"><span class="who">Lukas Rose</span><span class="what">ProperBird — intelligence layer, agent landscape</span></a></li>
+        <li><a href="day%201/hannah-parker-inoki-humans-and-ai-agents.html"><span class="who">Hannah Parker</span><span class="what">Inoki — humans &amp; AI agents, structured data</span></a></li>
+        <li><a href="day%201/daniel-ho-juwai-iq-global-platform-summary.html"><span class="who">Daniel Ho</span><span class="what">Juwai IQI — global platform, ecosystem, ATLAS</span></a></li>
+        <li><a href="day%201/mike-kenner-lifull-connect-scaling-ai-summary.html"><span class="who">Mike Kenner</span><span class="what">Lifull Connect — SEA transactions-first, M&amp;A, AI as tool</span></a></li>
+        <li><a href="day%201/jonathan-turpin-ai-property-portals-summary.html"><span class="who">Jonathan Turpin</span><span class="what">AI threat vs opportunity for property portals</span></a></li>
+        <li><a href="day%201/courtney-bugeja-sellsmart-seller-journey-summary.html"><span class="who">Courtney Bugeja</span><span class="what">SellSmart — seller journey, digital twins, pre-listing</span></a></li>
+        <li><a href="day%201/haider-ali-khan-winning-with-product-summary.html"><span class="who">Haider Ali Khan</span><span class="what">Winning with product (Tru* stack) — Oct 2025 meeting note</span></a></li>
+      </ul>
+      <a class="back-top" href="#top">↑ Back to top</a>
+    </section>
+
+    <section class="card" id="day2">
+      <h2><span class="tag">Day 2</span> Session notes <span class="muted" style="font-weight:500;font-size:0.85rem;">11 write-ups</span></h2>
+      <p class="muted">Thu Mar 19 afternoon block (agenda) plus other Day 2 sessions.</p>
+
+      <h3>Afternoon block (agenda order)</h3>
+      <table class="agenda">
+        <thead>
+          <tr><th>Time</th><th>Session</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>14:20–14:45</td>
+            <td><a href="day%202/taha-dar-searchsmartly-ai-into-portal-summary.html">Taha Dar — SearchSmartly · reinventing / integrating AI into the portal</a></td>
+          </tr>
+          <tr>
+            <td>14:45–15:10</td>
+            <td><a href="day%202/mike-bird-simon-baker-ai-future-new-build-marketplaces-summary.html">Mike Bird &amp; Simon Baker — AI and the future of new-build marketplaces</a></td>
+          </tr>
+          <tr>
+            <td>15:10–15:30</td>
+            <td><a href="day%202/nick-sertis-off-site-marketing-summary.html">Nick Sertis — off-site marketing · does it make a difference?</a></td>
+          </tr>
+          <tr>
+            <td>15:30–15:55</td>
+            <td><a href="day%202/simon-baker-levent-kuenzi-from-agents-to-platforms-summary.html">Simon Baker &amp; Levent Künzi — from agents to platforms (brokerage marketplace)</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Other Day 2 sessions</h3>
+      <ul class="session-list">
+        <li><a href="day%202/edmund-keith-ai-real-estate-search-summary.html"><span class="who">Edmund Keith</span><span class="what">So, where are we with AI real estate search?</span></a></li>
+        <li><a href="day%202/mike-van-der-heijden-portal-ventures-ai-search-summary.html"><span class="who">Mike van der Heijden</span><span class="what">Portal Ventures — AI search: overstated, understood, underestimated</span></a></li>
+        <li><a href="day%202/panel-building-ai-native-business-summary.html"><span class="who">Panel</span><span class="what">Building an AI-native business</span></a></li>
+        <li><a href="day%202/panel-can-traditional-portals-implement-ai-search-summary.html"><span class="who">Panel</span><span class="what">Can traditional portals truly implement AI search?</span></a></li>
+        <li><a href="day%202/jonathan-liu-soho-ai-portals-to-partners-summary.html"><span class="who">Jonathan Liu</span><span class="what">Soho.ai — from portals to partners</span></a></li>
+        <li><a href="day%202/rhys-rogers-beforeyoubuy-expanding-search-due-diligence-summary.html"><span class="who">Rhys Rogers</span><span class="what">Beforeyoubuy — expanding search into due diligence</span></a></li>
+      </ul>
+      <a class="back-top" href="#top">↑ Back to top</a>
+    </section>
+
+    <section class="card" id="closing">
+      <h2><span class="tag">Closing</span> Conference learnings panel</h2>
+      <p class="muted">Malcolm Myers (eiv) · Jonathan Turpin (AIM) · Simon Baker (Online Marketplaces). Summarised on the Day 2 master; full ASR-style notes below.</p>
+      <ul class="session-list">
+        <li><a href="day%202/panel-conference-learnings-summary.html"><span class="who">Conference learnings</span><span class="what">Closing synthesis — themes across the programme (full notes + at-a-glance)</span></a></li>
+      </ul>
+      <a class="back-top" href="#top">↑ Back to top</a>
+    </section>
+
+    <footer>
+      <p><strong>Sharing:</strong> Zip this <code>bangkok2026</code> folder or host it on GitHub Pages with these files at the <strong>site root</strong> so links to <code>day 1/</code> and <code>day 2/</code> keep working. Entry URL: <code>index.html</code> (this page).</p>
+      <p style="margin-top:10px;">PDF export (Day 1 batch): see <code>day 1/export-html-to-pdf.js</code> in <a href="README.md">README.md</a>.</p>
+    </footer>
+  </div>
+</body>
+</html>
