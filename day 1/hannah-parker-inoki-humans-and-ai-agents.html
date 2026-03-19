@@ -1,0 +1,769 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hannah Parker (Inoki) — Humans &amp; AI agents</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f1f5f9;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #fdf4ff 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 40px 20px 64px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #86198f 0%, #a21caf 50%, #7e22ce 100%);
+      color: white;
+      border-radius: 24px;
+      padding: 36px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+    }
+
+    .session-badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.14);
+      color: #f5d0fe;
+      font-weight: 600;
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .brand {
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      margin-bottom: 10px;
+      opacity: 0.95;
+    }
+
+    header h1 {
+      margin: 0 0 10px;
+      font-size: clamp(1.25rem, 2.8vw, 1.85rem);
+      line-height: 1.2;
+      font-weight: 800;
+    }
+
+    .headline-sub {
+      margin: 0 0 16px;
+      font-size: 1.02rem;
+      color: rgba(255, 255, 255, 0.92);
+      font-weight: 600;
+    }
+
+    .speaker-line { margin: 0; font-size: 1.02rem; }
+
+    header .conf {
+      margin: 18px 0 0;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 0.92rem;
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      margin-bottom: 20px;
+    }
+
+    h2 { margin: 0 0 14px; font-size: 1.2rem; color: #86198f; }
+    p { margin: 0 0 12px; }
+    ul { margin: 0; padding-left: 20px; }
+    li { margin-bottom: 10px; }
+
+    .muted-note { font-size: 0.9rem; color: var(--muted); }
+
+    .query-box {
+      background: #faf5ff;
+      border: 1px solid #e9d5ff;
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin: 12px 0;
+      font-size: 0.95rem;
+    }
+
+    .query-box strong { color: #7e22ce; display: block; margin-bottom: 8px; font-size: 0.8rem; letter-spacing: 0.04em; }
+
+    .kind-wicked {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 14px;
+    }
+
+    @media (max-width: 720px) {
+      .kind-wicked { grid-template-columns: 1fr; }
+    }
+
+    .kind-col, .wicked-col {
+      padding: 16px 18px;
+      border-radius: 14px;
+      font-size: 0.93rem;
+    }
+
+    .kind-col {
+      background: #ecfdf5;
+      border: 1px solid #6ee7b7;
+    }
+
+    .wicked-col {
+      background: #fef2f2;
+      border: 1px solid #fca5a5;
+    }
+
+    .kind-col h3, .wicked-col h3 {
+      margin: 0 0 10px;
+      font-size: 1rem;
+      color: inherit;
+    }
+
+    .kind-col h3 { color: #047857; }
+    .wicked-col h3 { color: #b91c1c; }
+
+    .kind-col .tag { color: #047857; font-weight: 700; font-size: 0.88rem; margin-top: 12px; }
+    .wicked-col .tag { color: #b91c1c; font-weight: 700; font-size: 0.88rem; margin-top: 12px; }
+
+    .bench-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 20px;
+      margin: 12px 0;
+      font-size: 0.88rem;
+    }
+
+    .bench-legend span { display: inline-flex; align-items: center; gap: 6px; }
+    .leg-red::before { content: ""; width: 12px; height: 12px; background: #ef4444; border-radius: 3px; }
+    .leg-orange::before { content: ""; width: 12px; height: 12px; background: #f97316; border-radius: 3px; }
+    .leg-grey::before { content: ""; width: 12px; height: 12px; background: #94a3b8; border-radius: 3px; }
+
+    .bench-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+      margin-top: 12px;
+    }
+
+    .bench-table th, .bench-table td {
+      padding: 10px 12px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .bench-table th { background: #f8fafc; color: #64748b; font-weight: 600; font-size: 0.82rem; }
+
+    .tier-list { margin: 0; padding: 0; list-style: none; }
+    .tier-list li {
+      padding: 16px 18px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      margin-bottom: 12px;
+      background: #f8fafc;
+    }
+
+    .tier-list li.tier-opportunity {
+      border: 2px solid #dc2626;
+      background: #fef2f2;
+    }
+
+    .tier-list li strong { color: #86198f; }
+    .tier-list li.tier-opportunity strong { color: #b91c1c; }
+
+    .aix-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 14px;
+      align-items: start;
+    }
+
+    @media (max-width: 800px) {
+      .aix-grid { grid-template-columns: 1fr; }
+    }
+
+    .persona-box {
+      background: #1e293b;
+      color: #e2e8f0;
+      border-radius: 14px;
+      padding: 18px 20px;
+      font-size: 0.92rem;
+    }
+
+    .persona-box h3 {
+      margin: 0 0 12px;
+      font-size: 0.95rem;
+      color: #f5d0fe;
+      letter-spacing: 0.03em;
+    }
+
+    .persona-box ul { margin: 0; padding-left: 18px; }
+    .persona-box li { margin-bottom: 8px; color: #cbd5e1; }
+
+    .aix-steps {
+      margin: 0;
+      padding-left: 22px;
+    }
+
+    .aix-steps li { margin-bottom: 14px; }
+
+    .premium-grid {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 12px;
+      margin-top: 14px;
+      align-items: start;
+    }
+
+    @media (max-width: 780px) {
+      .premium-grid { grid-template-columns: 1fr; }
+      .premium-arrow { display: none; }
+    }
+
+    .premium-arrow {
+      font-size: 1.5rem;
+      color: #94a3b8;
+      align-self: center;
+      padding-top: 2rem;
+    }
+
+    .premium-current, .premium-emerging {
+      padding: 16px 18px;
+      border-radius: 14px;
+      font-size: 0.92rem;
+    }
+
+    .premium-current {
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+    }
+
+    .premium-emerging {
+      background: #fff7ed;
+      border: 1px solid #fdba74;
+    }
+
+    .premium-current h3, .premium-emerging h3 {
+      margin: 0 0 10px;
+      font-size: 0.98rem;
+      color: inherit;
+    }
+
+    .premium-current h3 { color: #475569; }
+    .premium-emerging h3 { color: #c2410c; }
+
+    .specialist-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    @media (max-width: 640px) {
+      .specialist-grid { grid-template-columns: 1fr; }
+    }
+
+    .specialist-box {
+      padding: 16px 18px;
+      border-radius: 14px;
+      background: #f0fdf4;
+      border: 1px solid #86efac;
+      font-size: 0.92rem;
+    }
+
+    .specialist-box h3 {
+      margin: 0 0 8px;
+      font-size: 0.98rem;
+      color: #166534;
+    }
+
+    .takeaways-list { margin: 0; padding: 0; list-style: none; }
+    .takeaways-list li {
+      padding: 16px 18px;
+      margin-bottom: 12px;
+      border-radius: 14px;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      font-size: 0.93rem;
+    }
+
+    .takeaways-list li strong { color: #86198f; }
+    .takeaways-footer { margin-top: 14px; font-style: italic; color: #64748b; }
+
+    .notes-box {
+      min-height: 80px;
+      border: 2px dashed #cbd5e1;
+      border-radius: 16px;
+      padding: 18px;
+      background: #f8fafc;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .footer { margin-top: 22px; color: var(--muted); font-size: 0.92rem; }
+
+    .expand-block {
+      background: #faf5ff;
+      border: 1px solid #e9d5ff;
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin-bottom: 18px;
+    }
+
+    .expand-block:last-child { margin-bottom: 0; }
+
+    .expand-block h4 {
+      margin: 0 0 10px;
+      font-size: 1rem;
+      color: #7e22ce;
+    }
+
+    .expand-block p:last-child, .expand-block ul:last-child { margin-bottom: 0; }
+
+    .criteria-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      margin: 10px 0 0;
+    }
+
+    .criteria-table th, .criteria-table td {
+      padding: 8px 10px;
+      text-align: left;
+      border-bottom: 1px solid #e9d5ff;
+      vertical-align: top;
+    }
+
+    .criteria-table th { background: #f3e8ff; color: #6b21a8; }
+
+    .checklist-notes {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .checklist-notes li {
+      padding: 6px 0 6px 26px;
+      position: relative;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .checklist-notes li::before {
+      content: "□";
+      position: absolute;
+      left: 0;
+      color: #86198f;
+    }
+
+    code {
+      font-size: 0.88em;
+      background: #e2e8f0;
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+
+    @media (max-width: 820px) {
+      header, .card { padding: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="session-badge">PropTech &amp; PortalWatch · March 18–19, 2026 · Bangkok</div>
+      <div class="brand">Inoki</div>
+      <h1>Designing products that serve both human users and AI agents</h1>
+      <p class="headline-sub"><strong>Structured data &amp; Schema.org eerst</strong> — dat was volgens Hannah het <strong>allerbelangrijkste</strong>; zonder goede schema’s faalt elke AI-laag.</p>
+      <p class="speaker-line"><strong>Hannah Parker</strong> — Founder</p>
+      <p class="conf">
+        <strong>PropTech &amp; PortalWatch Conference</strong> — The next wave of digital real estate · Online Marketplaces
+      </p>
+    </header>
+
+    <section class="card">
+      <h2>Session</h2>
+      <p>Moderator frames <strong>products that serve users</strong> — including the non-human “user” (<strong>AI agents</strong>). Hannah demos <strong>Claude (browser)</strong> on a real UK query; then kind/wicked, benchmark, AIx, commercial shift, specialist playbook. Below: <strong>deck</strong> + <strong>voice memo</strong> (ASR cleaned).</p>
+    </section>
+
+    <section class="card" style="border:2px solid #a21caf; box-shadow:0 8px 28px rgba(134,25,143,0.12);">
+      <h2 style="margin-top:0;">Structured data &amp; schema — #1 prioriteit</h2>
+      <p><strong>NL:</strong> Hannah zei expliciet dat dit het <strong>allerbelangrijkste</strong> is — niet nog een AI-chatbot, maar <strong>data die machines kunnen uitlezen</strong>. Zonder dat faalt elke agent (Claude, ChatGPT, Perplexity, …) op je listings.</p>
+      <p><strong>Wat bedoelt ze met structured data?</strong></p>
+      <ul>
+        <li><strong>Vaste velden</strong> per attribuut dat een koop-/huurbeslissing stuurt: kamers, tuin ja/nee, parkeerplaatsen (getal), thuiskantoor, afstand tot OV — niet alleen vrije tekst of “mooie omschrijving”.</li>
+        <li><strong>Schema.org-markup</strong> op <strong>elke listingpagina</strong> — zij noemt dit de <em>“love language”</em> van AI-agents: zo vertaal je wat je hebt naar iets dat een model betrouwbaar kan parsen.</li>
+        <li><strong>Completeness:</strong> agents ranken op <strong>hoe volledig</strong> je data is; gaten → gokken → hallucinaties (zoals in haar Winchester-demo).</li>
+      </ul>
+      <p><strong>EN / quote:</strong> Great content that machines <strong>cannot read</strong> is only worth about <strong>10%</strong> of its potential — <strong>get schema / readability right first</strong>, then build AI features on top. R&amp;D-prioriteit #1 in de Q&amp;A: <strong>schema line</strong> (data model + markup), daarna pas de rest.</p>
+      <p><strong>Praktisch:</strong> audit (o.a. met <strong>Claude in de browser</strong>) wat een agent uit je site haalt; valideer Schema.org; normaliseer binnenkomende makelaarsdata als die rommelig is — pas daarna is “schema fix” echt simpel.</p>
+    </section>
+
+    <section class="card">
+      <h2>From deck — example user query</h2>
+      <p><strong>A user just asked an AI agent to find her a home.</strong></p>
+      <div class="query-box">
+        <strong>USER QUERY</strong>
+        “3 bedrooms in Winchester. Space for a home office. Garden for the dog. Parking for 2 cars. 20 mins walk to the station. Good schools for my girls aged 9 and 14.”
+      </div>
+      <p class="muted-note">Illustrates <strong>multi-constraint</strong>, natural-language search — product + data design must support this class of query for agents <em>and</em> humans.</p>
+    </section>
+
+    <section class="card">
+      <h2>From deck — kind vs wicked environments</h2>
+      <p><strong>AI thrives in <em>kind</em> environments; property search lives in a <em>wicked</em> one.</strong></p>
+      <div class="kind-wicked">
+        <div class="kind-col">
+          <h3>Kind environment</h3>
+          <p><strong>Clear rules, repeatable, reliable feedback.</strong></p>
+          <ul>
+            <li><strong>Games</strong> — e.g. chess: fixed rules, instant feedback.</li>
+            <li><strong>Medical</strong> — radiology patterns; yes/no clarity.</li>
+            <li><strong>Legal</strong> — document review for specific, computer-definable variables.</li>
+            <li><strong>Marketplace (simple)</strong> — price comparison on well-defined variables.</li>
+          </ul>
+          <p class="tag">AI excels here ✓</p>
+        </div>
+        <div class="wicked-col">
+          <h3>Wicked environment</h3>
+          <p><strong>Ambiguous criteria, moving goalposts, emotional bias.</strong></p>
+          <ul>
+            <li><strong>“Good schools”</strong> — performance? faith? capacity?</li>
+            <li><strong>“Good location”</strong> — safety? commute? status? demographics?</li>
+            <li><strong>Criteria change mid-search.</strong></li>
+            <li><strong>Weighting</strong> — what’s non-negotiable vs nice-to-have?</li>
+          </ul>
+          <p class="tag">AI struggles without rich, structured data ⚠</p>
+        </div>
+      </div>
+      <p class="muted-note">Implication for portals: expose <strong>structured, queryable signals</strong> (schools, commute, parking, etc.) so agents and humans aren’t guessing in a wicked problem space.</p>
+    </section>
+
+    <section class="card">
+      <h2>From deck — how readable are listings to an AI agent?</h2>
+      <p><strong>Benchmarking 100+</strong> local and global portals against <strong>5 key decision-driving</strong> data dimensions (e.g. address, price, features, imagery — per slide grid).</p>
+      <div class="bench-legend">
+        <span class="leg-red">Structured &amp; machine-readable</span>
+        <span class="leg-orange">Partial / limited</span>
+        <span class="leg-grey">Manual — invisible to agents</span>
+      </div>
+      <table class="bench-table">
+        <thead>
+          <tr><th>#</th><th>Portal</th><th>Score</th><th>Note (aggregate)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Homes.com</td><td><strong>7</strong></td><td>Most structured cells on slide</td></tr>
+          <tr><td>2</td><td>Domain.com.au</td><td><strong>5</strong></td><td>Mix of structured + partial</td></tr>
+          <tr><td>3</td><td>realestate.com.au</td><td><strong>4</strong></td><td>Structured, partial, and manual</td></tr>
+          <tr><td>4</td><td>Scout24</td><td><strong>3</strong></td><td>—</td></tr>
+          <tr><td>5</td><td>Zillow</td><td><strong>2</strong></td><td>—</td></tr>
+          <tr><td>6</td><td>Rightmove</td><td><strong>2</strong></td><td>—</td></tr>
+          <tr><td>7</td><td>Zoopla</td><td><strong>0</strong></td><td>All manual / agent-invisible on tracked factors</td></tr>
+        </tbody>
+      </table>
+      <p class="muted-note">Scores summarise how much listing data is machine-actionable for agents across the five factors (exact methodology per Inoki).</p>
+    </section>
+
+    <section class="card">
+      <h2>From deck — three tiers of new AI products</h2>
+      <ul class="tier-list">
+        <li>
+          <strong>01 — The AI theatre</strong>
+          <p style="margin:8px 0 0;">AI-powered search “filters,” chatbot assistants, natural-language homepage…</p>
+          <p style="margin:6px 0 0;color:#64748b;"><em>“Great for press releases, none of it changes behaviour.”</em> Feels fake; <strong>low value</strong>.</p>
+        </li>
+        <li>
+          <strong>02 — What’s promising</strong>
+          <p style="margin:8px 0 0;">Visual search, conversational UI — fun, high-engagement.</p>
+          <p style="margin:6px 0 0;color:#64748b;"><em>“People don’t buy homes based on kitchen colour or floor type.”</em> Entertainment; <strong>low ROI impact</strong>.</p>
+        </li>
+        <li class="tier-opportunity">
+          <strong>03 — The structural gap</strong>
+          <p style="margin:8px 0 0;">The data behind <strong>real</strong> decisions: affordability, schools, safety, commute, energy cost…</p>
+          <p style="margin:6px 0 0;color:#991b1b;"><strong>Today:</strong> missing, unstructured, or invisible to an AI agent parsing your listings.</p>
+          <p style="margin:8px 0 0;font-weight:700;color:#b91c1c;">This is the opportunity.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>From deck — AIx before UX</h2>
+      <p><strong>You have a new user persona — design for them first.</strong> (“AIx” = AI experience / agent-first information architecture.) <strong>Core of AIx = structured data + schema.</strong></p>
+      <div class="aix-grid">
+        <div class="persona-box">
+          <h3>New user persona: the AI agent</h3>
+          <ul>
+            <li>Cannot read on-screen text or photos <strong>(well)</strong></li>
+            <li>Cannot interpret nuances in free text</li>
+            <li><strong>Needs structured data</strong> to extract meaning</li>
+            <li>Ranks based on <strong>data completeness</strong></li>
+            <li>Will often guess — <strong>confidently wrong</strong></li>
+          </ul>
+        </div>
+        <div>
+          <p style="margin:0 0 10px;font-weight:600;color:#86198f;">Strategic steps (schema first)</p>
+          <ol class="aix-steps">
+            <li><strong>Structured data fields</strong> in je CMS/API voor <em>elk</em> attribuut dat een beslissing stuurt — letterlijk waar mogelijk: <code>garden: true</code>, <code>parkingSpaces: 2</code>, geen alleen “leuke tuin” in prose.</li>
+            <li><strong>Schema.org</strong> (o.a. <code>RealEstateListing</code> / relevante types) op <strong>elke listing-URL</strong> — export van die velden naar machine-leesbare markup; dit is wat agents en crawlers “lezen”, niet je hero-afbeelding.</li>
+            <li>Portals scoren nu vaak <strong>OK op image tagging</strong>, maar <strong>zwak op overige attributen</strong> in schema — daar zit de grootste winst.</li>
+            <li>Daarna pas <strong>enrich</strong>: commute, schoolvangnetten, risico’s, kosten — bovenop een schone structured basis.</li>
+            <li><strong>AIx</strong> = die data-architectuur; elke nieuwe AI-feature bouw je <em>op</em> goed gezet schema, niet ernaast.</li>
+          </ol>
+        </div>
+      </div>
+      <p class="muted-note" style="margin-top:14px;"><strong>SEO:</strong> dezelfde structured data helpt ook zoekmachines; FAQ-pagina’s met schema werden in de talk genoemd als dubbel voordeel.</p>
+    </section>
+
+    <section class="card">
+      <h2>From deck — the premium position funeral</h2>
+      <p>Shift from <strong>pay to show more</strong> → <strong>pay to know more</strong>.</p>
+      <div class="premium-grid">
+        <div class="premium-current">
+          <h3>Current model: Pay to show more</h3>
+          <ul>
+            <li>Premium listing position = premium price</li>
+            <li>Featured placement drives agent spend</li>
+            <li>Position 1 / page 1 views matter</li>
+            <li>Spotlight listings create lead quantity</li>
+            <li>Native and SERP advertising opportunities</li>
+          </ul>
+        </div>
+        <div class="premium-arrow" aria-hidden="true">→</div>
+        <div class="premium-emerging">
+          <h3>Emerging model: Pay to know more</h3>
+          <ul>
+            <li><strong>Data richness</strong> commands a premium price</li>
+            <li>Decision-critical data that’s harder to know becomes <strong>portal proprietary</strong></li>
+            <li>Drives <strong>higher quality</strong> lead conversions</li>
+            <li>Trust earns the <strong>downstream</strong>: mortgage, conveyancer, broadband</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>From deck — becoming the specialist</h2>
+      <div class="specialist-grid">
+        <div class="specialist-box">
+          <h3>The out-of-market majority</h3>
+          <p style="margin:0;">80–90% of your traffic arrives wanting to be entertained. They are the buyers and sellers of tomorrow — <strong>delight them</strong>.</p>
+        </div>
+        <div class="specialist-box">
+          <h3>Give away your lego</h3>
+          <p style="margin:0;">Give away as much as you can. Every experience with you should give back constant snippets of <strong>“information gifts”</strong> they can’t get (easily) elsewhere.</p>
+        </div>
+        <div class="specialist-box">
+          <h3>Lock them in</h3>
+          <p style="margin:0;">As a specialist you can ask for more information from your users to lock them into an <strong>emotional relationship</strong>. The more they give, the longer they stay.</p>
+        </div>
+        <div class="specialist-box">
+          <h3>Make it relevant</h3>
+          <p style="margin:0;">The specialist’s role is to always keep it <strong>accurate</strong>. Keep it personal; data is a two-way road so you can match users to the right products and services.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>From deck — three takeaways</h2>
+      <ul class="takeaways-list">
+        <li>
+          <strong>01 — AIx before UX (= structured data / schema eerst)</strong><br>
+          Eerst audit: wat kan een AI-agent <em>nu</em> hard uit je listings halen — waar zijn de gaten? <strong>Schema.org + velden goedzetten</strong> vóór je volgende product-roadmap. Zonder dit blijft alles theater.
+        </li>
+        <li>
+          <strong>02 — Choose your side</strong><br>
+          Generalist or specialist? The distance between them is accelerating. Your brand, scale, and content still matter — use them while they still hold weight.
+        </li>
+        <li>
+          <strong>03 — Build the moat through trust</strong><br>
+          Design products users can invest in: richer profiles, match scores, specialist search. Give away your lego until you’re the one they come back to. Ground every product decision in <strong>real data</strong>, not assumptions.
+        </li>
+      </ul>
+      <p class="takeaways-footer"><em>AI will make the bad worse and the good even better.</em></p>
+    </section>
+
+    <section class="card">
+      <h2>Talk summary (voice memo)</h2>
+      <h3>Live demo (Claude)</h3>
+      <p>Same Winchester query as on slide — <strong>Claude in the browser</strong> on her machine. Outcome: only <strong>~2 of ~6</strong> criteria satisfied; the rest forced <strong>hallucination/guesswork</strong>. The “make it a home” criteria (schools, commute, dog, parking…) fail when the portal doesn’t expose <strong>structured, machine-readable</strong> truth.</p>
+      <h3>Kind vs wicked (spoken)</h3>
+      <p>“Good school” means different things to everyone. Buyers say <strong>20 min to station</strong> then buy <strong>40 min</strong> away. <strong>Mid-search criteria change</strong> — brutal for agents. AI analogy: <strong>Bernese mountain dog</strong> — smart intentions, may bring a <strong>sock</strong> instead of the <strong>ball</strong>.</p>
+      <h3>Who’s “AI-able”?</h3>
+      <p>Only <strong>Homes.com</strong> called out as having a deliberate <strong>AI-able</strong> strategy. Nearly everyone else scores poorly on agent readability → risk of being <strong>invisible in the AI search economy</strong>. Great human UX is not enough if <strong>readability</strong> fails.</p>
+      <h3>Tiers (spoken)</h3>
+      <p><strong>Theatre:</strong> filters rebranded as AI — press, little user value. <strong>Promising:</strong> e.g. Homes.com UK <strong>visual search</strong> — strong engagement metrics coming, but people don’t choose a home on <strong>kitchen colour / flooring</strong> alone — entertainment vs decision. <strong>Structural gap</strong> = affordability, location, schools (faith/capacity/rating), commute, energy, <strong>safety</strong> — quality-of-life data.</p>
+      <h3>Structured data &amp; schema (kern — allerbelangrijkst)</h3>
+      <p>Hannah’s hoofdboodschap: <strong>schema’s en structured data goedzetten</strong> gaat vóór mooie AI-UI. ~30y B2B-ego → ~20y UX voor mensen → nu ook <strong>machines</strong> die namens mensen kiezen. Mensen lezen prose; agents lezen <strong>schema/markup</strong>. Zonder <strong>Schema.org + consistente velden</strong> ben je <strong>niet zichtbaar</strong> in de AI-zoek-economie — ongeacht je homepage-AI. Listingtekst “mooie tuin” helpt een agent niet; <strong>garden: yes, parking: 2</strong> wel.</p>
+      <h3>Commercial + specialist</h3>
+      <p><strong>Premium position</strong> “dying” — explore <strong>pay to know</strong>. Three pillars for personalisation: (1) listing/agent content (2) <strong>proprietary enrichments</strong> — geo, risk, planning (3) <strong>user data</strong> once trust is earned. Portal as <strong>data supplier</strong>; intelligible data may be worth more than raw listing copy. Don’t only pass the lead to the broker — add <strong>“so what”</strong> so the user isn’t dumped straight into the funnel without interpretation.</p>
+      <h3>Extra uit voice (nuance)</h3>
+      <ul>
+        <li><strong>Agents “lie” confidently:</strong> zonder bronnen vullen modellen gaten in — gebruiker ziet geen onzekerheid. Daarom is <strong>provenance + structured truth</strong> een vertrouwensproduct, niet alleen SEO.</li>
+        <li><strong>Image tagging vs rest:</strong> veel portals hebben redelijke visuele metadata; de <strong>beslissingsattributen</strong> (OV-minuten, parkeerplekken, schooltype) zitten vaak niet in schema — dat is waar concurrenten elkaar passeren in AI-zoek.</li>
+        <li><strong>“Give away your lego”</strong> is geen gratis alles weggeven — het is <strong>waarde in snippets</strong> die binding creëren (tooltips, mini-inzichten, vergelijkingen) zodat de gebruiker terugkomt voor de volgende vraag.</li>
+        <li><strong>Safety #1:</strong> in Q&amp;A expliciet — gebruikers willen weten of een buurt “veilig” voelt; LLM’s willen negatieve signalen vermijden. Productvraag: hoe toon je veiligheid <em>nuttig</em> (context, trends) zonder sensatie of discriminerende proxies.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Uitgebreide notes — verhaallijn &amp; diepgang</h2>
+      <p class="muted-note" style="margin-bottom:18px;">Voor eigen presentaties of interne sessies: wat Hannah <strong>opbouwt</strong>, en hoe je elk blok kunt <strong>uitdiepen</strong>.</p>
+
+      <div class="expand-block">
+        <h4>1. Verhaallijn van de talk (volgorde)</h4>
+        <p><strong>NL:</strong> (1) <em>Framing</em> — je hebt nu twee gebruikers: mens én agent. (2) <em>Claude-demo</em> — zelfde Winchester-query als op slide; publiek ziet live dat 4/6 criteria misgaan. (3) <em>Kind vs wicked</em> — waarom vastgoed inherent “wicked” is; AI werkt beter als jij de wereld <strong>kind-er</strong> maakt door data. (4) <em>Benchmark</em> — wie is machine-leesbaar? (5) <em>Drie tiers</em> — theater / engagement / echte gap. (6) <em>AIx voor UX</em> — ontwerp eerst voor de agent. (7) <em>Commercial</em> — premium positie onder druk; pay-to-know. (8) <em>Specialist</em> — 80–90% out-of-market; vertrouwen + data. (9) <em>Takeaways</em>.</p>
+        <p><strong>Tip om te presenteren:</strong> de demo vóór de benchmark zet — dan “snappen” mensen de scores op de tabel zonder extra uitleg.</p>
+      </div>
+
+      <div class="expand-block">
+        <h4>2. Winchester-query → product-eisen (per criterium)</h4>
+        <p>Elke regel hieronder is iets dat een agent alleen hard kan matchen als het <strong>gestructureerd op object + omgeving</strong> staat — niet alleen in brokstukken tekst.</p>
+        <table class="criteria-table">
+          <thead>
+            <tr><th>Criterium (uit query)</th><th>Wat een agent nodig heeft</th><th>Typische portal-gap</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>3 slaapkamers</td><td>Integer <code>bedrooms</code> in API + schema</td><td>Vaak OK; check consistentie met “study” als slaapkamer gemaskeerd</td></tr>
+            <tr><td>Thuiskantoor</td><td>Veld <code>homeOffice</code> / aparte kamer / breedte bureau — geen alleen “study” in prose</td><td>Zelden expliciet; agent raadt</td></tr>
+            <tr><td>Tuin voor hond</td><td><code>garden</code> boolean + <code>gardenSize</code> of fenced — niet “lovely garden”</td><td>Subjectief in copy</td></tr>
+            <tr><td>2 parkeerplekken</td><td><code>parkingSpaces: 2</code> of driveway capacity</td><td>“Parking” zonder getal</td></tr>
+            <tr><td>20 min lopen station</td><td>Isochronen / <code>walkMinutesToTransit</code> gekoppeld aan adres</td><td>“Near station” vage; geen coördinaten-logica voor agent</td></tr>
+            <tr><td>Goede scholen 9 &amp; 14</td><td>School catchment + leeftijdscohorten + type (faith, grammar, capacity)</td><td>“Good schools nearby” — wicked blijft wicked tenzij je disambiguateert</td></tr>
+          </tbody>
+        </table>
+        <p class="muted-note" style="margin-top:10px;">Hannah’s punt: zelfs met perfecte velden blijft “goede school” deels wicked — maar zonder velden is het <strong>pure gok</strong>.</p>
+      </div>
+
+      <div class="expand-block">
+        <h4>3. Kind vs wicked — voorbeelden om intern te gebruiken</h4>
+        <ul>
+          <li><strong>Kind-achtig maken:</strong> vervang “dicht bij goede scholen” door <em>geselecteerde scholen binnen X km + ratings + leeftijd match</em> — nog steeds normatief, maar <strong>audit trail</strong> voor de agent.</li>
+          <li><strong>Wicked blijft:</strong> “gezellige buurt” — je kunt proxies tonen (cafés, voetgangers, geluidskaart) maar niet één waarheid.</li>
+          <li><strong>Bernese-metafoor:</strong> hond wil bal helpen → brengt sok — intentie goed, uitvoering fout. AI-agent idem: vult ontbrekende constraints met plausibele onzin. <strong>Lesson:</strong> geef de bal (data); anders improviseert de hond.</li>
+        </ul>
+      </div>
+
+      <div class="expand-block">
+        <h4>4. Benchmark-tabel — hoe je ’m leest</h4>
+        <p><strong>Homes.com bovenaan:</strong> bewuste “AI-able” positioning — veel cellen rood (structured) op de vijf dimensies. <strong>UK-giganten laag (Rightmove, Zoopla):</strong> sterke merken + human UX, maar op <strong>agent-parseerbare</strong> dimensies zwak → risico op lange termijn als discovery verschuift. Dit is geen “wie de beste site is”; het is <strong>wie een machine kan vertrouwen</strong>.</p>
+        <p><strong>NL takeaway:</strong> je concurrent is niet alleen de andere portal — het is <strong>elke agent</strong> die jou overslaat omdat je listing niet te parsen is.</p>
+      </div>
+
+      <div class="expand-block">
+        <h4>5. Drie tiers — herkenningssignalen</h4>
+        <ul>
+          <li><strong>Theater:</strong> “AI search” = zelfde filters met chat-UI; geen nieuwe data; KPI’s op press, niet op beslissing.</li>
+          <li><strong>Promising/low ROI:</strong> hoge engagement (visual search, swipe) — waardevol voor <em>discover</em> en merk, maar Hannah: koopbeslissing hangt niet aan keukenkleur.</li>
+          <li><strong>Structural gap:</strong> budget-realiteit, energielabel/kosten, veiligheid-perceptie + data, planning overlay, flood — alles wat <strong>vóór de bezichtiging</strong> de shortlist maakt of breekt.</li>
+        </ul>
+      </div>
+
+      <div class="expand-block">
+        <h4>6. Pay to show → Pay to know</h4>
+        <p><strong>NL:</strong> Klassiek: betalen voor positie = zichtbaarheid in een <strong>lijst</strong>. Toekomst: betalen voor <strong>rijkere, betrouwbare data</strong> op die listing (of bundel) — hogere kwaliteit lead omdat de koper al geïnformeerd is. Downstream: hypotheek, notaris, utilities — vertrouwen in portal als <strong>navigator</strong> i.p.v. alleen doorverwijzer.</p>
+        <p><strong>Productnoot:</strong> dit botst soms met “alles gratis tonen”; Hannah’s specialist-model lost dat op via <strong>progressive disclosure</strong> + trust — eerst snippets (“lego”), dan diepte na uitwisseling.</p>
+      </div>
+
+      <div class="expand-block">
+        <h4>7. Claude-audit (uit Q&amp;A) — stappenplan</h4>
+        <ol style="margin:0;padding-left:20px;">
+          <li>Plugin aan: laat Claude <strong>concurrent A, B, eigen site</strong> doorlopen op dezelfde query.</li>
+          <li>Vraag om <strong>extracted fields</strong> vs <strong>assumed fields</strong> — waar gokt het model?</li>
+          <li>Export als intern rapport voor product + data engineering.</li>
+          <li>Daarna: “Hoe zet ik Schema.org op alle listing-URLs?” — startpunt voor implementatie-epic.</li>
+          <li>Parallel: <strong>normalisatie-pipeline</strong> voor rommelige feeds (Dubai-voorbeeld) — schema zonder schone bron helpt beperkt.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Q&amp;A — questions &amp; answers (session)</h2>
+
+      <h3>What data is missing? (5 votes)</h3>
+      <p><strong>A:</strong> Lots missing on <strong>quality of life</strong> early in the journey: <strong>planning</strong> (neighbour extensions, failed applications), <strong>flood</strong> zones, <strong>infrastructure</strong> coming. Hard part isn’t sourcing data per se but <strong>mapping it to the exact property</strong> — agents often omit full address; guesswork. Next level: <strong>interpretation for normals</strong> — e.g. “flood risk” vs 1-in-10,000 event — user vs insurer/mortgage lens. Portal becomes <strong>specialist navigator</strong>. (Brokers/agents remain <strong>specialists</strong> in their lane.)</p>
+
+      <h3>Stay relevant + where to invest R&amp;D? (2 votes)</h3>
+      <p><strong>A:</strong> <strong>Eerst het schema / structured data</strong> — dat was haar kristalheldere prioriteit. Mooie data die geen machine kan uitlezen = ~<strong>10%</strong> van de waarde. <strong>Schema.org + datamodel</strong> (“love language” voor agents) vóór features. Daarna verdiepen i.p.v. dunne tool op andermans data.</p>
+
+      <h3>Top 3–5 data points to aggregate? (2 votes)</h3>
+      <p><strong>A:</strong> Human / life-quality signals. <strong>Safety</strong> is <strong>#1</strong> what users care about (agents dislike surfacing “negatives”). Challenge: turn safety into a <strong>useful experience</strong>. <strong>Planning data</strong> — hard to get; <strong>be first</strong>. Valuation/AVM: every model wrong about something — use carefully.</p>
+
+      <h3>SEO risk with AI-native search? (1 vote)</h3>
+      <p><strong>A:</strong> <strong>SEO still central</strong> — most traffic for years will still be <strong>search-led</strong>, not “everyone starts in ChatGPT.” Strong <strong>FAQ + schema</strong> (example cited: content mined from FAQs for structured data) helps both <strong>SEO</strong> and <strong>LLM readability</strong>.</p>
+
+      <h3>Schema.org an easy fix? (0 votes)</h3>
+      <p><strong>A:</strong> Looks easy until you see <strong>ingest quality</strong> from agents — messy listings (e.g. early <strong>Dubai / Property Finder</strong>) need <strong>normalisation</strong> before schema pays off. AI can <strong>accelerate</strong> cleanup; still real work.</p>
+
+      <h3>Wicked → kind with zero experience? (0 votes)</h3>
+      <p><strong>A:</strong> Run <strong>Claude browser plugin</strong> on <strong>competitors’ sites and yours</strong> — see what it extracts; get a report. Then: paste your site, ask Claude <strong>how to add Schema.org across listings</strong> — workable starting point <strong>without</strong> deep prior experience.</p>
+
+      <h3>Build data for wicked questions — realistic? (0 votes)</h3>
+      <p class="muted-note">Partially covered above: map data to property + layer <strong>interpretation</strong> (“so what”) — specialist portal role.</p>
+
+      <h3>Great schema = LLMs scrape everything? (0 votes)</h3>
+      <p class="muted-note">Not spelled out in transcript; schema is framed as <strong>visibility to agents</strong>, not unlimited exfiltration.</p>
+    </section>
+
+    <section class="card">
+      <h2>Interne checklist (na deze talk)</h2>
+      <p class="muted-note" style="margin-bottom:14px;">Af te vinken door product/data — aansluitend op Hannah’s prioriteiten.</p>
+      <ul class="checklist-notes">
+        <li><strong>Schema eerst:</strong> JSON-LD (of equivalent) op elke listing-URL; validator draaien; velden aligned met CMS.</li>
+        <li><strong>Gap-audit:</strong> Winchester-achtige query op eigen site via Claude/browser — welke criteria falen structureel?</li>
+        <li><strong>Ingest:</strong> regels voor makelaarsfeed zodat “2 parking” niet alleen in description belandt.</li>
+        <li><strong>Enrichment roadmap:</strong> planning, flood, OV-isochronen — wat is per object te mappen vs te ruim?</li>
+        <li><strong>Safety UX:</strong> hoe tonen we signalen nuttig zonder te vermijden of te polariseren?</li>
+        <li><strong>FAQ + schema:</strong> bestaande content hergebruiken voor SEO + LLM (zoals in Q&amp;A).</li>
+        <li><strong>Commercial experiment:</strong> één “pay to know” datapakket hypothetisch uitwerken (welke velden premium?).</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Quick ref</h2>
+      <p><strong>Company:</strong> Inoki</p>
+      <p><strong>Speaker:</strong> Hannah Parker, Founder</p>
+      <p><strong>Topic:</strong> <strong>Schema/structured data #1</strong> · AIx · specialist · benchmark · premium shift</p>
+      <p><strong>Kern:</strong> <strong>Structured data + Schema.org</strong> = #1 · daarna enrich &amp; trust · Claude-audit</p>
+    </section>
+
+    <p class="footer">
+      <strong>Deck + talk + Q&amp;A</strong>. Related:
+      <code>lukas-rose-properbird-ai-data-intelligence-layer.html</code>,
+      <code>paruey-anadirekkul-spacely-ai-adoption-outcomes.html</code>,
+      <code>lamerton-gray-proptexx-ai-retail-media-portal-intelligence.html</code>,
+      <code>jonathan-turpin-ai-property-portals-summary.html</code>,
+      <code>ryan-gallagher-iovox-ai-communications.html</code>,
+      <code>steve-coleman-snow-only-ai-human-touch.html</code>,
+      <code>russell-wee-jean-yip-proptech-ai-real-estate.html</code>,
+      <code>malcolm-myers-ai-asia-portals-summary.html</code>,
+      <code>patrick-grove-fdv-summary.html</code>,
+      <code>satoshi-murakami-metaprop-investment-mandate.html</code>.
+    </p>
+  </main>
+</body>
+</html>

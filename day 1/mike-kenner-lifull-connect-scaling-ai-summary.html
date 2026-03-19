@@ -1,0 +1,788 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mike Kenner (Lifull Connect) — Scaling a global proptech platform in the AI age</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f0f4f8;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #eff6ff 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 40px 20px 64px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 42%, #dc2626 100%);
+      color: white;
+      border-radius: 24px;
+      padding: 36px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+    }
+
+    .session-badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.15);
+      color: #bfdbfe;
+      font-weight: 600;
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .brand {
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      margin-bottom: 10px;
+      opacity: 0.95;
+    }
+
+    header h1 {
+      margin: 0 0 12px;
+      font-size: clamp(1.15rem, 2.4vw, 1.65rem);
+      line-height: 1.28;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .headline-sub {
+      margin: 0 0 16px;
+      font-size: 1.02rem;
+      color: rgba(255, 255, 255, 0.93);
+      font-weight: 500;
+      max-width: 68ch;
+    }
+
+    .speaker-line { margin: 0; font-size: 1.05rem; font-weight: 600; }
+
+    header .conf {
+      margin: 18px 0 0;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.22);
+      font-size: 0.92rem;
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 1.2rem;
+      color: #1d4ed8;
+    }
+
+    p { margin: 0 0 12px; }
+    ul { margin: 0; padding-left: 20px; }
+    li { margin-bottom: 10px; }
+
+    .muted-note { font-size: 0.9rem; color: var(--muted); }
+
+    .title-slide-img {
+      width: 100%;
+      max-height: 440px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+    }
+
+    .img-caption {
+      margin-top: 12px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .notes-box {
+      min-height: 100px;
+      border: 2px dashed #cbd5e1;
+      border-radius: 16px;
+      padding: 18px;
+      background: #f8fafc;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .pill {
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #dbeafe;
+      color: #1d4ed8;
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+
+    .footer {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    code {
+      font-size: 0.88em;
+      background: #e2e8f0;
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+
+    .slide-img {
+      width: 100%;
+      max-height: 480px;
+      object-fit: contain;
+      object-position: center;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: #0f172a;
+    }
+
+    .slide-data {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px 20px;
+      background: linear-gradient(180deg, #f8fafc 0%, #fff 100%);
+      margin: 14px 0;
+    }
+
+    .slide-kicker {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #64748b;
+      margin-bottom: 8px;
+    }
+
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 14px 0;
+    }
+
+    @media (max-width: 720px) {
+      .compare-grid { grid-template-columns: 1fr; }
+    }
+
+    .compare-box {
+      border-radius: 14px;
+      padding: 14px 16px;
+      border: 2px solid var(--border);
+      font-size: 0.92rem;
+    }
+
+    .compare-box.fail {
+      border-color: #fecaca;
+      background: #fef2f2;
+    }
+
+    .compare-box.win {
+      border-color: #86efac;
+      background: #f0fdf4;
+    }
+
+    .compare-box .tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      padding: 2px 8px;
+      border-radius: 6px;
+    }
+
+    .compare-box.fail .tag { background: #fee2e2; color: #b91c1c; }
+    .compare-box.win .tag { background: #dcfce7; color: #166534; }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin: 12px 0;
+    }
+
+    .data-table th,
+    .data-table td {
+      border: 1px solid var(--border);
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .data-table th { background: #e2e8f0; color: #0f172a; }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+      margin: 14px 0;
+    }
+
+    .stat-tile {
+      background: #1e293b;
+      color: #f8fafc;
+      border-radius: 14px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .stat-tile .num {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #fbbf24;
+    }
+
+    .stat-tile .lbl { font-size: 0.8rem; opacity: 0.85; margin-top: 4px; }
+
+    .funnel-inline {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      margin: 12px 0;
+      padding: 12px;
+      background: #f1f5f9;
+      border-radius: 12px;
+    }
+
+    .whova-q {
+      border-left: 4px solid #2563eb;
+      padding: 10px 14px;
+      margin: 12px 0;
+      background: #eff6ff;
+      border-radius: 0 10px 10px 0;
+      font-size: 0.92rem;
+    }
+
+    .whova-meta { font-size: 0.82rem; color: var(--muted); margin-top: 4px; }
+
+    h3.deck-h3 {
+      margin: 18px 0 10px;
+      font-size: 1.02rem;
+      color: #1e40af;
+    }
+
+    .step-grid {
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+      font-size: 0.9rem;
+    }
+
+    .step-box {
+      padding: 12px 14px;
+      border-radius: 12px;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+    }
+
+    .step-box strong { color: #1d4ed8; }
+
+    .qa-answer {
+      margin: 10px 0 18px;
+      padding: 12px 14px;
+      background: #f0fdf4;
+      border-left: 4px solid #22c55e;
+      border-radius: 0 10px 10px 0;
+      font-size: 0.92rem;
+    }
+
+    .qa-answer strong { color: #166534; }
+
+    .transcript-section h3 {
+      margin: 20px 0 10px;
+      font-size: 1.02rem;
+      color: #1e40af;
+    }
+
+    .transcript-section h3:first-of-type { margin-top: 0; }
+
+    @media (max-width: 820px) {
+      header, .card { padding: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="session-badge">PropTech &amp; PortalWatch · Bangkok · Mar 18–19, 2026</div>
+      <div class="brand">LIFULL CONNECT</div>
+      <h1>Scaling a global proptech platform — in the age of AI</h1>
+      <p class="headline-sub"><strong>Transactions-first</strong> in SEA · M&amp;A discipline · <strong>AI = tool not strategy</strong> (deliberate second mover).</p>
+      <p class="speaker-line"><strong>Mike Kenner</strong> — Managing Director</p>
+      <p class="conf">
+        <strong>Property Portal Watch Conference</strong> — The next wave of digital real estate · Online Marketplaces
+      </p>
+    </header>
+
+    <section class="card">
+      <h2>Title slide (deck text)</h2>
+      <div class="slide-data">
+        <p class="slide-kicker">PropTech &amp; Portal Watch · Bangkok</p>
+        <p><strong>On-screen title:</strong> <em>Scaling a global proptech platform: Lifull Connect in the age of AI</em></p>
+        <ul style="margin:10px 0 0;">
+          <li><strong>Speaker:</strong> Mike Kenner — Managing Director, Lifull Connect</li>
+          <li><strong>Event:</strong> The next wave of digital real estate · March 18–19, 2026 · Online Marketplaces</li>
+          <li><strong>Visual:</strong> Blue/red wave graphic, Lifull Connect + PPW branding</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Session</h2>
+      <p><strong>Thesis:</strong> In Southeast Asia, <strong>portal-only</strong> (listings + media) <strong>plateaus</strong>; <strong>transaction-led</strong> (full funnel + close) is the path to scale, margin, and defensibility. Lifull is executing a <strong>transaction engine</strong> across TH → KH → ID/PH → region, with <strong>Thailand</strong> as the proof and profit centre.</p>
+      <div class="pill-row">
+        <span class="pill">Transaction engine</span>
+        <span class="pill">SEA footprint</span>
+        <span class="pill">Lamudi turnaround</span>
+        <span class="pill">Capital discipline</span>
+        <span class="pill">vs PG / REA</span>
+        <span class="pill">M&amp;A discipline</span>
+        <span class="pill">Call to startups</span>
+        <span class="pill">AI second mover</span>
+        <span class="pill">Execution engine</span>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>From deck — Transactions-first: the only way to scale in SEA</h2>
+      <div class="slide-data">
+        <p class="slide-kicker">Critical market reality</p>
+        <p><strong>Headline:</strong> Transactions-first: the <strong>only</strong> way to scale in SEA</p>
+        <div class="compare-grid">
+          <div class="compare-box fail">
+            <span class="tag">Failing</span>
+            <strong>Portal-only</strong> — traditional listings &amp; media sales<br>
+            <span class="muted-note">Flat curve · “Stuck in mud” · Revenue plateaus early; competitors trapped here.</span>
+          </div>
+          <div class="compare-box win">
+            <span class="tag">Winning</span>
+            <strong>Transaction-led</strong> — full-service ecosystem &amp; closing<br>
+            <span class="muted-note">Exponential curve · Unlocks massive TAM · Only scalable path.</span>
+          </div>
+        </div>
+        <table class="data-table">
+          <thead><tr><th>Pillar</th><th>On-slide meaning</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Conversion liquidity</strong></td><td>Don’t just introduce — <strong>own the connection</strong>. Faster buyer–seller matching → real market liquidity.</td></tr>
+            <tr><td><strong>Margin control</strong></td><td>Rigid process + compliance → <strong>protect revenue</strong>; control the close to secure commission.</td></tr>
+            <tr><td><strong>Defensibility</strong></td><td>Operational complexity = moat. <strong>Listings easy to copy; transaction ops hard to replicate.</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Reference slide — “Why portals are stuck” (Jonathan Turpin)</h2>
+      <p class="muted-note">Kenner showed this as <strong>market diagnostic</strong> context. Full narrative: <code>jonathan-turpin-ai-property-portals-summary.html</code>.</p>
+      <div class="slide-data">
+        <p class="slide-kicker">Emerging markets reality</p>
+        <p><strong>Premise:</strong> Many try to be “Rightmove/Zillow of emerging markets” for exit optionality — <strong>no one is actually exiting.</strong></p>
+        <div class="step-grid" style="margin-top:14px;">
+          <div class="step-box"><strong>Fixated on dead valuations</strong><br>Founders chase old revenue multiples without profitability; market moved, expectations didn’t.</div>
+          <div class="step-box"><strong>VC liquidity trap</strong><br>Capital in, no exit path; companies not large enough for liquidity. <strong>Result: founders &amp; investors stuck.</strong></div>
+          <div class="step-box"><strong>Moat illusion</strong><br>Portal: hard build → easy run → defensible. Transaction: hard build → hard run → <strong>true moat</strong>.</div>
+          <div class="step-box"><strong>Inability to pivot</strong><br>Portal → transaction = people/ops business vs tech commodity. Analogy: <strong>“Netflix becoming HBO.”</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>From deck — Strategic blueprint</h2>
+      <div class="slide-data">
+        <p><strong>Subtitle:</strong> Leadership-driven transformation — blending <strong>Thailand culture</strong> with <strong>European excellence</strong>.</p>
+        <table class="data-table">
+          <thead><tr><th>#</th><th>Pillar</th><th>Owner</th><th>On-slide detail</th></tr></thead>
+          <tbody>
+            <tr><td>01</td><td><strong>Cost discipline</strong> (foundation)</td><td>Finance</td><td>Strict cost discipline; lean teams; consistent profitability.</td></tr>
+            <tr><td>02</td><td><strong>Strategic acquisitions</strong> (assets)</td><td>Tech &amp; product</td><td>Acquired <strong>DCG</strong>; bet on major media portals → integrate reach → <strong>lower-funnel transaction volume</strong>.</td></tr>
+            <tr><td>03</td><td><strong>Transaction expansion</strong> (engine)</td><td>SEA execution</td><td>Beyond listings — capture value across the <strong>full property journey</strong>.</td></tr>
+            <tr><td>04</td><td><strong>Growth focus</strong> (target)</td><td>Thailand growth engine</td><td>Double down on Thailand → <strong>$50M run-rate by year-end</strong> (slide target).</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>From deck — The negative value trap (M&amp;A)</h2>
+      <p><strong>Market reality check:</strong> SEA M&amp;A “littered with overcapitalized, unprofitable zombies.” Lifull: <strong>we refuse to buy negative value.</strong></p>
+      <div class="slide-data">
+        <table class="data-table">
+          <thead><tr><th>Trap</th><th>Slide content</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>1 · Capital &amp; valuation</strong></td>
+              <td>Too much raised at unrealistic valuations; VCs hold liq prefs (1x–2x) without majority. <strong>Example $10M exit:</strong> 2× pref ≈ <strong>$9M</strong> to VC → common <strong>$1M</strong> → <strong>founder $0</strong>. <em>Misalignment: what’s right for company ≠ investors/founders.</em></td>
+            </tr>
+            <tr>
+              <td><strong>2 · Profitability illusion</strong></td>
+              <td>Unprofitable cos valued on misleading multiples. Waterfall on slide: <strong>$50M claimed</strong> → <strong>$30M</strong> (no profit) → <strong>$15M</strong> (no liq.) → <strong>~$5M actual</strong>. <em>SEA small-cap liquidity non-existent; public comps irrelevant.</em></td>
+            </tr>
+            <tr>
+              <td><strong>3 · Misalignment crisis</strong></td>
+              <td>Founder needs exit vs fund needs <strong>10×</strong> → <strong>deadlock</strong>. Cap tables broken without massive down round.</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="funnel-inline">
+          <span>100 deals</span> → <span style="color:#b91c1c;">95 rejected</span> → <span style="color:#166534;">5 clean</span>
+        </div>
+        <p><strong>Buy clean value:</strong> clean structure · aligned incentives · transparent economics. <em>“95% of deals have broken cap tables.”</em></p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>From deck — M&amp;A strategy: building the active pipeline</h2>
+      <div class="slide-data">
+        <p class="slide-kicker">REF: CONFIDENTIAL-2026</p>
+        <p><strong>SEA deal funnel:</strong></p>
+        <div class="funnel-inline">
+          <span>12 targets</span> (sourcing) → <span>3 active deals</span> (negotiation) → <span>Q4 closing</span> expected
+        </div>
+        <ul>
+          <li><strong>Track record (checked):</strong> Lamudi · Thaiger</li>
+          <li><strong>Conversion:</strong> ~25% target-to-deal</li>
+          <li><strong>Growth bar on slide:</strong> <strong>+45% YoY</strong> revenue</li>
+        </ul>
+        <table class="data-table">
+          <thead><tr><th>Gate</th><th>Slide wording</th></tr></thead>
+          <tbody>
+            <tr><td>Financial</td><td>Unit economics &amp; <strong>hidden liability</strong> check</td></tr>
+            <tr><td>Technical</td><td>Scalability audit</td></tr>
+            <tr><td>Legal</td><td><strong>IP ownership</strong> &amp; compliance filter</td></tr>
+          </tbody>
+        </table>
+        <p><strong>Growth multiplier:</strong> M&amp;A × organic = <strong>exponential growth / compound velocity</strong>. <em>Operating execution = market dominance.</em></p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>From deck — Call to startups</h2>
+      <div class="slide-data">
+        <p><strong>Strapline:</strong> <em>The sad reality: most won’t exit. Don’t chase fairy tales. Plug into a platform.</em></p>
+        <p>10+ years in market — hundreds of startups land in two buckets unless they take the third path.</p>
+      </div>
+      <div class="step-grid">
+        <div class="step-box" style="border-color:#93c5fd;">
+          <strong>Golden scenario — 0.01% probability</strong><br>
+          “We’ll raise Series A, scale to unicorn, exit $100M+.” → <strong>“This is a mirage.”</strong>
+        </div>
+        <div class="step-box" style="border-color:#fecaca;background:#fef2f2;">
+          <strong>Sad reality</strong><br>
+          <strong>The trap (~45%):</strong> underpaid forever · broken cap table · revenue keeps lights on · <strong>no liquidity</strong>.<br>
+          <strong>Dissolution (~45%):</strong> company dissolves · investors write off · founders <strong>zero return</strong>.
+        </div>
+        <div class="step-box" style="border-color:#86efac;background:#f0fdf4;">
+          <strong>Pragmatic path</strong> · <em>Strategic alignment = exit</em><br>
+          <em>“We bought the company that bought us.”</em> — no unicorns; <strong>build businesses</strong>.<br>
+          <strong>Tangible drivers</strong> (conversion &amp; margin) · <strong>real economics</strong> (unit profitability) · <strong>plugin first</strong> (not an island).<br>
+          Arc on slide: <strong>Built → Acquired → Scaled</strong>.
+        </div>
+      </div>
+      <p class="muted-note" style="margin-top:12px;">Footer: <em>Waiting for a miracle…</em> platforms create real exits.</p>
+    </section>
+
+    <section class="card">
+      <h2>From deck — SEA blueprint: operator playbook (6 steps)</h2>
+      <div class="slide-data">
+        <p class="slide-kicker">REF: SEA-EXEC-2026</p>
+        <p><strong>Title:</strong> The SEA blueprint — operator playbook · <em>The transaction engine — what others can’t replicate</em></p>
+      </div>
+      <div class="step-grid">
+        <div class="step-box"><strong>01 · Distribution control</strong> — Own traffic, audience, media; <strong>reduce paid dependency</strong>. Entry point.</div>
+        <div class="step-box"><strong>02 · Qualification speed</strong> — Contact <strong>&lt;5 min</strong>; rapid intent filter. <em>Speed-to-lead = primary conversion driver.</em></div>
+        <div class="step-box"><strong>03 · Routing systems</strong> — Performance-based routing; <strong>best closers</strong> via algorithm; continuous allocation optimization.</div>
+        <div class="step-box"><strong>04 · Supply capture</strong> — New homes &amp; exclusive inventory. <strong>Control product → control transaction outcome.</strong></div>
+        <div class="step-box"><strong>05 · Transaction ops</strong> — Streamlined docs &amp; closing; remove friction.</div>
+        <div class="step-box"><strong>06 · Revenue protection</strong> — Controls &amp; compliance to <strong>secure revenue through close</strong> (slide: secure 100% of revenue).</div>
+      </div>
+      <p class="muted-note">Footer on deck: 6-step operational moat competitors cannot replicate.</p>
+    </section>
+
+    <section class="card">
+      <h2>From deck — Transaction engine at regional scale</h2>
+      <div class="slide-data">
+        <p class="slide-kicker">SEA regional 2026</p>
+        <p><strong>Headline:</strong> Building the <strong>only</strong> transaction engine at regional scale</p>
+        <table class="data-table">
+          <thead><tr><th>Market</th><th>On-slide status</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Thailand (TH)</strong></td><td><strong>Blueprint live</strong> — #1 by a long way; master template 100% operational; systematically replicated.</td></tr>
+            <tr><td><strong>Cambodia (KH)</strong></td><td><strong>#1 + running &amp; scaling</strong></td></tr>
+            <tr><td><strong>Indonesia (ID)</strong></td><td><strong>Market entry started</strong></td></tr>
+            <tr><td><strong>Philippines (PH)</strong></td><td><strong>Launching soon</strong></td></tr>
+            <tr><td><strong>Vietnam (VN)</strong></td><td>Portal presence</td></tr>
+            <tr><td><strong>Malaysia (MY)</strong></td><td>Portal presence</td></tr>
+          </tbody>
+        </table>
+        <p><strong>Competition:</strong> PropertyGuru et al. ~100% portal model — <strong>trying</strong> to catch up vs Lifull <strong>executing</strong> at scale. <em>Assets &lt; transactions</em> — use portal assets to deploy transactions.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>From deck — Thailand blueprint (2026)</h2>
+      <div class="slide-data">
+        <p class="slide-kicker">2026 strategy model · REF: TH-2026-MASTER</p>
+        <p><strong>Position:</strong> Undisputed leader — <strong>bigger than next 3–4 players combined</strong> (bar chart: SEA Connect TH #1 vs next 3 trailing).</p>
+        <div class="stat-row">
+          <div class="stat-tile"><div class="num">$35M</div><div class="lbl">2026 revenue (TH)<br>single-market projection</div></div>
+          <div class="stat-tile"><div class="num">65%</div><div class="lbl">Gross profit<br>high margin profile</div></div>
+          <div class="stat-tile"><div class="num">20–25%</div><div class="lbl">EBITDA margin<br>highly profitable</div></div>
+        </div>
+        <p><strong>Footer:</strong> <em>Replicate Thailand</em> — master template for regional rollout.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>From deck — Lamudi PH / ID: first time profitable</h2>
+      <div class="slide-data">
+        <p><strong>Title:</strong> M&amp;A turnaround — <strong>first time profitable: Lamudi PH/ID</strong></p>
+        <p class="muted-note">Context: prior owners (Rocket Internet, EMPG) spent heavily, copied regional playbooks — <strong>never profitable in ~a decade</strong>. Under Lifull: profitable within <strong>~3 months</strong> of integration.</p>
+        <table class="data-table">
+          <thead><tr><th>Problem (prior era)</th><th>Action (Lifull)</th><th>Result</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Theory-driven spending · high monthly burn · disconnected ops<br><em>Missed: execution, integration, cost discipline</em></td>
+              <td>M&amp;A playbook · integrated leadership · cost structure reset</td>
+              <td>Positive EBITDA · integrated ops (“DOT”) · scalable model<br><em>Delivered: transaction model, regional focus, cost control</em></td>
+            </tr>
+          </tbody>
+        </table>
+        <p><strong>Tagline:</strong> Turning unprofitable assets into profitable ones in months.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>From deck — Scorecard: delivered vs not</h2>
+      <div class="slide-data">
+        <p><strong>Title:</strong> Scorecard — what we delivered · and what we didn’t</p>
+        <p><strong>Monthly SEA revenue:</strong> <strong>$2M → $3M+</strong> (Jan 2025 → in excess of $3M) · <strong>50%+ growth</strong>. Slide shows <strong>5/6 promises</strong> delivered (~83%).</p>
+      </div>
+      <div class="step-grid">
+        <div class="step-box">
+          <strong>Delivered (numbered on slide)</strong>
+          <ul style="margin:8px 0 0;padding-left:18px;">
+            <li><strong>1 — Revenue:</strong> monthly SEA <strong>$2M → $3M+</strong> (from Jan 2025); <strong>50%+</strong> growth.</li>
+            <li><strong>2 — Regional focus:</strong> three distinct regional plays; no more “global product soup.”</li>
+            <li><strong>3 — Profitability:</strong> consistent profitability, leaner team, all divisions.</li>
+            <li><strong>4 — Expansion:</strong> transactions into <strong>Cambodia, Indonesia, Philippines</strong>.</li>
+            <li><strong>5 — Turnaround:</strong> Lamudi PH/ID from never-profitable → profitable &amp; integrated.</li>
+          </ul>
+        </div>
+        <div class="step-box">
+          <strong>Did not deliver</strong>
+          <ul style="margin:8px 0 0;padding-left:18px;">
+            <li><strong>6 — LATAM:</strong> strategic <strong>pause</strong>. No toe-dipping — all-in with right model, partners, structure or don’t do it.</li>
+          </ul>
+          <p class="muted-note" style="margin:10px 0 0;">Note on slide: not expanding until model/partners/structure align.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>From deck — All-in or not at all (expansion trifecta)</h2>
+      <div class="slide-data">
+        <p class="slide-kicker">LATAM expansion framing</p>
+        <p><strong>Title:</strong> All-in or not at all · <em>The required trifecta</em></p>
+        <table class="data-table">
+          <thead><tr><th>Pillar</th><th>Required</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Right model</strong></td><td>Proven operating model for specific market dynamics.</td></tr>
+            <tr><td><strong>Right partners</strong></td><td>Local expertise; aligned incentives; strong operators.</td></tr>
+            <tr><td><strong>Right structure</strong></td><td>Clean M&amp;A or JV ensuring <strong>control and results</strong>.</td></tr>
+          </tbody>
+        </table>
+        <p><strong>Rule:</strong> <em>Missing any one = no expansion.</em> Badges on slide: no toe-dipping · capital discipline.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>From deck — AI: <strong>tool, not strategy</strong></h2>
+      <div class="slide-data">
+        <p class="slide-kicker">Strategic stance: deliberate second mover</p>
+      </div>
+      <div class="step-grid">
+        <div class="step-box" style="border-left:4px solid #3b82f6;">
+          <strong>The hype cycle</strong><br>
+          Only worth talking about if it <strong>moves the needle</strong>. <strong>Reality:</strong> consumer AI hasn’t changed outcomes for Lifull or peers — mostly <strong>PR + incremental automation</strong>. <em>“AI is a tool, not the strategy. If it doesn’t move consumer metrics or margins, it’s just noise.”</em>
+        </div>
+        <div class="step-box" style="border-left:4px solid #ea580c;">
+          <strong>Strategic patience</strong><br>
+          Watching &amp; waiting · open-eyed, <strong>not first mover</strong> · agentic AI not mature. Status: <strong>not fully utilized yet</strong> — adopt <strong>as market proves value</strong>. <em>Second mover to avoid bleeding-edge costs.</em>
+        </div>
+        <div class="step-box" style="border-left:4px solid #16a34a;">
+          <strong>Moving the needle</strong> (four tests on slide)<br>
+          (1) <strong>Remove leakage</strong> — auto-plug funnel revenue gaps<br>
+          (2) <strong>Agent efficiency</strong> — slash time-per-transaction<br>
+          (3) <strong>Reduce costs</strong> — lower <strong>CAC</strong> &amp; overhead<br>
+          (4) <strong>New capabilities</strong> — things users couldn’t do before (not just “better”)
+        </div>
+      </div>
+      <p class="muted-note" style="margin-top:12px;">Ticker/footer: conversation must be about <strong>outcomes</strong> — otherwise buzzwords.</p>
+    </section>
+
+    <section class="card" style="border:2px solid #1d4ed8;">
+      <h2 style="margin-top:0;">From deck — Owning Southeast Asia: the execution engine</h2>
+      <div class="slide-data">
+        <p class="slide-kicker">Strategy summary · closing slide</p>
+        <p><strong>Headline:</strong> Owning Southeast Asia — the execution engine</p>
+      </div>
+
+      <h3 style="margin:18px 0 8px;font-size:1.05rem;color:#1e3a8a;">The SEA reality</h3>
+      <ul>
+        <li><strong>Execution graveyard:</strong> most portals stuck, dead valuations, can’t pivot.</li>
+        <li><strong>95% no outcome:</strong> assets in zombie state — aligns with <strong>filter 95% of deals</strong>.</li>
+        <li><strong>10+ year lesson:</strong> “golden scenario” failed for a decade → <strong>emerging markets = execution graveyards</strong>.</li>
+      </ul>
+
+      <h3 style="margin:18px 0 8px;font-size:1.05rem;color:#1e3a8a;">Moat — self-reinforcing execution (on-slide checklist)</h3>
+      <ul>
+        <li><strong>Thailand blueprint</strong> as core (centre of diagram).</li>
+        <li><strong>Transactions-first</strong> — <strong>60–70% GP</strong>, full control model.</li>
+        <li><strong>Distribution</strong> — owned channels, <strong>2.2M users</strong>, low CAC.</li>
+        <li><strong>Regional scale</strong> — replicate across <strong>~4 markets</strong>.</li>
+        <li><strong>M&amp;A</strong> — turnaround capability &amp; active pipeline.</li>
+      </ul>
+
+      <h3 style="margin:18px 0 8px;font-size:1.05rem;color:#1e3a8a;">Expansion &amp; formula</h3>
+      <p><strong>Regional path:</strong> Thailand (anchor) → <strong>Indonesia</strong> · <strong>Philippines</strong> → next markets.</p>
+      <p><strong>Winning formula:</strong> <strong>M&amp;A</strong> (buy capabilities) + <strong>organic</strong> (scale execution) = <strong>dominance</strong>.</p>
+      <p><strong>Strict filters:</strong> no negative value · <strong>clean cap tables only</strong> · only what <strong>moves the needle</strong>.</p>
+    </section>
+
+    <section class="card transcript-section">
+      <h2>Talk summary — voice transcription (ASR cleaned)</h2>
+      <p class="muted-note">Mike Kenner · PPW Bangkok. Japanese parent / Thailand brokerage heritage. Raw ASR corrected where obvious.</p>
+
+      <h3>Framing &amp; honesty</h3>
+      <p>Promised last year: <strong>simplify</strong> the group, <strong>profitability</strong>, <strong>hard on transactions</strong>, <strong>AI only if it moves the needle</strong>. This session = <strong>what we did vs didn’t</strong>. Not a pitch — “truth for builders.”</p>
+
+      <h3>Results (early 2026)</h3>
+      <p><strong>January:</strong> strong YoY growth cited (~<strong>50% YoY</strong> vs prior January per speech). <strong>Regional split:</strong> moved from “spaghetti” global product to clear <strong>Europe vs Southeast Asia</strong> narratives. <strong>Lamudi / acquired assets:</strong> turnaround — some assets <strong>profitable for the first time in history</strong> within ~<strong>three months</strong> of integration (vs never profitable under prior owners / Rocket / etc.).</p>
+
+      <h3>What they didn’t do — LATAM</h3>
+      <p><strong>Nothing material in Latin America.</strong> Reason: missing any of <strong>right model, right partners, right structure</strong> = won’t enter. “Not ego” — won’t do a conference boast then force a bad deal. May revisit when setup is right.</p>
+
+      <h3>Thailand &amp; thesis</h3>
+      <p><strong>Undisputed #1</strong> in Thailand vs next 3–4 combined; strong gross and EBITDA margins. <strong>Blueprint:</strong> cost discipline, finance leadership, strategic buys (e.g. <strong>DDG</strong>), expand transactions, growth mindset. <strong>Belief:</strong> portals <strong>stuck in mud</strong> in emerging markets; <strong>transactions-only path scales</strong>. Portal = hard to build, easy to run; transaction = hard build, hard run, <strong>true moat</strong>. AI commoditises <strong>tech</strong> → people/ops complexity matters more. <strong>Leakage</strong> in funnel ~<strong>15% of revenue</strong> — major focus. Owning <strong>portal + transaction</strong> = full funnel + <strong>margin control</strong>.</p>
+
+      <h3>Regional engine &amp; competitors</h3>
+      <p>Rollout: <strong>Thailand → Cambodia → Indonesia → Philippines</strong>. Rivals (e.g. <strong>PropertyGuru</strong>) reportedly used <strong>consultants</strong> to plan transaction entry; Lifull positions as already the <strong>transaction business</strong>. <strong>Distribution:</strong> ~<strong>5–10M</strong> social followers across assets (per speech); contrast with buying media — <strong>owned top-of-funnel</strong>. M&amp;A pipeline needs strong <strong>finance/legal</strong> from Japanese listed parent.</p>
+
+      <h3>M&amp;A &amp; startups</h3>
+      <p>Disciplined buying — not “anything.” <strong>Negative-value</strong> deals (prefs, broken caps, fake multiples) block most targets. Startups need ~<strong>$100M revenue</strong> for a real exit outcome; better to <strong>join a platform</strong> than die solo. <strong>Closing:</strong> double down on <strong>core transactions</strong>, <strong>M&amp;A + owned distribution</strong>, <strong>replicate region by region</strong> (Patrick Grove / F&amp;B “core” reference).</p>
+
+      <h3>AI (spoken)</h3>
+      <p>Everyone uses AI day-to-day; <strong>hasn’t moved the business needle yet</strong>. Tests: <strong>leakage</strong>, agent efficiency, <strong>cost</strong>, truly <strong>new</strong> capabilities (not “agentic search that does what portals already do”). <strong>Deliberate second mover</strong> — can copy/buy once proven; <strong>tool not strategy</strong>.</p>
+
+      <h3>Vertical search / other</h3>
+      <p>Classifieds/vertical search <strong>hard in AI era</strong>; kept <strong>flat</strong>, not scaled — diversification limited. Anecdote: four vertical-search cos on a panel years ago eventually <strong>aggregated</strong> into one market story.</p>
+    </section>
+
+    <section class="card">
+      <h2>Audience Q&amp;A — Whova + answers (transcription)</h2>
+      <div class="slide-data">
+        <p class="slide-kicker">Whova · “Questions for Scaling a Global Pro…”</p>
+        <div class="whova-q">
+          <strong>Q1</strong> — Thailand IPO still on the radar?<br>
+          <span class="whova-meta">1 vote · status: question asked</span>
+        </div>
+        <div class="whova-q">
+          <strong>Q2</strong> — Ideal parameters of companies to acquire this year?<br>
+          <span class="whova-meta">0 votes · status: question asked</span>
+        </div>
+        <div class="whova-q">
+          <strong>Q3</strong> — SEA brokers vary in tech — how do you help a <strong>low-tech partner</strong> improve performance?<br>
+          <span class="whova-meta">3 votes · answered in live Q&amp;A · 1 reply</span>
+        </div>
+        <p class="muted-note" style="margin:12px 0 0;">Sort: votes · moderated Q&amp;A.</p>
+      </div>
+
+      <p><strong>Q:</strong> SEA brokers vary in tech — how do you help a <strong>low-tech partner</strong> perform better?</p>
+      <div class="qa-answer"><strong>A:</strong> Distinction between <strong>portal model</strong> and <strong>transaction model</strong>. In core markets they’re not trying to make <strong>other brokers better at closing transactions</strong>; they want those partners to take <strong>leads</strong> if that’s the relationship. Strategic clarity: compete on transaction where they own the stack.</div>
+
+      <p><strong>Q:</strong> <strong>Thailand IPO</strong> — still on the radar?</p>
+      <div class="qa-answer"><strong>A:</strong> Need <strong>scale for a real outcome</strong> (~<strong>$100M</strong>-type bar mentioned for meaningful liquidity). Thailand business this year in the <strong>~$15M</strong> range (per speech — verify). With growth, IPO could be <strong>serious in a few years</strong>. <strong>Market timing</strong> not ideal now; may be more of a <strong>SEA / regional listing</strong> story when the opportunity is clearer.</div>
+
+      <p><strong>Q:</strong> Ideal parameters for <strong>acquisitions this year</strong>?</p>
+      <div class="qa-answer"><strong>A:</strong> Not <strong>too small</strong>. Open to <strong>transaction or portal</strong> assets, even <strong>pre-revenue</strong> in some cases — case-by-case. Needs <strong>strong local operating partner</strong> in each market. Think across <strong>portal + transaction + finance</strong> angles broadly.</div>
+
+      <p><strong>Q (floor):</strong> Is the core <strong>matching buyers/sellers and earning commission</strong>?</p>
+      <div class="qa-answer"><strong>A:</strong> <strong>Yes.</strong> Everything else is to make that <strong>smoother and less friction</strong>; tech will keep shaving friction.</div>
+
+      <p><strong>Q:</strong> What <strong>keeps you awake</strong>?</p>
+      <div class="qa-answer"><strong>A:</strong> Occasionally existential (“what’s the point?”). Mainly: <strong>finding the exit / outcome</strong> after years of grind — Japanese parent could <strong>buy the business back</strong>; how to land a proper outcome for everyone.</div>
+
+      <p><strong>Q:</strong> Next year — <strong>$50M</strong> goals, trajectory?</p>
+      <div class="qa-answer"><strong>A:</strong> SEA team believes they’ll get <strong>very close</strong> organically with growth; <strong>Indonesia, Philippines, Cambodia</strong> transaction expansion; already entered Indonesia in part. Core SEA <strong>~$35M</strong> on path toward <strong>~$100M</strong> narrative. <strong>Focused regional</strong> assets easier to run and exit than messy global conglomerates.</div>
+
+      <p><strong>Q:</strong> Why not <strong>sell Latin America</strong>?</p>
+      <div class="qa-answer"><strong>A:</strong> Hard to sell a <strong>whole region</strong>; “no one’s empire building” like before. If sale doesn’t make sense, <strong>double down on SEA</strong>. Would sell at the <strong>right price</strong> if it did.</div>
+
+      <p><strong>Q:</strong> <strong>Strip LatAm</strong> / freewheel / take cash?</p>
+      <div class="qa-answer"><strong>A:</strong> <strong>Option value</strong> — not in a rush; could strip further later. Still see <strong>opportunity</strong> with right <strong>partners / strategic JV</strong> rather than force a fire sale.</div>
+
+      <p><strong>Q:</strong> Why no LatAm (moderator)?</p>
+      <div class="qa-answer"><strong>A:</strong> (Repeated) Had portal footprint vs transaction ambition but <strong>couldn’t find right model/partners/structure</strong>; won’t do for ego — may try again with better information.</div>
+    </section>
+
+    <section class="card">
+      <h2>Quick ref</h2>
+      <p><strong>Speaker:</strong> Mike Kenner — MD, Lifull Connect</p>
+      <p><strong>Thesis:</strong> Transaction-led &gt; portal-only in SEA</p>
+      <p><strong>Numbers (deck):</strong> TH ~$35M rev ’26 · ~65% GP · ~20–25% EBITDA · SEA monthly ~$3M+ · $50M run-rate target</p>
+      <p><strong>Footprint:</strong> TH #1 · KH scaling · ID/PH · VN/MY presence</p>
+      <p><strong>M&amp;A:</strong> 100→95 rejected · pipeline 12/3/Q4 · +45% YoY · startup call</p>
+      <p><strong>AI:</strong> second mover · 4 outcome tests (leakage, agent time, cost, new capability)</p>
+      <p><strong>Closing slide:</strong> owning SEA · TH core · ~60–70% txn GP · ~2.2M users · M&amp;A+organic = dominance</p>
+      <p><strong>Spoken:</strong> Jan ~+50% YoY · ~15% leakage · Lamudi profitable in ~3mo · 5–10M social reach · IPO TH ~$15M now, ~$100M bar later</p>
+    </section>
+
+    <p class="footer">
+      Related:
+      <code>jonathan-turpin-ai-property-portals-summary.html</code>,
+      <code>daniel-ho-juwai-iq-global-platform-summary.html</code>,
+      <code>hannah-parker-inoki-humans-and-ai-agents.html</code>.
+    </p>
+  </main>
+</body>
+</html>

@@ -1,0 +1,704 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daniel Ho (Juwai IQI) — Global real estate platform</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --accent: #b45309;
+      --accent-2: #0c4a6e;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #fffbeb 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 40px 20px 64px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0c4a6e 0%, #155e75 45%, #b45309 100%);
+      color: white;
+      border-radius: 24px;
+      padding: 36px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+    }
+
+    .session-badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      color: #fde68a;
+      font-weight: 600;
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .brand {
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      margin-bottom: 10px;
+      opacity: 0.95;
+    }
+
+    header h1 {
+      margin: 0 0 12px;
+      font-size: clamp(1.2rem, 2.5vw, 1.75rem);
+      line-height: 1.25;
+      font-weight: 800;
+    }
+
+    .headline-sub {
+      margin: 0 0 16px;
+      font-size: 1.02rem;
+      color: rgba(255, 255, 255, 0.92);
+      font-weight: 500;
+      max-width: 65ch;
+    }
+
+    .speaker-line { margin: 0; font-size: 1.02rem; font-weight: 600; }
+
+    header .conf {
+      margin: 18px 0 0;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 0.92rem;
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 1.2rem;
+      color: var(--accent-2);
+    }
+
+    h3 { margin: 20px 0 10px; font-size: 1.05rem; color: #0f172a; }
+
+    p { margin: 0 0 12px; }
+    ul { margin: 0; padding-left: 20px; }
+    li { margin-bottom: 10px; }
+
+    .muted-note { font-size: 0.9rem; color: var(--muted); }
+
+    .slide-img.people-keys-img {
+      width: 100%;
+      max-height: 520px;
+      object-fit: contain;
+      object-position: center;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: #f1f5f9;
+      display: block;
+      margin-top: 12px;
+    }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    @media (max-width: 720px) {
+      .stat-row { grid-template-columns: 1fr; }
+    }
+
+    .stat-box {
+      background: linear-gradient(180deg, #fef2f2 0%, #fff 100%);
+      border: 2px solid #fecaca;
+      border-radius: 16px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .stat-box .big {
+      display: block;
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #991b1b;
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+
+    .stat-box .lbl {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.35;
+    }
+
+    .eco-pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    @media (max-width: 720px) {
+      .eco-pillars { grid-template-columns: 1fr; }
+    }
+
+    .eco-pillar {
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      border-radius: 14px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .eco-pillar strong {
+      display: block;
+      color: #b91c1c;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+    }
+
+    .story-callout {
+      margin-top: 16px;
+      padding: 16px 18px;
+      background: linear-gradient(180deg, #fffbeb 0%, #fef3c7 100%);
+      border: 1px solid #fbbf24;
+      border-radius: 14px;
+      font-size: 1.02rem;
+    }
+
+    .story-callout strong { color: #92400e; }
+
+    .bonus-tiers {
+      margin-top: 14px;
+      padding: 0;
+      list-style: none;
+      counter-reset: tier;
+    }
+
+    .bonus-tiers li {
+      counter-increment: tier;
+      padding: 12px 14px 12px 48px;
+      margin-bottom: 8px;
+      position: relative;
+      background: #fff;
+      border: 1px solid #fde68a;
+      border-radius: 12px;
+      font-size: 0.95rem;
+    }
+
+    .bonus-tiers li::before {
+      content: counter(tier);
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background: #d97706;
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.85rem;
+      display: grid;
+      place-items: center;
+    }
+
+    .bonus-tiers li strong { color: #78350f; }
+
+    .region-list {
+      margin: 0 0 14px;
+      padding: 0;
+      list-style: none;
+      font-size: 0.92rem;
+    }
+
+    .region-list li {
+      margin-bottom: 10px;
+      padding-left: 0;
+    }
+
+    .region-list strong {
+      display: inline-block;
+      min-width: 140px;
+      color: var(--accent-2);
+    }
+
+    .brand-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .brand-chip {
+      padding: 8px 12px;
+      border-radius: 10px;
+      background: #f1f5f9;
+      border: 1px solid var(--border);
+      font-size: 0.88rem;
+    }
+
+    .brand-chip span { color: var(--muted); font-size: 0.82rem; }
+
+    .slide-quote {
+      margin: 16px 0;
+      padding: 18px 20px;
+      border-left: 4px solid #dc2626;
+      background: #fef2f2;
+      border-radius: 0 12px 12px 0;
+      font-size: 0.95rem;
+    }
+
+    .slide-quote cite {
+      display: block;
+      margin-top: 12px;
+      font-size: 0.88rem;
+      color: var(--muted);
+      font-style: normal;
+    }
+
+    .transcript-section h3 {
+      margin: 22px 0 10px;
+      font-size: 1.02rem;
+      color: #0c4a6e;
+    }
+
+    .transcript-section h3:first-child { margin-top: 0; }
+
+    .qa-answer {
+      margin: 8px 0 16px 0;
+      padding: 12px 14px;
+      background: #f0fdf4;
+      border-left: 4px solid #22c55e;
+      border-radius: 0 10px 10px 0;
+      font-size: 0.92rem;
+    }
+
+    .qa-answer strong { color: #166534; }
+
+    .notes-box {
+      min-height: 120px;
+      border: 2px dashed #cbd5e1;
+      border-radius: 16px;
+      padding: 18px;
+      background: #f8fafc;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .pill {
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #e0f2fe;
+      color: #0369a1;
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+
+    .footer {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    code {
+      font-size: 0.88em;
+      background: #e2e8f0;
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+
+    .aini-demos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    @media (max-width: 720px) {
+      .aini-demos { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 820px) {
+      header, .card { padding: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="session-badge">PropTech &amp; PortalWatch · Bangkok · Mar 18–19, 2026</div>
+      <div class="brand">Juwai IQI</div>
+      <h1>The exponential rise of Juwai IQI — reinventing global real estate platform in the digital era</h1>
+      <p class="headline-sub"><strong>FY 2023 USD 4.3B</strong> total transacted GDV · <strong>35+ countries</strong> · <strong>10-yr CAGR 30%</strong> (on-deck KPI strip) — story arc: <strong>Platform · Technology · People</strong> (three interlocking pillars).</p>
+      <p class="speaker-line"><strong>Daniel Ho</strong> — Co-founder &amp; Group Managing Director</p>
+      <p class="conf">
+        <strong>Property Portal Watch Conference</strong> — The next wave of digital real estate
+      </p>
+    </header>
+
+    <section class="card">
+      <h2>From deck — scale &amp; footprint</h2>
+      <p>On-stage KPI strip (FY 2023) — numbers as on deck.</p>
+      <div class="stat-row" aria-label="Key statistics from slide">
+        <div class="stat-box">
+          <span class="big">USD 4.3B</span>
+          <span class="lbl"><strong>Total transacted GDV</strong> (FY 2023)</span>
+        </div>
+        <div class="stat-box">
+          <span class="big">35+</span>
+          <span class="lbl"><strong>Countries</strong> (presence / footprint)</span>
+        </div>
+        <div class="stat-box">
+          <span class="big">30%</span>
+          <span class="lbl"><strong>10-year CAGR</strong> (as printed: “10-YEAR CAGR 30%”)</span>
+        </div>
+      </div>
+      <p class="muted-note" style="margin-top:12px;">Deck also showed a large group in red shirts — employer / network scale.</p>
+    </section>
+
+    <section class="card">
+      <h2>From deck — ecosystem model</h2>
+      <p><strong>Building the most complete real estate ecosystem</strong> — three interlocking pillars (hexagon graphic on deck).</p>
+      <div class="eco-pillars">
+        <div class="eco-pillar">
+          <strong>Platform</strong>
+          <span class="muted-note" style="font-size:0.9rem;">Marketplace / listing &amp; transaction rails, cross-border reach.</span>
+        </div>
+        <div class="eco-pillar">
+          <strong>Technology</strong>
+          <span class="muted-note" style="font-size:0.9rem;">Digital tools, data, automation supporting the network.</span>
+        </div>
+        <div class="eco-pillar">
+          <strong>People</strong>
+          <span class="muted-note" style="font-size:0.9rem;">Agents, teams, on-the-ground execution — human layer of the ecosystem.</span>
+        </div>
+      </div>
+      <p class="muted-note" style="margin-top:14px;">Slide layout: three <strong>interlocking hexagons</strong> in a circle — <strong>Platform</strong> (top), <strong>People</strong> (bottom left), <strong>Technology</strong> (bottom right), each with a small icon. Left panel: high-contrast skyline. Message: <strong>completeness</strong> of the ecosystem, not a single product wedge.</p>
+    </section>
+
+    <section class="card">
+      <h2>From deck — “The Platform” (where they are active)</h2>
+      <p>World map on deck: <strong>countries where Juwai IQI is active</strong>. List below matches deck labels; aligns with <strong>35+ countries</strong> KPI.</p>
+      <h3>Markets (by region)</h3>
+      <ul class="region-list">
+        <li><strong>Americas</strong> Canada</li>
+        <li><strong>Europe</strong> Iceland, Netherlands, Germany, Malta, Greece, Italy, Spain, Portugal, Montenegro, Bulgaria</li>
+        <li><strong>Middle East &amp; Africa</strong> Turkey, Cyprus, Nigeria, Saudi Arabia, Qatar, UAE</li>
+        <li><strong>Asia-Pacific</strong> Pakistan, India, Malaysia, Singapore, Indonesia, Australia, New Zealand, Brunei, Philippines, Vietnam, Hong Kong, Cambodia, Thailand, Japan, Bangladesh, China, Korea</li>
+      </ul>
+      <h3>Platform brands (footer of slide)</h3>
+      <p class="muted-note" style="margin-bottom:8px;">Subsidiaries / verticals under the platform umbrella:</p>
+      <div class="brand-chips">
+        <div class="brand-chip"><strong>Juwai.com</strong> <span>居外 — cross-border listings</span></div>
+        <div class="brand-chip"><strong>IRHAMY</strong> <span>Valuers International</span></div>
+        <div class="brand-chip"><strong>IQI CONCEPT</strong></div>
+        <div class="brand-chip"><strong>Artteva</strong> <span>Kitchen &amp; Wardrobe</span></div>
+        <div class="brand-chip"><strong>MyKey</strong> <span>global short-term rental management</span></div>
+        <div class="brand-chip"><strong>Mana Mana</strong> <span>Hospitality</span></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>From deck — China reach &amp; “geo-blocked” portals</h2>
+      <p>Deck split: <strong>Asia leadership / Juwai Global Platform</strong> (left) + <strong>why Juwai.com matters for China-facing demand</strong> (centre).</p>
+      <h3>Left panel (deck)</h3>
+      <ul>
+        <li><strong>We are the leader in Asia</strong> — <em>The Juwai Global Platform</em></li>
+        <li>CTA angle: <strong>Not using Juwai.com?</strong> — ties reach to <strong>Chinese / Asia buyers</strong>.</li>
+        <li>Small stack on white section: <strong>Data · Tech · Media</strong> (three circles).</li>
+      </ul>
+      <h3>Centre headline + quote (as on slide)</h3>
+      <p><strong>International portals are “geo-blocked” in China.</strong></p>
+      <p class="story-callout" style="margin-bottom:14px;"><strong>Data hook on slide:</strong> supporting article headline — foreign investors spend <strong>~USD 3.7B</strong> (Australia context in piece); deck uses it to anchor <em>scale of offshore demand</em> while arguing Western portals lack in-China reach.</p>
+      <blockquote class="slide-quote">
+        In the Asian superpower, the internet is heavily controlled and major sites including <strong>Google, Facebook, YouTube and Wikipedia</strong> are blocked.
+        <p style="margin:12px 0 0;"><strong>But Juwai IQI has Mandarin-language sites based within China.</strong></p>
+        <cite>— <strong>realestate.com.au</strong>, “Foreign investors spend $3.7bn, top Aussie suburbs they want revealed” <strong>(Feb 2024</strong> — day as printed on slide).</cite>
+      </blockquote>
+      <p class="muted-note">Left red panel: <strong>“We are the leader in Asia — The Juwai Global Platform”</strong> + CTA angle <strong>“NOT USING Juwai.com?”</strong> White panel top: three circles — <strong>Data · Tech · Media</strong>.</p>
+      <p class="muted-note"><strong>Takeaway:</strong> competitor portals can’t assume the same <em>in-China</em> distribution; Juwai positions in-market Mandarin presence as a structural moat for reaching buyers from China.</p>
+    </section>
+
+    <section class="card">
+      <h2>Story arc (how the deck reads end-to-end)</h2>
+      <ol style="margin:0;padding-left:22px;font-size:0.95rem;">
+        <li><strong>Proof of scale</strong> — FY23 <strong>USD 4.3B</strong> GDV, <strong>35+</strong> markets, <strong>30%</strong> 10-yr CAGR above a sea of red-shirt teams.</li>
+        <li><strong>Strategic frame</strong> — “most complete” ecosystem: Platform + People + Technology (hexagon graphic).</li>
+        <li><strong>Geography</strong> — world map + subsidiary brands (Juwai.com through Mana Mana).</li>
+        <li><strong>China distribution moat</strong> — geo-blocked Western portals vs Mandarin sites in-market; <strong>$3.7bn</strong> headline as demand signal.</li>
+        <li><strong>Agent OS</strong> — IQI ATLAS: registration → deals → co-broke → performance, with <strong>AI Marketing / AI Inventory / AtlasGPT</strong>.</li>
+        <li><strong>Embedded AI</strong> — <strong>Aini</strong> (coach + content planner) and <strong>IQPilot</strong> (flows, 24/7 recruitment comms, team bookings).</li>
+        <li><strong>Vertical automation</strong> — Arrteva-style <strong>Follow Up Sequence</strong> (feedback → rewards → labels).</li>
+        <li><strong>People as proof</strong> — golden keys / home-bonus moment (culture + retention).</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>From deck — “The Technology” (IQI ATLAS)</h2>
+      <p>Agent-facing stack: end-to-end workflow in one ecosystem (mobile app UI on deck). Brand: <strong>IQI ATLAS</strong> — <strong>Juwai IQI</strong>. Two deck variants; labels differ slightly (e.g. <strong>Atlas ERP</strong> vs <strong>AtlasGPT</strong>, <strong>Lead Cam</strong> vs <strong>Lead CRM</strong>, <strong>Project Canvas</strong> vs <strong>Project Centre</strong>).</p>
+
+      <h3 style="margin-top:12px;">Journey (numbered ring on deck — variant A shows eight beats)</h3>
+      <ol style="margin:0;padding-left:22px;font-size:0.93rem;">
+        <li><strong>AI, digital registration &amp; continuous learning</strong> <span class="muted-note">(variant B: registration &amp; continuous learning)</span></li>
+        <li><strong>Branding &amp; professional online identity</strong></li>
+        <li><strong>Vast portfolio of global projects</strong> — manage properties with ease</li>
+        <li><strong>Attract prospects &amp; nurture leads</strong> — marketing tools</li>
+        <li><strong>Navigate sales from offer to close</strong> — secure, efficient</li>
+        <li><strong>Cooperative agent-to-agent collaboration</strong> — expand reach</li>
+        <li><strong>Monitor success, analyse performance, increase sales</strong></li>
+        <li><strong>Digital transactions &amp; smart deals</strong> <span class="muted-note">(called out on full ring; modules: deposits, e-signing, payment gateway)</span></li>
+      </ol>
+
+      <h3>Module bands (top → bottom on deck)</h3>
+      <table style="width:100%;border-collapse:collapse;font-size:0.88rem;margin-top:10px;">
+        <thead>
+          <tr style="background:#f1f5f9;"><th style="padding:8px;text-align:left;border:1px solid var(--border);">Stage</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">Modules / app areas</th></tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding:8px;border:1px solid var(--border);vertical-align:top;"><strong>Registration</strong></td><td style="padding:8px;border:1px solid var(--border);">AI Marketing; slide A also shows <strong>AI monitoring</strong> on registration flow</td></tr>
+          <tr><td style="padding:8px;border:1px solid var(--border);vertical-align:top;"><strong>Onboarding &amp; training</strong></td><td style="padding:8px;border:1px solid var(--border);">Training Centre, Event Centre, Help Desk / Helpdesk, IQI Academy</td></tr>
+          <tr><td style="padding:8px;border:1px solid var(--border);vertical-align:top;"><strong>Digital presence &amp; branding</strong></td><td style="padding:8px;border:1px solid var(--border);">QR Code, Agent Homepage, Listings</td></tr>
+          <tr><td style="padding:8px;border:1px solid var(--border);vertical-align:top;"><strong>Global project &amp; property Mgmt</strong></td><td style="padding:8px;border:1px solid var(--border);"><strong>Project Canvas</strong> (A) / <strong>Project Centre</strong> (B), IQI Drive, <strong>Atlas ERP</strong> <em>or</em> <strong>AtlasGPT</strong></td></tr>
+          <tr><td style="padding:8px;border:1px solid var(--border);vertical-align:top;"><strong>Dynamic listing &amp; content</strong></td><td style="padding:8px;border:1px solid var(--border);">Property Listing, AI Inventory</td></tr>
+          <tr><td style="padding:8px;border:1px solid var(--border);vertical-align:top;"><strong>Performance / tracking</strong></td><td style="padding:8px;border:1px solid var(--border);">Gamified Dashboard, Performance / <strong>My Performance</strong> (B)</td></tr>
+          <tr><td style="padding:8px;border:1px solid var(--border);vertical-align:top;"><strong>Collaborative selling</strong></td><td style="padding:8px;border:1px solid var(--border);"><strong>Co-broker Centre</strong> (A) / Co-broke, <strong>Certificate Centre</strong> (B), Project Partner, Global Network</td></tr>
+          <tr><td style="padding:8px;border:1px solid var(--border);vertical-align:top;"><strong>Digital transactions</strong></td><td style="padding:8px;border:1px solid var(--border);">Digitalized Deposit, E-signing, <strong>digitalised request-budgeting process</strong> (B), Manage My Deal, Online Payment Gateway</td></tr>
+          <tr><td style="padding:8px;border:1px solid var(--border);vertical-align:top;"><strong>Strategic marketing &amp; leads</strong></td><td style="padding:8px;border:1px solid var(--border);">Landing Page, Presentation Centre, Video Creator, Graphic Studio, <strong>Lead Cam</strong> / <strong>Lead CRM</strong></td></tr>
+        </tbody>
+      </table>
+      <p class="muted-note" style="margin-top:12px;"><strong>Takeaway (<em>Technology</em> pillar):</strong> full agent lifecycle in one app — from signup and training through listings, global inventory, deals, payments, co-broke, and performance — with explicit <strong>AI</strong> hooks (AI Marketing, AI Inventory, AtlasGPT).</p>
+    </section>
+
+    <section class="card">
+      <h2>From deck — AI: <strong>Aini</strong> (two example flows)</h2>
+      <p>One conversational assistant for agents — deck showed <strong>two tablet demos</strong> side by side (demo user <strong>Niel Kingston</strong>). Chat input <strong>“Ask Aini”</strong>. Footer on both panes: <em>“Aini is learning every day. If something seems wrong, please double-check before trusting it.”</em></p>
+      <div class="aini-demos">
+        <div style="padding:16px;border-radius:14px;border:1px solid #fecaca;background:#fffafa;">
+          <h3 style="margin:0 0 10px;font-size:1rem;color:#991b1b;">1 — Sales strategy</h3>
+          <p style="margin:0 0 10px;font-size:0.9rem;"><strong>Prompt:</strong> “What should I do if I want to <strong>double my sales in 2026</strong>?”</p>
+          <p style="margin:0;font-size:0.88rem;color:var(--muted);"><strong>Aini (on slide, six steps):</strong> (1) <strong>Market analysis</strong> — identify growth pockets; (2) <strong>Expand your network</strong> — events, referrals; (3) <strong>Improve client relationships</strong> — service, follow-ups, trust; (4) <strong>Leverage technology</strong> — <strong>Atlas</strong> for projects + <strong>CRM</strong> for automation; (5) <strong>Continuous learning</strong> — workshops, trends; (6) <strong>Set clear goals &amp; track progress</strong>.</p>
+        </div>
+        <div style="padding:16px;border-radius:14px;border:1px solid #fecaca;background:#fffafa;">
+          <h3 style="margin:0 0 10px;font-size:1rem;color:#991b1b;">2 — 30-day social calendar (verbatim structure from slide)</h3>
+          <p style="margin:0 0 10px;font-size:0.9rem;"><strong>Prompt:</strong> “Plan me <strong>30-days schedule</strong> for <strong>social media campaigns</strong>.”</p>
+          <ul style="margin:0;padding-left:18px;font-size:0.85rem;color:var(--muted);line-height:1.45;">
+            <li><strong>Week 1 — Introduction &amp; trust:</strong> Day 1 intro video; Day 2 motivational quote; Day 3 success story; Day 4 interactive Q&amp;A; Day 5 local landmark/property visual; Day 6 team member spotlight; Day 7 fun fact / myth-bust.</li>
+            <li><strong>Week 2 — Educational:</strong> Day 8 investment tips blog/video; Day 9 infographic (prep home for sale); Day 10 live webinar / IG Live (first-time buyers); Day 11 customer spotlight; Day 12 legal aspects of buying; Day 13 BTS property tour; Day 14 poll/quiz.</li>
+            <li><strong>Week 3 — Engage &amp; grow</strong> (visible to Day 17): Day 15 giveaway; Day 16 upcoming events list; Day 17 property video walkthrough.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="muted-note" style="margin-top:14px;"><strong>Takeaway:</strong> embedded AI for <em>coaching + marketing ops</em>, wired into the same stack as Atlas/CRM — not a generic chatbot only.</p>
+      <p class="muted-note"><strong>Transcription:</strong> Daniel also describes <strong>Aini</strong> for <strong>operational questions</strong> — e.g. top/bottom performers in the team, running the business (broader than these two demos).</p>
+    </section>
+
+    <section class="card">
+      <h2>From deck — <strong>IQPilot</strong> (testimonials)</h2>
+      <p>Deck: <strong>Testimonial</strong> — <strong>IQPilot</strong> (logo: IQ + π) under <strong>Juwai IQI</strong>. Laptop visual on deck: node-based workflow (messages / branching), same “automation canvas” family as follow-up builders.</p>
+      <h3>Calvin Law — Founder, ACE Team</h3>
+      <blockquote class="slide-quote" style="border-left-color:#0c4a6e;background:#f0f9ff;">
+        IQPilot has been <strong>incredibly helpful, supporting 24/7</strong> with <strong>recruitment leads</strong>. Previously manual replies to all basic questions; now <strong>common inquiries handled automatically</strong> — recruitment <strong>smoother and more efficient</strong>. Highly recommend.
+      </blockquote>
+      <h3>Muaz — GVP, iRealty Group</h3>
+      <blockquote class="slide-quote" style="border-left-color:#0c4a6e;background:#f0f9ff;">
+        <strong>Communication</strong> a major challenge with a <strong>big team</strong>. With IQPilot, <strong>automating bookings</strong> and <strong>sending targeted messages to the right group</strong> is much easier — saves time, improves <strong>internal coordination</strong>. Recommended for large teams staying organised.
+      </blockquote>
+      <p class="muted-note"><strong>Product UI (laptop on slide):</strong> node-based <strong>Flows</strong> builder; top tabs include <strong>Flows</strong>, <strong>Knowledge Base</strong>, <strong>Settings</strong>; channel sidebar suggests <strong>WhatsApp-class</strong> messaging integration.</p>
+      <p class="muted-note"><strong>Takeaway:</strong> ops layer for <strong>lead/recruitment Q&amp;A</strong>, <strong>booking automation</strong>, and <strong>segmented comms</strong> — not only external marketing.</p>
+      <p class="muted-note"><strong>Transcription:</strong> project-specific auto-replies, surveys, <strong>appointments in agent calendar</strong>, prep for meetings; <strong>~25% productivity</strong> per agent claimed.</p>
+    </section>
+
+    <section class="card">
+      <h2>Product capture — <strong>Arrteva</strong> Follow Up Sequence</h2>
+      <p>From product UI (project <code>Arrteva_20251106</code> · Active). Same ecosystem as platform brand <strong>Artteva</strong> (deck spelling); UI shows <strong>Arrteva</strong>. <strong>Node workflow</strong> for multi-step messaging.</p>
+      <ul style="margin-top:8px;font-size:0.93rem;">
+        <li><strong>Module:</strong> <strong>Follow Up Sequence</strong> (tabs: Design, Deep Knowledge, Leads, Assignment, Settings, Advance). Project id on screen: <code>Arrtiva_20251106</code>.</li>
+        <li><strong>Personalisation:</strong> templates use <code>{{name}}</code>, <code>{{Agent_Name}}</code> in message copy.</li>
+        <li><strong>Canvas:</strong> branching on poll-style buttons — <strong>5 Stars — Excellent</strong>, <strong>Good (4 stars)</strong>, <strong>It was Okay</strong>, <strong>Room for Growth</strong>; connectors show <strong>timed delays</strong> (clock icons).</li>
+        <li><strong>Rewards path:</strong> e.g. <strong>FREE Custom Cabinet</strong>, <strong>Kitchen Accessories</strong>, homeowner tips; follow-up node: “have you had a chance to claim your Homeowner Rewards yet?”</li>
+        <li><strong>Toggles:</strong> Classic Scheduled Messages, Poll Group Trigger Once Only, Send Poll as Buttons; <strong>PRO-Tools</strong> label in Manage Labels.</li>
+      </ul>
+      <p class="muted-note"><strong>Takeaway:</strong> no-code-style <strong>journey automation</strong> + optional <strong>Deep Knowledge</strong> (RAG-style) for richer replies — pairs with IQPilot-style messaging at scale.</p>
+    </section>
+
+    <section class="card">
+      <h2>From deck — “The People”</h2>
+      <p><strong>The People</strong> — team with oversized <strong>golden keys</strong> (home-bonus ceremony).</p>
+      <img
+        class="slide-img people-keys-img"
+        src="daniel-ho-juwai-iq-the-people-slide.png"
+        alt="Juwai IQI — The People slide, team with golden keys"
+        width="900"
+        loading="lazy"
+      >
+      <div class="story-callout">
+        <strong>What Daniel said (audience note):</strong> These people had <strong>just received their bonus</strong> — the company pays <strong>50% of their new home</strong>. The keys mark that moment: culture / retention story tied to the <em>People</em> pillar, not just headcount.
+        <p style="margin:14px 0 8px;"><strong>Bonus tiers</strong> (as described from the stage — higher levels stack or follow):</p>
+        <ol class="bonus-tiers">
+          <li><strong>Up to ~50% of price</strong>, company pays balance — <strong>performance + 3-yr stay</strong> after award (repay if leave early) <span class="muted-note">(keys slide; see Q&amp;A transcription)</span></li>
+          <li><strong>Next tier:</strong> <strong>free car</strong> <span class="muted-note">(company-provided vehicle)</span></li>
+          <li><strong>Next tier:</strong> <strong>added driver</strong> <span class="muted-note">(chauffeur / dedicated driver on top of the car benefit)</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Session</h2>
+      <p><strong>Company context (public):</strong> Juwai IQI combines cross-border listing/marketing (Juwai) with agency network (IQI) — Asia-Pacific and global buyer ↔ seller flows. Expect themes around <strong>scale</strong>, <strong>digital platform</strong>, and <strong>international</strong> real estate.</p>
+      <p class="muted-note">Text summary below + <strong>talk transcription</strong> + Whova Q&amp;A <strong>with answers</strong>.</p>
+      <div class="pill-row" aria-label="themes from deck">
+        <span class="pill">USD 4.3B GDV FY23</span>
+        <span class="pill">35+ countries</span>
+        <span class="pill">30% 10-yr CAGR</span>
+        <span class="pill">Platform · Tech · People</span>
+        <span class="pill">Bonus: 50% home → car → driver</span>
+        <span class="pill">The Platform map</span>
+        <span class="pill">China / Mandarin in-market</span>
+        <span class="pill">$3.7bn headline (deck)</span>
+        <span class="pill">IQI ATLAS</span>
+        <span class="pill">Aini (2 flows)</span>
+        <span class="pill">IQPilot</span>
+        <span class="pill">Arrteva sequences</span>
+      </div>
+    </section>
+
+    <section class="card transcript-section">
+      <h2>Talk summary — voice transcription (ASR cleaned)</h2>
+      <p class="muted-note">PPW Bangkok · Daniel Ho. Raw ASR errors corrected where obvious (e.g. B → billion). In speech he once said ~<strong>25 countries</strong>; deck/elsewhere <strong>35+</strong>.</p>
+
+      <h3>Origin story (~15 years)</h3>
+      <p>IQI started ~15 years ago — photo from <strong>second branch opening</strong>, <strong>six original founders</strong>. <strong>IQI</strong> = holding / <strong>transaction</strong> business (primary + secondary). <strong>Juwai.com</strong> = classified/portal side, <strong>inside China</strong>, helping <strong>Chinese-speaking buyers</strong> discover <strong>international</strong> property. Name tie-in: <strong>International Quality Investment</strong>. Six founders recruiting <strong>200+ agents</strong> while “everyone laughed” — big dream as driving force.</p>
+
+      <h3>Market pain → why IQI</h3>
+      <p>Property investing rests on <strong>trust</strong>; buyers struggle to trust agents; <strong>agents don’t trust each other</strong> — underhand tactics, toxic environment. <strong>Good agents are hyper-local</strong>; clients today travel and buy <strong>multiple geographies</strong>, but the local star can’t unlock overseas deals (even within Malaysia, agents can’t serve cross-state needs). Industry <strong>digitally behind</strong> — still print-heavy.</p>
+
+      <h3>Three blueprints</h3>
+      <p><strong>People</strong> — restore trust; culture modules everyone must embrace. <strong>Platform</strong> — geography + verticals to unlock value. <strong>Technology</strong> — scale beyond traditional ops.</p>
+
+      <h3>People pillar in depth</h3>
+      <p>Pre-COVID convention ~<strong>4,000 agents</strong>. Mission: <strong>change lives, habits, realise dreams</strong>. Agents called <strong>warriors</strong>; daily training in branches → uploaded to <strong>Academy</strong>. Mindset: come in <strong>like a child</strong> — curious; platform as <strong>playground</strong>; fall in love with the business and colleagues → collaboration and productivity.</p>
+      <p><strong>Dreams</strong> (property, car, travel, family) → <strong>“home owner” campaign</strong>: hit performance → buy residential at up to <strong>50% price, company settles the balance</strong>. Example cited: over years multiple properties cash-flowing. <strong>Car programme</strong>: luxury car — company pays <strong>down payment</strong>; higher performance → <strong>year’s instalments</strong> paid; higher still → <strong>driver</strong> (e.g. for school runs). ~<strong>eight travel-incentive campaigns per half-year</strong>; some achievers <strong>six trips/year</strong>, expenses paid.</p>
+
+      <h3>Platform pillar</h3>
+      <p><strong>Malaysia HQ → 35 countries</strong>; agent app + <strong>QR</strong> access to offices worldwide — travellers drop into local offices, collaboration. Cross-border handoffs (e.g. client’s kids to Australia). <strong>Verticals:</strong> IRHAMY (valuation), IQI Concept (interior/reno), Artteva (kitchen/wardrobe manufacturing), <strong>MyKey</strong> short-stay + <strong>Mana Mana</strong> — <strong>3,000+ keys</strong> in Malaysia, among largest hospitality operators there. Same client: buy via IQI → renovate Concept → MyKey manage short-term. <strong>Juwai</strong> serves Chinese-speaking demand for offshore property.</p>
+
+      <h3>COVID &amp; growth</h3>
+      <p><strong>Juwai merger ~29 Nov</strong>; soon after COVID. Focus on <strong>digital transaction</strong>. First COVID year revenue grew; <strong>second year</strong> (long SEA lockdown) growth ~<strong>80%</strong> cited. Large downlines (<strong>3,000–5,000</strong> under one leader) scaled via <strong>tech</strong>.</p>
+
+      <h3>Technology &amp; AI (spoken, beyond deck)</h3>
+      <p>Agent app = full <strong>business suite</strong> (marketing, digital deals, access to <strong>1,500+ projects</strong> globally). ~<strong>300 in-house developers</strong>.</p>
+      <p><strong>Aini:</strong> agents ask anything — e.g. <strong>team analytics</strong> (top 10% performers, bottom 30% “laggards”), to <strong>run the business</strong> (broader than the slide demos alone).</p>
+      <p><strong>IQPilot:</strong> <strong>Campaign flows</strong> — when a lead asks about a project, AI responds, personalised follow-up, surveys; <strong>books appointments into the agent’s calendar</strong> with conversational threads so agents prep meetings. Claim: <strong>~25% productivity uplift per agent</strong>.</p>
+      <p>Closing: frustration with old industry, keep innovating; seen as <strong>top-two player</strong> in some markets — “just the beginning.”</p>
+    </section>
+
+    <section class="card">
+      <h2>Audience Q&amp;A — Whova + answers (transcription)</h2>
+      <p class="muted-note"><strong>A:</strong> paraphrased from live audio ASR (Whova questions; no screenshots on this page).</p>
+
+      <h3 style="margin-top:14px;color:var(--accent-2);">Scaling + employee benefits</h3>
+      <p class="muted-note">3 votes / 1 vote</p>
+      <p><strong>Q:</strong> Biggest bottleneck scaling brokerage across markets — how did technology help?</p>
+      <div class="qa-answer"><strong>A:</strong> Hardest part is <strong>people</strong> — changing mindset is “like changing your spouse” (audience laugh). Agents build <strong>walls</strong>; IQI’s job is to <strong>tear down walls</strong> and use <strong>technology to scale</strong> what works.</div>
+      <p><strong>Q:</strong> What does building a leading employee benefits programme look like?</p>
+      <div class="qa-answer"><strong>A:</strong> Constantly put yourself in <strong>agents’ shoes</strong> — what they want, what they want to achieve. “Unique economics”: people from different backgrounds may only imagine modest income; incentives only work if they can <strong>dream bigger</strong> and believe. The <strong>platform trains/skills them up</strong> from wherever they start.</div>
+
+      <h3 style="margin-top:18px;color:var(--accent-2);">Mission, compliance, humour</h3>
+      <p><strong>Q:</strong> Mission — enabling vs transforming agents?</p>
+      <div class="qa-answer"><strong>A:</strong> <strong>Transforming.</strong> Everyone joins with legacy culture “outside”; inside they must come <strong>child-like</strong> (open). <span class="muted-note">(Second “attitude” point was garbled in ASR.)</span></div>
+      <p><strong>Q:</strong> Compliance with local labour law, distributed workforce?</p>
+      <div class="qa-answer"><strong>A:</strong> Must comply locally — e.g. <strong>Australia</strong> very different. Anecdote: <strong>REA</strong> at event in <strong>Madrid</strong> — same trust problem with agents; Australia went another way (platform, top-broker model, commission structure) vs IQI’s people-heavy approach — “interesting contrast.”</div>
+      <p><strong>Q:</strong> How long until Juwai staff own 100% of all property worldwide?</p>
+      <div class="qa-answer"><strong>A:</strong> Tongue-in-cheek — global market is <strong>huge</strong>; IQI is <strong>not enough stock</strong> / tiny slice.</div>
+
+      <h3 style="margin-top:18px;color:var(--accent-2);">Rewards, property award mechanics</h3>
+      <p><strong>Q:</strong> Reward <strong>non-selling</strong> employees?</p>
+      <div class="qa-answer"><strong>A:</strong> <strong>Share options</strong> for loyal staff; on an ongoing basis; at <strong>IPO / exercise</strong> they can benefit.</div>
+      <p><strong>Q:</strong> “Own your property” — 50% company-paid down payment: <strong>repay or keep?</strong> How many years with company?</p>
+      <div class="qa-answer"><strong>A:</strong> Tied to <strong>performance</strong> and <strong>tenure</strong>. Campaign runs <strong>yearly</strong> (photo was e.g. H2 last year; dozens per year). To qualify for the home award you must stay <strong>minimum three years</strong> after taking it; if you leave earlier you <strong>repay the company</strong>. No issue recovering funds — if needed company can <strong>take over the property</strong> / they still get the asset — <span class="muted-note">(closing sentences noisy in ASR; core: vesting + clawback if early exit)</span>.</div>
+
+      <h3 style="margin-top:18px;color:var(--accent-2);">Not clearly answered on tape</h3>
+      <ul class="muted-note" style="font-size:0.92rem;">
+        <li>Licensing tech to other agencies.</li>
+        <li>Sharing / commission from project selling (question truncated in app).</li>
+        <li>Rental sharing — how much earned from agents.</li>
+      </ul>
+      <p class="muted-note" style="margin-top:12px;">Whova fragment “employees” omitted. Slido png: <code>daniel-ho-juwai-iq-slido-questions.png</code>.</p>
+    </section>
+
+    <section class="card">
+      <h2>Deck index + extras</h2>
+      <p class="muted-note">Narrative + Q&amp;A → see <strong>Talk summary (transcription)</strong> and <strong>Whova + answers</strong> above.</p>
+      <h3>Numbers (deck vs speech)</h3>
+      <ul>
+        <li><strong>GDV:</strong> ~<strong>USD 4.3B</strong> FY23 (slide). ASR said “million” — error.</li>
+        <li><strong>Countries:</strong> deck <strong>35+</strong>; speech once ~25 — use map slide.</li>
+        <li><strong>CAGR:</strong> deck prints <strong>30%</strong> 10-year; speech also cited last year ~<strong>28%</strong>.</li>
+      </ul>
+      <h3>Soundbites (transcription)</h3>
+      <ul>
+        <li>“Come in <strong>like a child</strong>” — curiosity, playground, fall in love with the business.</li>
+        <li>Changing mindset = “<strong>changing your spouse</strong>” — why agents have walls.</li>
+        <li><strong>~25% productivity</strong> per agent from IQPilot-style automation (stated on stage).</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Quick ref</h2>
+      <p><strong>Company:</strong> Juwai IQI</p>
+      <p><strong>Speaker:</strong> Daniel Ho — Co-founder &amp; Group Managing Director</p>
+      <p><strong>Talk:</strong> Exponential rise · ecosystem (Platform / Technology / People)</p>
+      <p><strong>Deck stats:</strong> USD 4.3B GDV FY23 · 35+ countries · 10-yr CAGR 30%</p>
+      <p><strong>China slide data point:</strong> realestate.com.au piece — <strong>~USD 3.7B</strong> foreign-investor frame (headline on deck).</p>
+      <p><strong>Incentives:</strong> home (performance, <strong>3-yr lock-in</strong>) · car tiers · driver · travel · <strong>share options</strong> (non-sellers).</p>
+      <p><strong>Active markets:</strong> full country list under <em>The Platform</em> section.</p>
+      <p><strong>China angle:</strong> Mandarin in-market sites vs geo-blocked Western platforms (see deck quote).</p>
+      <p><strong>Tech:</strong> <strong>IQI ATLAS</strong> agent OS — see table + journey in <em>The Technology</em> section.</p>
+      <p><strong>AI:</strong> <strong>Aini</strong> (team/performance Q&amp;A + slide demos) · <strong>IQPilot</strong> (~25% productivity, calendar booking) · <strong>Arrteva</strong> flows.</p>
+      <p><strong>Property award:</strong> performance + <strong>3-yr vesting</strong>; early exit → <strong>repay</strong> company.</p>
+      <p><strong>Q&amp;A:</strong> transcribed — scaling/people, benefits, <strong>transform</strong> not only enable, AU compliance + REA anecdote, non-seller options, home-award mechanics.</p>
+    </section>
+
+      <p class="footer">
+      Summary page (one photo: golden keys). <strong>ASR talk + Q&amp;A answers</strong>. Related:
+      <code>malcolm-myers-ai-asia-portals-summary.html</code>,
+      <code>jonathan-turpin-ai-property-portals-summary.html</code>,
+      <code>hannah-parker-inoki-humans-and-ai-agents.html</code>.
+    </p>
+  </main>
+</body>
+</html>

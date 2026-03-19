@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Taha Dar (SearchSmartly) — From Buzzword to Blueprint: How to Integrate AI into Your Portal</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --accent: #0369a1;
+      --border: #e2e8f0;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #ecfeff 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 40px 20px 64px; }
+    header {
+      background: linear-gradient(135deg, #0c4a6e 0%, #0369a1 50%, #0891b2 100%);
+      color: white;
+      border-radius: 24px;
+      padding: 36px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+    }
+    .session-badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.15);
+      color: #a5f3fc;
+      font-weight: 600;
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .brand { font-size: 0.95rem; font-weight: 700; letter-spacing: 0.06em; margin-bottom: 10px; opacity: 0.95; }
+    header h1 {
+      margin: 0 0 12px;
+      font-size: clamp(1.05rem, 2.3vw, 1.55rem);
+      line-height: 1.3;
+      font-weight: 800;
+    }
+    .headline-sub { margin: 0 0 16px; font-size: 1rem; color: rgba(255, 255, 255, 0.92); max-width: 68ch; }
+    .speaker-line { margin: 0; font-size: 1.05rem; font-weight: 600; }
+    header .conf {
+      margin: 18px 0 0;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 0.92rem;
+      color: rgba(255, 255, 255, 0.88);
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      margin-bottom: 20px;
+    }
+    h2 { margin: 0 0 14px; font-size: 1.2rem; color: #0369a1; }
+    h3 { margin: 18px 0 10px; font-size: 1.05rem; color: #0c4a6e; }
+    p { margin: 0 0 12px; }
+    ul { margin: 0; padding-left: 20px; }
+    li { margin-bottom: 10px; }
+    .muted-note { font-size: 0.9rem; color: var(--muted); }
+    .notes-box {
+      min-height: 100px;
+      border: 2px dashed #7dd3fc;
+      border-radius: 16px;
+      padding: 18px;
+      background: #f0fdfa;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .footer { margin-top: 22px; color: var(--muted); font-size: 0.92rem; }
+    code { font-size: 0.88em; background: #e2e8f0; padding: 2px 6px; border-radius: 6px; }
+    .qa-answer {
+      margin: 8px 0 18px;
+      padding: 12px 14px;
+      background: #f0fdf4;
+      border-left: 4px solid #22c55e;
+      border-radius: 0 10px 10px 0;
+      font-size: 0.92rem;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="session-badge">PropTech &amp; PortalWatch · The next wave of digital real estate</div>
+      <div class="brand">SearchSmartly</div>
+      <h1>From Buzzword to Blueprint: How to Integrate AI into Your Portal</h1>
+      <p class="headline-sub">Practical framing: moving from hype to a concrete plan for AI inside the portal product.</p>
+      <p class="speaker-line"><strong>Taha Dar</strong> — CEO</p>
+      <p class="conf">
+        <strong>PropTech &amp; PortalWatch Conference</strong> — Online Marketplaces
+      </p>
+    </header>
+
+    <section class="card">
+      <h2>Session</h2>
+      <p><strong>Taha Dar</strong>, CEO, <strong>SearchSmartly</strong> (Dubai / UK). Practical path to integrating AI into the portal experience, with emphasis on the <strong>middle mile</strong>: data quality and structure — a theme echoed across the conference (final UX layer may be the easier part; the hard work is data that can answer what users actually ask).</p>
+      <p>SearchSmartly positions as a <strong>data provider</strong> for neighbourhood, schools, commute, amenities, lifestyle signals, etc., working with portals from traditional search through AI-powered experiences (incl. US).</p>
+    </section>
+
+    <section class="card">
+      <h2>From deck / takeaways</h2>
+      <ul>
+        <li><strong>AI definition (broad):</strong> Algorithms + data so machines can assess information, decide, act, and generate — not only chat.</li>
+        <li><strong>Building blocks:</strong> Understand the seeker · Understand location &amp; neighbourhood · Respect the business / advertiser side.</li>
+        <li><strong>Ideal experience:</strong> Personalised match under constraints; reliable, grounded recommendations; <strong>explainability</strong> (life decisions need “why”).</li>
+        <li><strong>Capture intent:</strong> Forms, NL/conversational flows, likes/saves, dwell time on listings and images → inferred preferences.</li>
+        <li><strong>Images:</strong> CV for structured attributes (room type, style, natural light) → scores and inferred features.</li>
+        <li><strong>Commercial + objective:</strong> Same stack can combine promoted inventory with merit-based matching if business rules live in your recommender.</li>
+        <li><strong>Market patterns:</strong> NL + surfaced filters + confirm/deny; opening discovery to big AI platforms (trade-off); full conversational search; <strong>hybrid</strong> guided flows + parallel chat that learns from behaviour.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Talk summary</h2>
+      <p class="muted-note">From voice/ASR transcript — cleaned for readability. Opening/closing banter (agenda, next sessions, MC handoff) omitted.</p>
+
+      <h3>Framing</h3>
+      <p>Move from buzzword to blueprint: what does it take to ship AI in search? The bottleneck is often <strong>data</strong> — having the right facts in a form models and rules can use — not only the chat layer on top.</p>
+
+      <h3>What counts as AI here</h3>
+      <p>Beyond generative UI: NLP for query understanding, computer vision on listing photos, speech in apps, etc. Property search is a <strong>multi-modal</strong> problem — text, images, maps, behaviour.</p>
+
+      <h3>North star for AI-powered search</h3>
+      <p>Help each user find a strong match given budget, beds, garden, kitchen, commute (e.g. time to work), schools for children, lifestyle preferences, and more. Outputs must be <strong>trustworthy</strong> (especially for big brands where bad hallucinations are unacceptable), and <strong>explainable</strong> — people need to know why a home was suggested.</p>
+
+      <h3>Three pillars of data</h3>
+      <ol>
+        <li><strong>The seeker</strong> — Intent from structured integrations, unstructured descriptions, and behaviour (not everything is in neat fields).</li>
+        <li><strong>Place</strong> — Schools, shops, green space, transport, amenities — with care for how metrics are defined (e.g. density vs “quality” can encode bias).</li>
+        <li><strong>The business</strong> — Advertisers and commercial goals; the system must still allow controlled promotion without pretending everything is “pure” organic rank.</li>
+      </ol>
+
+      <h3>How to learn about the user</h3>
+      <p>Long multi-step forms (high friction) still exist. Increasingly: light conversational steps (“two beds, garden, budget, commute, shops nearby…”), saves/likes, swipe UIs, and <strong>implicit signals</strong> — time on listing, which photos they linger on — to infer preferences.</p>
+
+      <h3>Location and listings</h3>
+      <p>Example: map radius around a home showing kindergartens — proximity and count matter for family buyers. Warning: naive use of correlated stats (e.g. crime vs density) can bake in bias; validate data and experiments.</p>
+
+      <h3>Computer vision</h3>
+      <p>Extract structured tags from photos (living room, open plan, “cozy” features, large windows) → scores; infer missing attributes (e.g. natural light) from what is visible.</p>
+
+      <h3>Sponsorship vs relevance</h3>
+      <p>Both can coexist: a recommendation engine with transparent business logic — hard boosts for paid placements plus feature-based matching on user needs. You control the rules.</p>
+
+      <h3>End-to-end matching</h3>
+      <p>Natural-language ask maps to your data model (beds, commute, style, schools, light, etc.). Combine user vector, property vector, neighbourhood signals → <strong>match score</strong> plus human-readable reasons (“great for family life” tied to earlier questions about schools).</p>
+
+      <h3>What’s live in the market</h3>
+      <p>NL search that surfaces inferred filters with yes/no confirmation. Some products deep-link into big consumer AIs — can bring traffic but may <strong>cede discovery</strong>. Fully conversational search. <strong>Hybrid</strong> products: structured questions + curated results, then a chat alongside results that refines based on likes/dislikes and follow-ups — lots of experimentation; winners not settled.</p>
+    </section>
+
+    <section class="card">
+      <h2>Q&amp;A highlights</h2>
+
+      <h3>Is the strategic play one-off data ingestion or ongoing data / recommendations?</h3>
+      <div class="qa-answer">
+        If you believe the game is the latter (continuous recommendation quality), partner with operators who own <strong>freshness and QA</strong> — many sources, cross-checks, regular validation. Geography keeps changing (new schools, new areas). Building that as a core competency is expensive; not every portal should try to own the whole pipeline.
+      </div>
+
+      <h3>Five years out — AI-native vs incumbents with brand + AI?</h3>
+      <div class="qa-answer">
+        Hard to predict. Behaviour is shifting; neighbourhood-based recommendations are becoming more mainstream. The next edge may be <strong>deep, updating user profiles</strong> — learning continuously from behaviour, not a one-shot “here are suburbs with good schools.” Portals that truly understand the individual over time can build a moat (“they invested in learning me”).
+      </div>
+
+      <h3>How do you assess “good for schools” when someone searches?</h3>
+      <div class="qa-answer">
+        Multiple factors: <strong>proximity</strong>, <strong>optionality</strong> (one good school vs several), admissions / oversubscription where data exists, and educational outcomes if available. Example: working with education data to model <strong>catchment-style attendance</strong> from pupil addresses for primary schools at scale; secondary datasets differ. Feeds can include admissions pressure and other criteria where you have them.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Quick ref</h2>
+      <p><strong>Speaker:</strong> Taha Dar</p>
+      <p><strong>Role:</strong> CEO, SearchSmartly</p>
+      <p><strong>Talk:</strong> From Buzzword to Blueprint: How to Integrate AI into Your Portal</p>
+      <p><strong>Event:</strong> PropTech &amp; PortalWatch Conference</p>
+    </section>
+
+    <p class="footer">
+      Related: <code>mike-van-der-heijden-portal-ventures-ai-search-summary.html</code>,
+      <code>edmund-keith-ai-real-estate-search-summary.html</code>,
+      <code>panel-can-traditional-portals-implement-ai-search-summary.html</code>.
+    </p>
+  </main>
+</body>
+</html>

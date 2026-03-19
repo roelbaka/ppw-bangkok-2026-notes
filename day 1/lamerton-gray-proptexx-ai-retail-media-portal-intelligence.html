@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PropTexx — AI that performs: retail media &amp; portal intelligence</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f1f5f9;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #ecfdf5 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 40px 20px 64px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #134e4a 0%, #0f766e 50%, #115e59 100%);
+      color: white;
+      border-radius: 24px;
+      padding: 36px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+    }
+
+    .session-badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      color: #5eead4;
+      font-weight: 600;
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .brand {
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      margin-bottom: 10px;
+      opacity: 0.95;
+    }
+
+    header h1 {
+      margin: 0 0 10px;
+      font-size: clamp(1.35rem, 3vw, 2rem);
+      line-height: 1.2;
+      font-weight: 800;
+    }
+
+    .headline-sub {
+      margin: 0 0 16px;
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.92);
+      font-weight: 600;
+    }
+
+    .speaker-line {
+      margin: 0 0 8px;
+      font-size: 1.02rem;
+    }
+
+    .speaker-line a { color: #99f6e4; }
+
+    header .conf {
+      margin: 18px 0 0;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 0.92rem;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 1.2rem;
+      color: #134e4a;
+    }
+
+    h3 { margin: 16px 0 8px; font-size: 1.02rem; }
+    p { margin: 0 0 12px; }
+    ul { margin: 0; padding-left: 20px; }
+    li { margin-bottom: 10px; }
+
+    .notes-box {
+      min-height: 80px;
+      border: 2px dashed #cbd5e1;
+      border-radius: 16px;
+      padding: 18px;
+      background: #f8fafc;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .footer {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    code {
+      font-size: 0.88em;
+      background: #e2e8f0;
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+
+    .muted-note {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .flow-pipeline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 12px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .flow-pipeline li {
+      flex: 1 1 160px;
+      padding: 12px 14px;
+      border-radius: 12px;
+      background: #f0fdfa;
+      border: 1px solid #99f6e4;
+      font-size: 0.92rem;
+      margin: 0;
+    }
+
+    .flow-pipeline li strong {
+      display: block;
+      color: #0f766e;
+      margin-bottom: 6px;
+      font-size: 0.9rem;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .stat-block {
+      padding: 14px;
+      border-radius: 12px;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      font-size: 0.92rem;
+    }
+
+    .stat-block strong { color: #134e4a; }
+
+    @media (max-width: 820px) {
+      header, .card { padding: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="session-badge">PropTech &amp; PortalWatch · March 18–19, 2026 · Bangkok</div>
+      <div class="brand">PropTexx</div>
+      <h1>AI that performs: unlocking new revenue through retail media and portal intelligence</h1>
+      <p class="headline-sub"><strong>Retail media in listing photos</strong> — retailer SKUs in staged images; portals share revenue; CPMA / sponsored image.</p>
+      <p class="speaker-line">
+        <strong>Josh Lamerton</strong> — COO
+      </p>
+      <p class="speaker-line">
+        <strong>James Gray</strong> — Director of Commercial
+      </p>
+      <p class="conf">
+        <strong>PropTech &amp; PortalWatch Conference</strong> — The next wave of digital real estate · Online Marketplaces
+      </p>
+    </header>
+
+    <section class="card">
+      <h2>Session</h2>
+      <p>Fireside with <strong>Josh Lamerton</strong> (COO) and <strong>James Gray</strong> (Director of Commercial). Moderator notes long history with James (~25 years). Below: <strong>deck</strong> bullets + <strong>voice memo</strong> summary (ASR cleaned).</p>
+    </section>
+
+    <section class="card">
+      <h2>Who we are (from deck)</h2>
+      <p>PropTexx is the <strong>leading AI provider</strong> in real estate, powering some of the world’s largest property platforms.</p>
+      <ul>
+        <li><strong>Regions:</strong> USA, EU, EMEA, APAC</li>
+        <li><strong>Scale:</strong> <strong>30m+</strong> images processed monthly</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Countries coming soon (from deck)</h2>
+      <p>Slide listed six markets in the pipeline (by flag): <strong>UAE</strong>, <strong>UK</strong>, <strong>Spain</strong>, <strong>Greece</strong>, <strong>Netherlands</strong>, <strong>France</strong>.</p>
+      <p class="muted-note">They don’t name us — but the Dutch flag is us. 🇳🇱</p>
+    </section>
+
+    <section class="card">
+      <h2>Use cases (from deck)</h2>
+      <p>Word-cloud style slide — main themes:</p>
+      <ul>
+        <li><strong>Support price increase</strong> — justify premium tiers / packaging</li>
+        <li><strong>Content segmentation</strong></li>
+        <li><strong>Package support</strong> — productised tiers</li>
+        <li><strong>Private sellers</strong></li>
+        <li><strong>Additional metadata</strong></li>
+        <li><strong>Media revenue protection</strong></li>
+        <li><strong>Improve data quality</strong></li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>AI tools — pipeline (from deck)</h2>
+      <p>Five-stage AI workflow:</p>
+      <ul class="flow-pipeline">
+        <li><strong>Ingestion</strong> — Property descriptions</li>
+        <li><strong>Validation</strong> — Photo compliance, watermark detection, duplicate detection</li>
+        <li><strong>Enrichment</strong> — Image captions / tags</li>
+        <li><strong>Intelligence</strong> — Complexity score, comparable properties</li>
+        <li><strong>Output / UX</strong> — Visual search, image rotation</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Stats / KPIs (from deck)</h2>
+      <div class="stat-grid">
+        <div class="stat-block"><strong>50%</strong> reduction in operational costs when running similar services (vs in-house) due to optimized APIs.</div>
+        <div class="stat-block"><strong>87%</strong> satisfaction score from consumers.</div>
+        <div class="stat-block"><strong>27%</strong> of consumers opt for the interactive experience.</div>
+        <div class="stat-block"><strong>20%</strong> of images are reflecting an empty room (insight / opportunity).</div>
+        <div class="stat-block"><strong>40%</strong> (slide text partially obscured — add detail if you have it).</div>
+      </div>
+      <p class="muted-note" style="margin-top:12px;">Slide also referenced increased conversion / engagement; exact wording not fully visible in photo.</p>
+    </section>
+
+    <section class="card">
+      <h2>Talk summary (voice memo)</h2>
+
+      <h3>Retail media — what it is</h3>
+      <ul>
+        <li>Classic <strong>virtual staging</strong> is often a <strong>cost</strong> per image for the portal. PropTexx bridges <strong>staging + AI</strong> with <strong>retail brands embedded in those images</strong> — turning photos into a <strong>revenue line</strong>, not only an expense.</li>
+        <li>Analogy: evolution of <strong>display ads / CPM</strong> — but applied to <strong>property photos</strong> (high engagement inventory that wasn’t monetised this way before).</li>
+        <li><strong>Retailers</strong> supply huge SKU catalogues (kitchens, furniture, appliances); PropTexx places real product visuals into virtually staged rooms. <strong>Portals</strong> = scale and attention; retailers pay for <strong>placement in context</strong> (“your kitchens in 100,000 kitchen photos in market X”).</li>
+        <li><strong>Consumer journey:</strong> Original listing photo → AI restyle / themes (e.g. Mediterranean, alpine) → branded or retailer furniture → optional path to product selection / commerce. Formats: subtle branding, <strong>hotspots</strong>, still early; retailer interest is strong.</li>
+      </ul>
+
+      <h3>Portals &amp; commercial models</h3>
+      <ul>
+        <li><strong>Revenue share</strong> with portals — models vary. Some portals want <strong>full control</strong> (own media team, existing retailer relationships); others want PropTexx to run more of the stack.</li>
+        <li><strong>Europe vs US-style commerce:</strong> Some retailers want <strong>click-out / add-to-basket</strong>; many European portals resist sending traffic off-site — keep users in the <strong>portal frame</strong>. Journey is phased: not extracting “maximum” retail revenue day one; <strong>over time</strong> some may allow click-outs.</li>
+        <li><strong>Cost to portal:</strong> In <strong>high-demand</strong> markets, outputs can be subsidised or “free” to the portal, <strong>offset by retail spend</strong>. Rollout often starts with <strong>segmentation</strong> (e.g. ~30% of images), then expand retail insertion.</li>
+        <li><strong>Portal upside:</strong> Longer <strong>time on site</strong>, engagement vs static galleries; staging shifts from <strong>cost to revenue</strong>; ties to Russell’s “P&amp;L needle” (see Q&amp;A).</li>
+        <li><strong>Pricing narrative for retailers:</strong> Beyond dying CPM — <strong>CPMA</strong> (cost per minute of attention) and <strong>sponsor an image</strong>; retailers focus on <strong>unit economics</strong>.</li>
+        <li><strong>Private sellers (Europe):</strong> Bundle with staging / image uplift; strong interest; large portals bundling packages, penetration building (e.g. mid-teens % first-year cited in discussion).</li>
+      </ul>
+
+      <h3>Product &amp; UX</h3>
+      <ul>
+        <li><strong>API-first:</strong> Images processed as listings are created; gallery often <strong>swipe before/after</strong>. When user <strong>enlarges</strong> a photo and gets an option to engage with AI output, engagement is high.</li>
+        <li><strong>Scout24-style:</strong> Multiple themes, regenerated sets — presentation layer. Future: <strong>text prompts</strong> (“make it blue”, “this sofa”) → rotating ad / behaviour signals for retailers.</li>
+        <li><strong>Widget:</strong> Embeddable experience (own page / script) for interaction without losing portal context where required.</li>
+        <li><strong>Future / roadmap:</strong> User <strong>ingests own furniture</strong> (photo of existing sofa) to see it in the listing — “moving home” use case; plus retailer products in same scene.</li>
+      </ul>
+
+      <h3>Accuracy vs creativity (expanded)</h3>
+      <ul>
+        <li>Pipeline: <strong>prescreen</strong> / grade photo, room type, condition → <strong>generative</strong> step with <strong>structural integrity</strong> controls (no absurd hallucinations) → <strong>QC</strong>. Go-live failures (e.g. broken geometry) would trigger agent backlash.</li>
+        <li>Trade-off with customers: <strong>structural integrity vs creativity</strong> — often <strong>not both</strong> at once; as models improve, they may converge.</li>
+        <li><strong>MLS US:</strong> Work on misrepresentation / rules; legal awareness varies by region. <strong>3D / layout understanding</strong> to place furniture correctly; <strong>~40 attributes</strong> per image cited for solid output — also becomes <strong>portal intelligence / data asset</strong>.</li>
+      </ul>
+
+      <h3>Ad load &amp; trust</h3>
+      <ul>
+        <li>Partnership rules: start <strong>unobtrusive</strong>; avoid “advertising fest”; steady state before competing brands in one room, etc.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Q&amp;A — questions &amp; answers (app + session)</h2>
+
+      <h3>1. Vietnam / fake listings &amp; sustainable retail media</h3>
+      <p><em>Q:</em> Emerging markets, fake listings vs Australia — advice for retail media that <strong>maintains user trust</strong>?</p>
+      <p><strong>A:</strong> Two layers: (1) <strong>Listing quality / trust</strong> — watermark detection, duplicates, policy tooling; country-specific legal levers; identify fakes and <strong>action plans</strong> to reduce volume. (2) <strong>Retail layer</strong> can be <strong>hybrid</strong>: even if some listings are weak, the <strong>interactive image experience</strong> can still add value for the portal (time on site, engagement) — retail isn’t only “buy furniture for this exact home.” Responsibility for listing integrity remains <strong>with the portal</strong>.</p>
+
+      <h3>2. Russell’s P&amp;L “needle” — has PropTexx moved it?</h3>
+      <p><em>Q:</em> Extent of client impact?</p>
+      <p><strong>A:</strong> AI can move <strong>top line</strong> (e.g. search) — does it drive leads/revenue? <strong>Staging</strong> used to be pure cost; retail model turns it into <strong>revenue</strong>. On portals with <strong>hundreds of millions</strong> in revenue, share is still <strong>to be determined</strong> — but clear positives on <strong>smaller</strong> examples (e.g. modest CRA uplift → meaningful extra monthly revenue cited). <strong>Large European</strong> focus: private-seller bundles, staging penetration growing. For <strong>retailers</strong>, it’s a <strong>new channel</strong> — product <strong>in situ</strong> vs only store or roadside — from IKEA-scale to local retailers; heavy SKU onboarding complexity.</p>
+
+      <h3>3. Image AI — accuracy or creativity?</h3>
+      <p><strong>A:</strong> See pipeline above: <strong>structural integrity first</strong> for production use; creativity pushes against that — <strong>customer choice</strong> on the dial. MLS / misrepresentation sensitivity in US; regional variation.</p>
+
+      <h3>4. Lagged journey — sofa after you buy the house — track conversion?</h3>
+      <p><strong>A:</strong> <strong>Trackable links</strong> / affiliate-style <strong>click-through</strong> to retailer sites for shoppable placements — measurable to a point. <strong>Full end-to-end</strong> furniture purchase through the portal is <strong>not fully built</strong>; discussions ongoing. Tension: retailers want <strong>more traffic / multiple</strong> on conversion; portals <strong>reluctant to send users away</strong> — tradeoff.</p>
+
+      <p class="muted-note" style="margin-top:14px;">Extra closing beat: moderator asked about <strong>user’s own furniture</strong> in the scene — speakers confirm <strong>on the roadmap</strong> (ingest photo of your sofa, see it in the listing alongside retailer placements).</p>
+    </section>
+
+    <section class="card">
+      <h2>Notes / scratch</h2>
+      <div class="notes-box">
+        Optional: extra quotes or follow-ups.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Quick ref</h2>
+      <p><strong>Company:</strong> PropTexx</p>
+      <p><strong>Speakers:</strong> Josh Lamerton (COO), James Gray (Director of Commercial)</p>
+      <p><strong>Topic:</strong> Retail media · portal intelligence · AI revenue</p>
+      <p><strong>Deck:</strong> Who we are · Use cases · AI pipeline · Countries coming soon · 30m+ images/mo</p>
+      <p><strong>Talk:</strong> Retail in photos · CPMA · portal rev-share · integrity vs creativity · trackable links</p>
+    </section>
+
+    <p class="footer">
+      <strong>Deck + talk + Q&amp;A</strong>. Related:
+      <code>jonathan-turpin-ai-property-portals-summary.html</code>,
+      <code>ryan-gallagher-iovox-ai-communications.html</code>,
+      <code>steve-coleman-snow-only-ai-human-touch.html</code>,
+      <code>russell-wee-jean-yip-proptech-ai-real-estate.html</code>,
+      <code>malcolm-myers-ai-asia-portals-summary.html</code>,
+      <code>patrick-grove-fdv-summary.html</code>,
+      <code>satoshi-murakami-metaprop-investment-mandate.html</code>.
+    </p>
+  </main>
+</body>
+</html>

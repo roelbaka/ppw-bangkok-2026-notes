@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mike van der Heijden (portal ventures) — AI Search: Overstated, Understood, Underestimated</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --accent: #1e40af;
+      --accent-2: #dc2626;
+      --border: #e2e8f0;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #eff6ff 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 40px 20px 64px; }
+    header {
+      background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 40%, #dc2626 100%);
+      color: white;
+      border-radius: 24px;
+      padding: 36px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+    }
+    .session-badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.15);
+      color: #bfdbfe;
+      font-weight: 600;
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .brand {
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      margin-bottom: 10px;
+      opacity: 0.95;
+    }
+    header h1 {
+      margin: 0 0 12px;
+      font-size: clamp(1.1rem, 2.4vw, 1.6rem);
+      line-height: 1.25;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+    .headline-sub { margin: 0 0 16px; font-size: 1rem; color: rgba(255, 255, 255, 0.92); max-width: 68ch; }
+    .speaker-line { margin: 0; font-size: 1.05rem; font-weight: 600; }
+    header .conf {
+      margin: 18px 0 0;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 0.92rem;
+      color: rgba(255, 255, 255, 0.88);
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      margin-bottom: 20px;
+    }
+    h2 { margin: 0 0 14px; font-size: 1.2rem; color: #1e40af; }
+    h3 { margin: 20px 0 10px; font-size: 1.05rem; color: #1e3a8a; }
+    p { margin: 0 0 12px; }
+    ul { margin: 0; padding-left: 20px; }
+    li { margin-bottom: 10px; }
+    .muted-note { font-size: 0.9rem; color: var(--muted); }
+    .title-triplet {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 16px 0;
+    }
+    .title-triplet span {
+      padding: 10px 16px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+    .title-triplet .overstated { background: #fef2f2; color: #b91c1c; border: 1px solid #fecaca; }
+    .title-triplet .understood { background: #eff6ff; color: #1d4ed8; border: 1px solid #93c5fd; }
+    .title-triplet .underestimated { background: #f0fdf4; color: #15803d; border: 1px solid #86efac; }
+    .notes-box {
+      min-height: 120px;
+      border: 2px dashed #93c5fd;
+      border-radius: 16px;
+      padding: 18px;
+      background: #f0f9ff;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .data-slide {
+      margin-bottom: 24px;
+    }
+    .data-slide:last-child { margin-bottom: 0; }
+    .data-slide h3 {
+      margin: 0 0 10px;
+      font-size: 1.05rem;
+      color: #1e40af;
+    }
+    .data-slide .source {
+      margin-top: 10px;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+    table.data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin-top: 10px;
+    }
+    table.data-table th,
+    table.data-table td {
+      padding: 8px 12px;
+      text-align: left;
+      border: 1px solid var(--border);
+    }
+    table.data-table th { background: #f1f5f9; font-weight: 600; }
+    .stat-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .stat-card {
+      padding: 14px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: #f8fafc;
+    }
+    .stat-card .num { display: block; font-size: 1.25rem; font-weight: 800; color: #1e40af; margin-bottom: 4px; }
+    .stat-card .lbl { font-size: 0.85rem; color: var(--muted); line-height: 1.3; }
+    .journey-stages li {
+      padding: 10px 14px;
+      margin-bottom: 8px;
+      border-radius: 10px;
+      font-size: 0.93rem;
+    }
+    .journey-stages .stage-disrupted {
+      background: #fef2f2;
+      border-left: 4px solid #dc2626;
+    }
+    .journey-stages .stage-portal {
+      background: #eff6ff;
+      border-left: 4px solid #2563eb;
+    }
+    @media (max-width: 720px) {
+      .framework-layers { grid-template-columns: 1fr !important; }
+    }
+    .footer { margin-top: 22px; color: var(--muted); font-size: 0.92rem; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="session-badge">PropTech &amp; PortalWatch · The next wave of digital real estate</div>
+      <div class="brand">portal ventures</div>
+      <h1>AI Search: Overstated, Understood, Underestimated</h1>
+      <p class="headline-sub">Three-part frame for where AI search stands today — hype, reality, and missed opportunity.</p>
+      <p class="speaker-line"><strong>Mike van der Heijden</strong> — CEO</p>
+      <p class="conf">
+        <strong>PropTech &amp; PortalWatch Conference</strong> — Online Marketplaces
+      </p>
+    </header>
+
+    <section class="card">
+      <h2>Session</h2>
+      <p>Talk title from deck: <strong>AI Search: Overstated, Understood, Underestimated</strong>. Slide featured a large wave graphic (red/blue). Mike van der Heijden, CEO of <strong>portal ventures</strong>, on stage.</p>
+      <div class="title-triplet" aria-label="Talk title structure">
+        <span class="overstated">Overstated</span>
+        <span class="understood">Understood</span>
+        <span class="underestimated">Underestimated</span>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>The first data points</h2>
+      <p class="muted-note">From the deck — slide data as presented. Sources as on slides.</p>
+
+      <div class="data-slide">
+        <h3>As of 2026, referral traffic from AI is tiny</h3>
+        <table class="data-table" aria-label="Organic vs AI referral traffic by portal">
+          <thead>
+            <tr><th>Portal</th><th>Organic search</th><th>AI referral</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Zillow</td><td>38%</td><td>1.5%</td></tr>
+            <tr><td>Rightmove</td><td>41%</td><td>0.20%</td></tr>
+            <tr><td>Realestate.com.au</td><td>45%</td><td>0.12%</td></tr>
+          </tbody>
+        </table>
+        <p class="source">Source: Similarweb Desktop June 2024</p>
+      </div>
+
+      <div class="data-slide">
+        <h3>Average searches per US desktop user dropped by ~20%</h3>
+        <p>Average searches per US desktop user, Oct 2024 to Dec 2025. Callout on slide: <strong>~21% drop</strong> in Google searches per desktop user; <strong>121 → 95</strong> searches per user per month in 15 months.</p>
+        <p>Google trend (monthly, from chart): Oct 24: 121 → Nov 24: 109 → Dec 24: 96 → Jan 25: 104 → Feb–Mar 25: 100 → Apr 25: 96 → May 25: 95 → Jun 25: 92 → Jul 25: 98 → Aug–Sep 25: 95–100 → Oct 25: 103 → Nov–Dec 25: 98–95.</p>
+        <p class="source">Source: SimilarWeb “Average searches per US Desktop user” Jan 2026; also cited SparkToro / Datos State of Search Q4 2025</p>
+      </div>
+
+      <div class="data-slide">
+        <h3>Where are the Google clicks going? (US)</h3>
+        <p>US desktop searches, Oct 2024 to Dec 2025 — stacked bar by outcome.</p>
+        <table class="data-table" aria-label="First three months click distribution">
+          <thead>
+            <tr><th>Outcome</th><th>Oct 2024</th><th>Nov 2024</th><th>Dec 2024</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Stayed on Google property</td><td>14.6%</td><td>14.0%</td><td>14.5%</td></tr>
+            <tr><td>Clicked an organic result</td><td>41.1%</td><td>41.4%</td><td>41.2%</td></tr>
+            <tr><td>Clicked a paid result</td><td>1.2%</td><td>1.2%</td><td>1.3%</td></tr>
+            <tr><td>Searched again</td><td>18.6%</td><td>18.7%</td><td>17.8%</td></tr>
+            <tr><td>Ended with no clicks</td><td>24.4%</td><td>24.7%</td><td>25.2%</td></tr>
+          </tbody>
+        </table>
+        <p><strong>~25%</strong> of searches end with no click at all. <strong>~41%</strong> click an organic result — remarkably stable.</p>
+        <p class="source">Source: SparkToro State of Search Q4 2025</p>
+      </div>
+
+      <div class="data-slide">
+        <h3>Growth in referrals to Google’s own properties</h3>
+        <p>Google AI Mode visits in the US, May to Dec 2025. Line chart: May 25: 0.01% → Jul–Aug 25: 0.03% → Sep 25: 0.04% → Oct–Nov 25: 0.05% → Dec 25: 0.06%.</p>
+        <p><strong>6×</strong> growth in AI Mode share in 8 months. <strong>0.06%</strong> of all US web visits now go through AI Mode. Small today; slide noted Google is training users to stay in-product.</p>
+        <p class="source">Source: SimilarWeb Desktop Panel 2025</p>
+      </div>
+
+      <div class="data-slide">
+        <h3>The plateau paradox</h3>
+        <p>AI visits more than doubled YoY, but referral traffic to publishers peaked and then declined. Chart: Jan 2023–Jan 2024 — AI visits (bars) up; AI referrals (line) peak around Oct/Nov 2023, then decline.</p>
+        <p><strong>Visits up. Referrals down.</strong> AI tools answer, not route; users stay inside the interface; models are cutting outbound links. More visits ≠ more referrals.</p>
+        <p class="source">Similarweb; data re OpenAI, Anthropic, Perplexity</p>
+      </div>
+
+      <div class="data-slide">
+        <h3>The signals are already visible</h3>
+        <p>Four-card summary (data from Jumpshot / SparkToro State of Search Q4 2023 and related):</p>
+        <div class="stat-cards">
+          <div class="stat-card">
+            <span class="num">~20%</span>
+            <span class="lbl">Drop in Google searches per desktop user (2021→2023)</span>
+          </div>
+          <div class="stat-card">
+            <span class="num">~25%</span>
+            <span class="lbl">Zero-click searches — nearly 1 in 4 Google searches end with no click to any website</span>
+          </div>
+          <div class="stat-card">
+            <span class="num">252M</span>
+            <span class="lbl">AI Model searches per month — Google AI Model grew 6× in 6 months, users staying on Google</span>
+          </div>
+          <div class="stat-card">
+            <span class="num">Peak</span>
+            <span class="lbl">LLM referrals plateauing — AI referral traffic to publishers peaked Oct 2023, now declining</span>
+          </div>
+        </div>
+        <p class="source">Source: Jumpshot / SparkToro State of Search Q4 2023</p>
+      </div>
+
+      <div class="data-slide">
+        <h3>AI already owns the top of the funnel</h3>
+        <p>At which stage is each tool most useful? (% of respondents)</p>
+        <table class="data-table" aria-label="AI Bots vs Search Engines by journey stage">
+          <thead>
+            <tr><th>Stage of journey</th><th>AI bots</th><th>Search engines</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Discovering &amp; getting initial ideas</td><td>~34.2%</td><td>~13.8%</td></tr>
+            <tr><td>Researching &amp; comparing options</td><td>~28.6%</td><td>~20.4%</td></tr>
+            <tr><td>Identifying choice &amp; narrowing down search</td><td>~31.3%</td><td>~15.2%</td></tr>
+            <tr><td>Evaluating details &amp; reading reviews</td><td>~31.9%</td><td>~15.4%</td></tr>
+            <tr><td>Making final choice and next steps</td><td>~23.7%</td><td>~22.1%</td></tr>
+          </tbody>
+        </table>
+        <p><strong>35%</strong> use AI for discovery, only <strong>13.8%</strong> use Google. At the decision stage, <strong>22.1%</strong> use Google to find where to buy — the gap nearly closes. Google still wins for the decision stage; AI nears the same.</p>
+        <p class="source">Source: SimilarWeb / Market Research Panel Nov 2023</p>
+      </div>
+
+      <div class="data-slide">
+        <h3>What is actually changing then?</h3>
+        <ol style="margin:0;padding-left:1.25rem;font-size:0.95rem;">
+          <li><strong>How queries are formed</strong> — Queries are becoming longer and more diverse. Long tail is growing at unprecedented rates.</li>
+          <li><strong>Which sources get surfaced</strong> — There are more surfaces appearing for searches than ever before.</li>
+          <li><strong>How need is satisfied pre-click</strong> — Queries are being satisfied before users reach your site.</li>
+          <li><strong>What it takes to be reference-worthy</strong> — LLMs, whilst reliant on the search engines, have their own ways of ranking sources.</li>
+        </ol>
+      </div>
+
+      <div class="data-slide">
+        <h3>A new discoverability framework</h3>
+        <p>Three layers from the deck:</p>
+        <div class="framework-layers" style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px;" aria-label="Three layers of discoverability">
+          <div style="padding:14px;border-radius:12px;background:#e0f2fe;border:1px solid #7dd3fc;">
+            <strong style="display:block;margin-bottom:8px;color:#0369a1;">Layer 1 — Traditional search</strong>
+            <ul style="margin:0;padding-left:1.1rem;font-size:0.9rem;">
+              <li>Google ranking</li>
+              <li>SEO</li>
+              <li>Internal filters</li>
+              <li>Structured inventory</li>
+            </ul>
+          </div>
+          <div style="padding:14px;border-radius:12px;background:#1e3a8a;color:#fff;border:1px solid #3b82f6;">
+            <strong style="display:block;margin-bottom:8px;">Layer 2 — Answer layer</strong>
+            <ul style="margin:0;padding-left:1.1rem;font-size:0.9rem;">
+              <li>AI Overviews</li>
+              <li>Featured answers</li>
+              <li>Zero-click extraction</li>
+              <li>Summarised content</li>
+            </ul>
+          </div>
+          <div style="padding:14px;border-radius:12px;background:#fef2f2;border:1px solid #fca5a5;">
+            <strong style="display:block;margin-bottom:8px;color:#b91c1c;">Layer 3 — Generative discovery</strong>
+            <ul style="margin:0;padding-left:1.1rem;font-size:0.9rem;">
+              <li>ChatGPT</li>
+              <li>Gemini</li>
+              <li>Perplexity citing</li>
+              <li>Google ranking and recommending search</li>
+            </ul>
+          </div>
+        </div>
+        <p class="muted-note" style="margin-top:14px;">Portals need to show up across all three layers.</p>
+      </div>
+
+      <div class="data-slide">
+        <h3>Layer 3: Generative discovery — what it looks like in ChatGPT/Gemini</h3>
+        <p>Example query on slide: <em>Where are the best places to live in Madrid for a young family?</em> Mock-up showed an AI-style interface with sources, images, a text answer recommending neighbourhoods, and a small chart.</p>
+        <div class="slide-callout" style="margin-top:14px;padding:14px 18px;background:#b91c1c;color:#fff;border-radius:12px;font-size:0.95rem;">
+          <strong>Layer 3 — Generative discovery:</strong> LLMs citing your content. ChatGPT, Gemini, Perplexity recommend visitors. Only unique, proprietary content gets cited. This is the moat.
+        </div>
+      </div>
+
+      <div class="data-slide">
+        <h3>What’s required to compete at each layer?</h3>
+        <p>Three-tier pyramid from the deck — progression: <strong>Be crawlable → Be extractable → Be irreplaceable.</strong></p>
+        <ul class="journey-stages" style="margin:0;padding:0;list-style:none;">
+          <li class="stage-portal" style="border-left-color:#1e3a8a;"><strong>Layer 1 — Technical SEO</strong> (dark blue base): Core Web Vitals, indexation, internal linking, structured markup. Necessary, but not sufficient. <span class="muted-note">Callout on slide: Most marketplaces are here.</span></li>
+          <li class="stage-portal"><strong>Layer 2 — Answer-ready data</strong> (middle): Enriched, structured content that Google extracts for AI Overviews and snippets. Examples: median prices, school ratings, suburb stats, Schema markup.</li>
+          <li class="stage-disrupted" style="border-left-color:#b91c1c;"><strong>Layer 3 — Citation-worthy</strong> (red top): Proprietary data and insights that LLMs can cite and competition does not have.</li>
+        </ul>
+        <p style="margin-top:14px;font-weight:600;">Your proprietary data is the only thing that moves you up. That’s the moat.</p>
+      </div>
+
+      <div class="data-slide">
+        <h3>If AI answers the question, is your brand in the answer?</h3>
+        <p>Discovery traffic isn’t blog traffic. It’s new buyers. And which portal to use.</p>
+        <ol style="margin:12px 0;padding-left:1.25rem;font-size:0.95rem;">
+          <li><strong>Buyer asks AI</strong> — e.g. “Best suburbs for families in Sydney?”</li>
+          <li><strong>AI answers with sources</strong> — Will the source be Domain, realestate.com.au, or nobody?</li>
+          <li><strong>User visits the portal named</strong> — Impression → direct visit → linking intent → SEO.</li>
+        </ol>
+        <div class="slide-callout" style="margin-top:14px;padding:14px 18px;background:#1e3a8a;color:#fff;border-radius:12px;font-size:0.95rem;">
+          <strong>The real question:</strong> When AI answers a question, are you the source it cites? If not, it’s an opportunity for the competition to take away your market share.
+        </div>
+        <p style="margin-top:14px;font-weight:600;">The goal isn’t to stop AI from answering. It’s to make sure your portal is in the answer.</p>
+      </div>
+
+      <div class="data-slide">
+        <h3>What type of content is AI disrupting?</h3>
+        <p>These are the queries AI can absorb without sending traffic to your portal:</p>
+        <table class="data-table" aria-label="Query types AI can absorb">
+          <thead>
+            <tr><th>Query</th><th>Type</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Best suburbs for families in Sydney</td><td>Informational</td></tr>
+            <tr><td>Where to buy under $800k near good schools</td><td>Informational</td></tr>
+            <tr><td>Is now a good time to buy a home?</td><td>Research</td></tr>
+            <tr><td>Compare rental yields: Sydney vs Melbourne</td><td>Research</td></tr>
+            <tr><td>Best commuter suburbs under 45 minutes</td><td>Informational</td></tr>
+            <tr><td>What are property prices expected to do?</td><td>Research</td></tr>
+          </tbody>
+        </table>
+        <div class="slide-callout" style="margin-top:14px;padding:14px 18px;background:#1e3a8a;color:#fff;border-radius:12px;font-size:0.95rem;">
+          <strong>It’s not your inventory traffic that’s at risk.</strong> It’s the discovery traffic that shapes the buyer’s shortlist before they ever reach your portal.
+        </div>
+      </div>
+
+      <div class="data-slide">
+        <h3>How does it impact the property discovery journey?</h3>
+        <p>Four stages from the deck — first two labeled <strong>AI DISRUPTED</strong>, last two (listings and contact) as core portal territory.</p>
+        <ul class="journey-stages" style="margin:0;padding:0;list-style:none;">
+          <li class="stage-disrupted"><strong>Discovery</strong> (AI disrupted): Best suburb, lifestyle, yields, school zones.</li>
+          <li class="stage-disrupted"><strong>Research</strong> (AI disrupted): Market trends, prices, suburb comparisons.</li>
+          <li class="stage-portal"><strong>Property search</strong>: Listings, filters, specific locations.</li>
+          <li class="stage-portal"><strong>Contact</strong>: Agent inquiry, application.</li>
+        </ul>
+        <p class="muted-note" style="margin-top:12px;">Red = AI disrupted; blue = listing/contact layer where portals still own the flow.</p>
+      </div>
+
+      <h2 style="margin-top:28px;margin-bottom:14px;color:#1e40af;">Four-step strategic playbook</h2>
+      <p class="muted-note">From the deck: Protect SEO → Know exposure → Weaponise data → Redefine success.</p>
+
+      <div class="data-slide">
+        <h3>Step 1 — Protect the existing SEO engine</h3>
+        <p>Do not neglect SEO fundamentals. Focus on <strong>search intent</strong>: inventory and location page visibility. Technical: crawlability, taxonomy, internal linking, structured data. SEO gives the highest ROI and underpins the answer layer and generative discovery.</p>
+        <div class="slide-callout" style="margin-top:14px;padding:14px 18px;background:#1e3a8a;color:#fff;border-radius:12px;font-size:0.95rem;">
+          <strong>24.5%</strong> of searches are now zero-click. SEO must now optimize for the answer layer.
+        </div>
+      </div>
+
+      <div class="data-slide">
+        <h3>Step 2 — Know your traffic mix and content exposure</h3>
+        <p>Understand your overall traffic mix, then classify which content and search traffic is most vulnerable.</p>
+        <p><strong>Your traffic mix:</strong> Organic search (Google, Bing), Direct / brand, AI chatbots (ChatGPT, Perplexity, Gemini), Paid search / social.</p>
+        <p><strong>Content vulnerability:</strong></p>
+        <table class="data-table" aria-label="Content vulnerability by type">
+          <thead><tr><th>Content type</th><th>Vulnerability</th></tr></thead>
+          <tbody>
+            <tr><td>Listing pages</td><td>LOW</td></tr>
+            <tr><td>Location / category pages</td><td>MEDIUM</td></tr>
+            <tr><td>Informational content</td><td>HIGH</td></tr>
+            <tr><td>Market trend pages</td><td>HIGH</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="data-slide">
+        <h3>Step 3 — Turn your data into a strategic growth asset</h3>
+        <p><em>Weaponise your proprietary market insights. This is the moat no AI tool can replicate.</em></p>
+        <ul style="margin:12px 0;padding-left:1.25rem;font-size:0.93rem;">
+          <li><strong>Unique data &amp; metadata</strong> — Unstructured feeds with pricing, features, agent info, availability, and more beyond what any scraper can assemble.</li>
+          <li><strong>Suburb &amp; location intelligence</strong> — School ratings, commute times, demographics, lifestyle profiles, crime data, local amenities.</li>
+          <li><strong>Market insights &amp; trends</strong> — Price indices, growth %, rental yields, vacancy rates, supply–demand dynamics, transaction histories.</li>
+          <li><strong>Trust &amp; authority signals</strong> — Author attribution, update dates, schema markup, expert reviews, agent endorsements.</li>
+        </ul>
+      </div>
+
+      <div class="data-slide">
+        <h3>Step 4 — Redefine what success looks like</h3>
+        <p>If you only measure clicks, you’re blind to where your brand is being discovered.</p>
+        <table class="data-table" aria-label="Stop vs start measuring">
+          <thead><tr><th>Stop measuring</th><th>Start measuring</th></tr></thead>
+          <tbody>
+            <tr><td>Keyword positions (traditional)</td><td><strong>Search visibility across all surfaces</strong></td></tr>
+            <tr><td>Page-level KPIs only</td><td><strong>Citation presence in AI responses</strong></td></tr>
+            <tr><td></td><td><strong>Assisted discovery &amp; branded query growth</strong></td></tr>
+            <tr><td></td><td><strong>Share of voice across organic + AI surfaces</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="data-slide">
+        <h3>Small players competing with incumbents (Travelmath)</h3>
+        <p>AI visibility scores in travel: a preview for property portals.</p>
+        <table class="data-table" aria-label="AI visibility scores travel">
+          <thead><tr><th>Brand</th><th>AI visibility score</th></tr></thead>
+          <tbody>
+            <tr><td>Expedia</td><td>100</td></tr>
+            <tr><td>Delta</td><td>83</td></tr>
+            <tr><td>TripAdvisor</td><td>58</td></tr>
+            <tr><td>Skyscanner</td><td>56</td></tr>
+            <tr><td>Airbnb</td><td>56</td></tr>
+            <tr><td>Travelmath</td><td>47</td></tr>
+          </tbody>
+        </table>
+        <div class="slide-callout" style="margin-top:14px;padding:14px 18px;background:#15803d;color:#fff;border-radius:12px;font-size:0.95rem;">
+          <strong>The overachiever — Travelmath:</strong> Small site, rich content, structured data. Punches above its weight in AI visibility.
+        </div>
+        <p class="source">Source: Similarweb &amp; AI Visibility Index (Mar 2024)</p>
+      </div>
+
+      <div class="data-slide">
+        <h3>A perfect example: the evolving search result page</h3>
+        <p>Before vs after — typical suburb page vs citation-ready suburb page.</p>
+        <table class="data-table" aria-label="Before vs after suburb page">
+          <thead><tr><th>Typical suburb page (before)</th><th>Citation-ready suburb page (after)</th></tr></thead>
+          <tbody>
+            <tr><td>“242 properties for sale in Richmond” — listing grid, filters</td><td>Median price, growth %, rental yield; school ratings, commute times; demographic and lifestyle profile</td></tr>
+            <tr><td>No real context on area data</td><td>Schema: Local Business, Place, FAQPage</td></tr>
+            <tr><td>No structured schema</td><td>Structured for extraction and citation</td></tr>
+            <tr><td>Not readable by AI — just a feed</td><td>AI will cite this</td></tr>
+            <tr><td><strong>Not citable</strong></td><td><strong>Citable</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>From deck / takeaways</h2>
+      <div class="notes-box">
+        <p>Placeholder: add further slide takeaways or narrative framing (Overstated / Understood / Underestimated) here.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Talk summary</h2>
+      <p class="muted-note">From voice/ASR transcript — cleaned for readability. Mike opens with: lots of fear about AI taking traffic, not enough clarity; goal is a bit of framework and what portals can actually do.</p>
+      <h3>Opening frame</h3>
+      <p>Is AI search about to disrupt property portals? The truth is more nuanced. Need to separate noise from signal — look at actual data and see which signals matter.</p>
+      <h3>Is AI taking all the traffic?</h3>
+      <p>First slide: Zillow, Rightmove, REA — how much of their traffic is still organic search vs AI referral? We see 0.15%, 0.2%, 0.12%. Not that much. So a lot of this is fear of AI; this is a snapshot, not a forecast. We need to look at trends.</p>
+      <h3>Search volume and where the drop goes</h3>
+      <p>Average searches per US desktop user (Oct 2024–Dec 2025): dropped from ~121 to ~95 per month. People are starting to use AI for discovery. Fewer searches → fewer chances for your site to appear. When we break down where that 21% drop goes: orange = stayed on Google, green = clicked out (organic), yellow = paid, red = searched again, blue = searched and got an answer with no click. Around 25% of searches globally now end with no click — people find the answer in AI Overviews or similar and leave. What you can take solace in: the share that still use organic search to click through to a website has stayed roughly unchanged at ~41%. So in the short term the threat of AI replacing your traffic is a bit overstated; organic hasn’t collapsed. But the bar that’s growing is the one that’s gone from ~0.01% to ~0.06%.</p>
+      <h3>Google AI Mode and the plateau paradox</h3>
+      <p>Google AI Mode launched May 2025 at 0.01% of searches; now 0.06% — six times growth in eight months. Small share but 252 million visits a month. The bigger long-term threat than ChatGPT or Perplexity is Google becoming an AI engine. AI tools are not here to route people to your site; they’re here to answer the question. Chart: orange bars = AI visits; black line = how many of those visits clicked out to a website. We hit an inflection around October; for the last few months AI referrals have been declining. Claude has cut outbound links sharply; Perplexity has halved theirs. More AI visits does not mean more referrals.</p>
+      <h3>Signals combined</h3>
+      <p>20% fewer searches per user; 25% of searches end with no click; AI Mode still small but 6× growth and 252M/month. Once users are in AI, they tend to stay. Each signal on its own is manageable; together they compound. The destruction isn’t in volume yet — it’s in interface and behaviour. By the time you notice the drop in traffic, you’re already behind.</p>
+      <h3>What is actually changing?</h3>
+      <p>Four things: (1) How queries are formed — longer, more diverse, long tail growing. (2) More surfaces — AI Overviews, SGE, Reddit, reviews inside platforms. (3) Need satisfied pre-click — if you’re not showing up in the answer, Google can answer without you. So it’s not “do I get the click?” but “is my data in the AI result?” (4) What it takes to be reference-worthy — who does the LLM cite?</p>
+      <h3>Property journey and who wins where</h3>
+      <p>Discovery (best suburbs, lifestyle) and research (market trends, comparisons) = AI disrupted. Property search (listings, filters) and contact = portal territory. The LLM still needs someone to supply the information; if you don’t, you’re not visible in AI. Panel data: discovery — 35% say AI most useful vs 13% Google; by the decision stage the gap nearly closes. It’s not your inventory traffic at risk; it’s the discovery traffic that shapes the shortlist. If you’re not in the citation, you’re not in the shortlist. The real question: when AI answers, is your portal in the answer? If the buyer asks AI and AI mentions Domain, realestate.com.au, or nobody — if nobody, you get no direct visits or leads. Goal: make sure your portal is in the answer.</p>
+      <h3>Three layers and what to do</h3>
+      <p>Layer 1: traditional search (SEO, indexation). Layer 2: answer layer (AI Overviews, etc.) — sits on top of organic. Layer 3: generative discovery (ChatGPT, Perplexity). Most portals are strong on layer 1 and still weak on 2 and 3; you need the foundations before you can win at layer 3. Example: “two-bed Melbourne” — layer 1 is classic SERP; layer 2 is what data you make extractable; layer 3 is what gets cited (market reports, suburb profiles, not just listing feeds). The moat is proprietary data no AI has. So: technical SEO; answer-ready content (what questions do people ask, do you have data?); citation-worthy content (unique data competitors don’t have). If your content isn’t indexable you won’t get into the answer layer; if you’re not in the answer layer you won’t get cited.</p>
+      <h3>Four-step playbook and closing</h3>
+      <p>Protect existing SEO; know your exposure (traffic mix, which content is vulnerable); weaponise your data; redefine success (visibility across surfaces, citations, share of voice, not just organic clicks and keywords). Closing: AI hasn’t replaced Google yet — overstated. What’s understood: it’s a shift in behaviour, not just volume. What’s underestimated: the three layers of discoverability and how to influence them.</p>
+    </section>
+
+    <section class="card">
+      <h2>Audience Q&amp;A — questions and answers</h2>
+      <p class="muted-note">From live Q&amp;A and app. Answers paraphrased from transcript.</p>
+
+      <h3>What determines being ranked high in conversational LLM search results vs. organic Google results? Is it sheer volume of blog articles with the right keywords? Any magic tricks?</h3>
+      <div class="qa-answer" style="margin:8px 0 20px;padding:12px 14px;background:#f0fdf4;border-left:4px solid #22c55e;border-radius:0 10px 10px 0;font-size:0.92rem;">
+        No magic tricks. What the models base it on: who’s got the right information, who covers the topics specifically, and who is actually being cited on other websites. Like the Travelmath example — if you’re really good and nobody else has it, you have a very good opportunity to get cited. It’s about quality of the content and how extractable that information is to the model.
+      </div>
+
+      <h3>During the emergence of Google we learned that customer experience drives users, not brand. Inktomi powered 80% of search via AOL, Yahoo — but everyone remembers Google. Why is it different now?</h3>
+      <div class="qa-answer" style="margin:8px 0 20px;padding:12px 14px;background:#f0fdf4;border-left:4px solid #22c55e;border-radius:0 10px 10px 0;font-size:0.92rem;">
+        It’s almost coming full circle. With organic search you had all these “free” results. What’s happening now with AI engines is that brands are becoming important again. When LLMs first came out it was “everyone’s equal,” we can all get cited. In reality it was grounded in where you ranked in search. What we’re seeing now: if you’ve got a bigger brand and the same content, you’re favoured over a smaller player. So if you’re a portal creating content, you have a much stronger position than if a single agent does it. Brand is becoming more and more important.
+      </div>
+
+      <h3>Whilst searches per user are dropping, is that a false positive as users get better answers (e.g. via integrated Gemini) faster?</h3>
+      <div class="qa-answer" style="margin:8px 0 20px;padding:12px 14px;background:#f0fdf4;border-left:4px solid #22c55e;border-radius:0 10px 10px 0;font-size:0.92rem;">
+        Anecdote: in Google AI Mode it used to answer and you could click through to the link. What AI Mode has been doing for the last several days — it gives you the AI answer and you’re in AI Mode. If you want to click the link it takes you to another Google search result, not out to your website. So they’re keeping users in their environment.
+      </div>
+
+      <h3>Your tone / threat assessment has shifted markedly since Madrid. What are the biggest shifts that have shaped your updated perspective?</h3>
+      <div class="qa-answer" style="margin:8px 0 20px;padding:12px 14px;background:#f0fdf4;border-left:4px solid #22c55e;border-radius:0 10px 10px 0;font-size:0.92rem;">
+        It’s not that traffic has disappeared — people are still searching. The threat is what’s going on on the right hand side: where the answer is being supplied. So it’s not that people are searching less; it’s where aren’t they searching and how are they getting their answers? That’s the threat if you’re not aware of where that’s happening. Search volume is still up from the last presentation; Google search is still up. ChatGPT and others aren’t taking search volume away — they’re servicing different parts of the journey. If you’re not across that, that’s where the threat is.
+      </div>
+
+      <h3>Other questions from the app (no answer captured)</h3>
+      <ul style="margin:0;padding-left:1.2rem;font-size:0.95rem;">
+        <li>You say longtail web search is growing. Do you expect that behaviour to translate to RE search or will most stick with location + price + bedrooms?</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Quick ref</h2>
+      <p><strong>Speaker:</strong> Mike van der Heijden</p>
+      <p><strong>Role:</strong> CEO, portal ventures</p>
+      <p><strong>Talk:</strong> AI Search: Overstated, Understood, Underestimated</p>
+      <p><strong>Event:</strong> PropTech &amp; PortalWatch Conference</p>
+    </section>
+
+    <p class="footer">
+      New talk page. Related: <code>edmund-keith-ai-real-estate-search-summary.html</code>,
+      <code>panel-can-traditional-portals-implement-ai-search-summary.html</code>.
+    </p>
+  </main>
+</body>
+</html>

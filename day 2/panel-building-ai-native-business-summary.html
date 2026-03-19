@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panel — Building an AI Native Business (Day 2)</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f0f9ff;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --accent: #0369a1;
+      --accent-soft: #e0f2fe;
+      --border: #e2e8f0;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #e0f2fe 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 40px 20px 64px; }
+    header {
+      background: linear-gradient(135deg, #0c4a6e 0%, #0369a1 50%, #0284c7 100%);
+      color: white;
+      border-radius: 24px;
+      padding: 36px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+    }
+    .session-badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.15);
+      color: #bae6fd;
+      font-weight: 600;
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    header h1 {
+      margin: 0 0 12px;
+      font-size: clamp(1.2rem, 2.5vw, 1.65rem);
+      line-height: 1.25;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+    .headline-sub { margin: 0 0 16px; font-size: 1rem; color: rgba(255, 255, 255, 0.92); max-width: 68ch; }
+    .speaker-line { margin: 0; font-size: 1.05rem; font-weight: 600; }
+    header .conf {
+      margin: 18px 0 0;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 0.92rem;
+      color: rgba(255, 255, 255, 0.88);
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      margin-bottom: 20px;
+    }
+    h2 { margin: 0 0 14px; font-size: 1.2rem; color: #0369a1; }
+    h3 { margin: 20px 0 10px; font-size: 1.05rem; color: #0c4a6e; }
+    p { margin: 0 0 12px; }
+    ul { margin: 0; padding-left: 20px; }
+    li { margin-bottom: 10px; }
+    .muted-note { font-size: 0.9rem; color: var(--muted); }
+    .panel-speakers {
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .panel-speaker {
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      font-size: 0.95rem;
+    }
+    .panel-speaker strong { display: block; margin-bottom: 4px; color: #0c4a6e; }
+    .panel-speaker span { color: var(--muted); font-size: 0.9rem; }
+    .notes-box {
+      min-height: 100px;
+      border: 2px dashed #7dd3fc;
+      border-radius: 16px;
+      padding: 18px;
+      background: var(--accent-soft);
+      color: #0c4a6e;
+      font-size: 0.95rem;
+    }
+    .footer { margin-top: 22px; color: var(--muted); font-size: 0.92rem; }
+    .transcript-section h3 { margin: 18px 0 8px; font-size: 1rem; color: #0c4a6e; }
+    .transcript-section h3:first-of-type { margin-top: 0; }
+    .quote-by { font-size: 0.88rem; color: var(--muted); margin-top: 6px; }
+    .quote-by strong { color: #0369a1; }
+    @media (max-width: 820px) { header, .card { padding: 22px; } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="session-badge">PropTech &amp; PortalWatch · Day 2 · Bangkok · Mar 18–19, 2026</div>
+      <h1>Building an AI Native Business</h1>
+      <p class="headline-sub">Panel discussion — what it means to build and run a business with AI at the core (product, operations, culture).</p>
+      <p class="speaker-line">Panel</p>
+      <p class="conf">Property Portal Watch Conference · The next wave of digital real estate · Online Marketplaces</p>
+    </header>
+
+    <section class="card">
+      <h2>Title slide (on-screen)</h2>
+      <div class="notes-box" style="border-style:solid;border-color:#7dd3fc;background:#f0f9ff;">
+        <p style="margin:0 0 8px;"><strong>On-screen title:</strong> Building an AI Native Business</p>
+        <p style="margin:0 0 8px;"><strong>Visual:</strong> PPW wave graphic (blue/red), stage with three speakers.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Panelists</h2>
+      <div class="panel-speakers">
+        <div class="panel-speaker">
+          <strong>Denis Nemtsev</strong>
+          <span>CEO &amp; Co-founder · LIVBASE</span>
+        </div>
+        <div class="panel-speaker">
+          <strong>Florian Gruenwald</strong>
+          <span>Founder &amp; MD · GEOSCI</span>
+        </div>
+        <div class="panel-speaker">
+          <strong>Simon Baker</strong>
+          <span>Founder &amp; Executive Chairman · (company name on screen partially obscured)</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>What each company does (intro)</h2>
+      <p><strong>LIVBASE (Denis Nemtsev):</strong> An agent that helps owners see what’s available on their property and get advice on pricing so they can sell in ~<strong>19 days</strong> instead of months (Thailand context). The core problem isn’t liquidity or lack of demand — it’s <strong>pricing</strong>: hard to set the right list price to attract demand.</p>
+      <p><strong>GEOSCI (Florian Gruenwald):</strong> Neighborhood and location insights — noise, pollution, quality of life, transport, environmental risks. Portals and companies use this to enhance profiles and enable AI search by location preferences. They’ve built an API that answers questions like “what are similar properties?” and “which areas are best for child-friendliness?” so that <strong>AI agents can ground their answers</strong> in stable, reliable data.</p>
+      <p><strong>Simon Baker</strong> (moderator / chair): Framed the session and shared a case study; company affiliation on screen partially obscured.</p>
+    </section>
+
+    <section class="card transcript-section">
+      <h2>Talk summary — voice transcription (ASR cleaned)</h2>
+      <p class="muted-note">Panel · Day 2 · PPW Bangkok 2026. Condensed; speaker attributions where clear.</p>
+
+      <h3>What is an AI-native business?</h3>
+      <p><strong>Simon:</strong> Two types — (1) companies <strong>powered by AI</strong> (use AI to improve or speed up existing tools); (2) <strong>AI-native</strong> = build operations from scratch, default to AI whenever they need to build something. Test: “What happens if you remove AI from your business? If you shut it down and the business stops, it’s an AI-native business.”</p>
+      <p><strong>Florian:</strong> Two dimensions: (1) product built with AI or product itself driven by AI; (2) internal operations made significantly more efficient by AI. Then you’re AI native. GEOSCI: product is <strong>predictable analytics</strong>; AI uses our data to become more predictable; customers work with us because they <strong>don’t trust raw AI</strong> — they trust our results. So GEOSCI wouldn’t call itself AI native by that test; “we can’t do better by using AI in the product because it would defeat the purpose.”</p>
+
+      <h3>Building the business — growth, marketing, product</h3>
+      <p><strong>Denis:</strong> With AI you need fewer people, but they must be <strong>stronger and more skilled</strong>; one skilled person + AI can replace several average people. First thought for any new function (marketing, customer success, product): “Can we build a system or AI agents to do most of the work?” Many tasks still human, but you can build agents that <strong>improve with time</strong> via data and feedback. Outcome = fewer humans. Pace of development: you can build products very quickly — “what took six months now in a week.” Biggest challenge = <strong>deciding what to build</strong>; still starts with customer requirements, but AI gets product in front of customers much faster for feedback.</p>
+      <p><strong>Florian:</strong> Marketing site used to be old and hard to maintain; now “I completely low-code it using Cursor” — no engineers, he doesn’t look at the code. One agent has browser access for an extra verification loop. For the <strong>core product</strong> (algorithms, infrastructure): “AI-assisted engineering” — engineers in the driver’s seat, AI creates part of the code, then lots of effort to understand, improve, secure, stabilise. “Not something we can outsource to AI so far.”</p>
+
+      <h3>Who do you hire?</h3>
+      <p><strong>Denis:</strong> Building team from scratch and moving fast → only hire people who <strong>already work with AI</strong> (engineers or others). Must have used AI in core work in the past six months. Even non-engineers: only “AI power users” — people who use AI, not necessarily build AI.</p>
+      <p><strong>Simon:</strong> Vision and direction = CEO’s job; “AI didn’t do that.” For himself: spending time with boards, talking to customers, getting feedback, being challenged — “that’s how it gets in.”</p>
+
+      <h3>Case study — truck parking (Simon)</h3>
+      <p>Guy left a 20k-employee company, got into <strong>truck parking</strong> in the US (lots where trucks park overnight waiting for containers). Not a trucking expert. Bought one site, then used AI to: identify where best to buy more; optimise fencing and capacity; security (AI monitors feeds 24/7); contracting with councils. Only humans = contractors who flatten the ground. <strong>Zero employees</strong>, one shareholder; on track to be largest in the US. App: driver downloads, subscription, books slot, turns up — no humans on site. “That’s a true AI-native business.”</p>
+
+      <h3>Can incumbents retrofit AI?</h3>
+      <p><strong>Denis:</strong> Businesses will get smaller; people become knowledge workers. For large incumbents, implementing AI is often about <strong>replacing</strong> the workforce, not just accelerating it. People and processes push back. If the business doesn’t realise AI is “not just automating but replacing,” they won’t succeed. First find what’s in the wall (distribution, sales, product); then look at product — what job do we do for clients? Which part can be done by AI, which by human? Don’t implement AI everywhere at once; maybe take one team, build from scratch.</p>
+      <p><strong>Florian:</strong> Like digital transformation — some companies did transform (e.g. Netflix, banks). Difference with AI: everyone’s already using it (e.g. ChatGPT); workforce has a feel for it; high urgency. So higher chance companies can transform than in the old “digital transformation” days. But: if the product isn’t much affected by AI, squeezing AI into the existing world may not create so much value.</p>
+      <p><strong>Simon:</strong> Transformation must start from the <strong>CEO</strong>; need someone in a “chief AI” type role who is an <strong>AI power user</strong> and understands deeply what AI can do, then gives permission to teams to change processes and workforce. Print → digital analogy: how many print companies made the leap? Not many — they could see it but had too much invested (culture, customers, revenue). “Perhaps we’ve lost the ability for most companies to deliver transformation”; internal desire or skills may not be there no matter how much the CEO pushes.</p>
+      <p><strong>Simon (Q):</strong> “Isn’t the challenge that you’re asking people to put themselves out of a job?” <strong>Denis:</strong> “It’s already happening. More people are not being hired in the first place because companies are building AI systems instead.”</p>
+
+      <h3>Human side — fear and transition</h3>
+      <p><strong>Florian:</strong> People will have to do something different; orgs may be smaller — “a handful of very skilled engineers.” What they do and love is “getting obsolete” — e.g. engineers spending time on architecture and system design “instead of writing the code.” “Very scary journey”; “I wish it was all over, we were in the new world.”</p>
+
+      <h3>Validation and quality when AI ships fast</h3>
+      <p><strong>Florian (Q: how do you validate when AI generations are more frequent?):</strong> “Still somewhat unsolved.” AI can review AI-generated code but often doesn’t catch logical errors the previous AI made. For difficult changes, human engineer still needed. Question = what’s the <strong>largest rate of change</strong> that’s sustainable at the quality you need?</p>
+
+      <h3>Best use cases for AI agents</h3>
+      <p><strong>Denis:</strong> Building agents embedded in <strong>Slack</strong>; “power agent” that can answer what’s happening with the website, what customers are saying, find patterns. Technical challenge = context windows; keeping agents focused. Employees sometimes feel threatened by AI answers — balance not trusting AI too much with actually using it. Skill = knowing how to ask the right question and iterate with the AI.</p>
+      <p><strong>Florian:</strong> For GEOSCI: <strong>Cursor / Copilot</strong> for code. Beyond that, “very much based on coding with raw AI”; don’t use a lot of other AI solutions. (Transcription: “I never look at those transcripts” in another context — re meetings.)</p>
+
+      <h3>Data and grounding</h3>
+      <p><strong>Florian:</strong> Product = structured, organised data. First step = <strong>AI check</strong> on points of interest (e.g. location ratings) to verify quality — is that supermarket still open? So: clean messy data, ensure quality, then feed into algorithms.</p>
+      <p><strong>Denis:</strong> Data from internal sources, product, feedback; use tools to collect feedback; transcripts of conversations fed to AI to extract insights (product, customer segments). “With AI it’s much easier to extract insight — you don’t need specialised BI, just ask AI to find the part you’re interested in.” Caveat: <strong>be sceptical</strong>. They have a system where AI can query infrastructure; sometimes answers are wrong because the question didn’t match how things are modelled. Example: AI conflated two entities and said a customer had used a feature when they hadn’t agreed pricing. So: control what data and tools AI can access — “build specific sources” and don’t give AI full access.</p>
+
+      <h3>Closing</h3>
+      <p>Moderator: AI business still at early stages, “like iPhone 1”; this was an introductory conversation for the day.</p>
+    </section>
+
+    <section class="card">
+      <h2>Quick reference</h2>
+      <ul>
+        <li><strong>Session:</strong> Building an AI Native Business (panel)</li>
+        <li><strong>Day:</strong> 2 · PPW Bangkok 2026</li>
+        <li><strong>Panel:</strong> Denis Nemtsev (LIVBASE) · Florian Gruenwald (GEOSCI) · Simon Baker</li>
+        <li><strong>LIVBASE:</strong> Pricing agent → sell in ~19 days (Thailand)</li>
+        <li><strong>GEOSCI:</strong> Location/neighborhood data, API for AI grounding</li>
+        <li><strong>Test for AI native:</strong> Remove AI → does the business stop?</li>
+      </ul>
+    </section>
+
+    <p class="footer">Summary from panel transcript (ASR cleaned). Speaker attributions where clear from context.</p>
+  </main>
+</body>
+</html>

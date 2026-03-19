@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Steve Coleman (Snow Only) — Automation vs human touch: where AI stops</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f1f5f9;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --accent: #0f766e;
+      --border: #e2e8f0;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #ecfdf5 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 40px 20px 64px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #134e4a 0%, #0f766e 50%, #115e59 100%);
+      color: white;
+      border-radius: 24px;
+      padding: 36px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+    }
+
+    .session-badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      color: #5eead4;
+      font-weight: 600;
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .brand {
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      margin-bottom: 10px;
+      opacity: 0.95;
+    }
+
+    header h1 {
+      margin: 0 0 10px;
+      font-size: clamp(1.5rem, 3.2vw, 2.15rem);
+      line-height: 1.2;
+      font-weight: 800;
+    }
+
+    .headline-sub {
+      margin: 0 0 16px;
+      font-size: 1.15rem;
+      color: rgba(255, 255, 255, 0.92);
+      font-weight: 600;
+    }
+
+    .speaker-line {
+      margin: 0;
+      font-size: 1.05rem;
+    }
+
+    .speaker-line a {
+      color: #99f6e4;
+    }
+
+    header .conf {
+      margin: 18px 0 0;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 0.92rem;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 1.2rem;
+      color: #134e4a;
+    }
+
+    h3 { margin: 18px 0 10px; font-size: 1.05rem; }
+    p { margin: 0 0 12px; }
+    ul { margin: 0; padding-left: 20px; }
+    li { margin-bottom: 10px; }
+
+    .notes-box {
+      min-height: 80px;
+      border: 2px dashed #cbd5e1;
+      border-radius: 16px;
+      padding: 18px;
+      background: #f8fafc;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .footer {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    code {
+      font-size: 0.88em;
+      background: #e2e8f0;
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+
+    .muted-note {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .callout {
+      background: #ecfeff;
+      border: 1px solid #67e8f9;
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin: 12px 0;
+      font-size: 0.95rem;
+    }
+
+    .callout strong { color: #0e7490; }
+
+    @media (max-width: 820px) {
+      header, .card { padding: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="session-badge">PropTech &amp; PortalWatch · March 18–19, 2026 · Bangkok</div>
+      <div class="brand">Snow Only</div>
+      <h1>Automation vs human touch: where AI stops in property marketplaces</h1>
+      <p class="headline-sub">AI scales discovery &amp; data; <strong>humans</strong> close €1M+ lifestyle deals — buyer-side, transaction-led.</p>
+      <p class="speaker-line">
+        <strong>Steve Coleman</strong> — Product Manager
+      </p>
+      <p class="conf">
+        <strong>PropTech &amp; PortalWatch Conference</strong> — The next wave of digital real estate · Online Marketplaces
+      </p>
+    </header>
+
+    <section class="card">
+      <h2>Session</h2>
+      <p>Fireside chat (ties to <strong>Russell Wee</strong> theme: show P&amp;L / value — Snow Only is <strong>transaction</strong>-driven, not ads-only). <strong>Steve Coleman</strong> (tech/PM) and founder <strong>Mark</strong> (~20 yrs ski real estate): very small team, niche <strong>ski property</strong> marketplace — Europe, Japan, North America, etc.</p>
+      <p class="muted-note">Below: cleaned summary from session transcript (ASR noise corrected where obvious).</p>
+    </section>
+
+    <section class="card">
+      <h2>What Snow Only does</h2>
+      <ul>
+        <li><strong>Niche:</strong> Marketplace for <strong>ski / mountain property</strong> — fragmented market; buyers fear missing listings scattered across many sites.</li>
+        <li><strong>Evolution:</strong> Started as <strong>discovery</strong> portal; now also <strong>education</strong>, coaching buyers, and helping <strong>transactions complete</strong> (high-value, cross-border).</li>
+        <li><strong>Roles:</strong> Steve = product/tech; Mark = sales / buyer conversations — complementary (“nerd” + “sales guy”).</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Business model: ads → success fee</h2>
+      <ul>
+        <li>Early: <strong>pay-to-list</strong> / subscription — agents didn’t know them; hard to sell even low monthly fees; had to prove value.</li>
+        <li><strong>COVID</strong> (~10 months after launch): forced <strong>automation</strong>, fewer bodies, quantified outcomes, discipline.</li>
+        <li>Pivot: <strong>transaction / success fee</strong> — revenue only when deals close; “list for free” but if nothing completes, no income → had to own the <strong>ecosystem around the deal</strong>.</li>
+        <li><strong>Cross-border pain:</strong> e.g. UK buyer vs French purchase — currencies, notaries, legal systems, mortgages, FX. Snow Only inserts value by <strong>coaching expectations</strong> from day one (budget realistic, what you can get) via content, site, video — but especially <strong>1:1 conversation</strong>.</li>
+        <li>Long pipelines; deals drop (mortgage, notary, FX) — much <strong>outside their control</strong>; still they partner with experts (agents, FX, etc.) so the deal moves. <strong>Don’t chase highest commission</strong> on horizontals — what closes the deal matters.</li>
+        <li><strong>Who pays:</strong> Developer deals → direct commission; agent-led → <strong>split</strong> with agent; ancillary services → commissions where aligned.</li>
+        <li><strong>Scale without headcount:</strong> Agents in resort = hundreds of “sales feet on the ground” as <strong>partners</strong>, same goal: buyer gets the property.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Where AI helps — where it stops</h2>
+      <div class="callout">
+        <strong>AI “cuts off”</strong> after driving traffic, enriching product, and converting to <strong>inquiry</strong> — then <strong>Mark (human)</strong> owns the relationship: lifestyle, trust, hours-long chats on skiing and life change.
+      </div>
+      <ul>
+        <li><strong>Automation mindset</strong> from day one; COVID accelerated it — “1% better every day.”</li>
+        <li><strong>AI / tooling:</strong> Content, video, knowledge bases; <strong>image analysis</strong> → metadata, resort data, smarter search; APIs over property images.</li>
+        <li><strong>French market analytics:</strong> Govt data, comps, percentile vs similar stock — work that would have been a <strong>major dev project</strong>; now ~<strong>20 minutes</strong> with AI — “would have been impossible” for a team their size without AI.</li>
+        <li><strong>Build vs buy:</strong> Estimate internal build + maintenance vs SaaS; <strong>usually buy</strong> (e.g. partners like SearchSmart-type tools).</li>
+        <li><strong>Human essential:</strong> Typical buyer ~€1M+ second home; wants peer conversation, lifestyle sell (ski culture, local colour). <strong>AI can’t replace that yet</strong> — “wait and see.”</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Strategy &amp; stress</h2>
+      <ul>
+        <li><strong>Innovation:</strong> Conferences, podcasts, watch others, <strong>copy what works</strong> — not first movers, “nipping at ankles”; constant <strong>small experiments</strong>, kill or scale.</li>
+        <li><strong>Who decides architecture:</strong> Steve + Mark from buyer/seller feedback — “always a new problem.”</li>
+        <li><strong>Buyer’s agent:</strong> Rarely buys first listing seen — journey across resorts/budget; Snow Only positions as <strong>buyer-side guide</strong>.</li>
+        <li><strong>SEO + AI:</strong> AI helped research SEO, trends, <strong>more relevant content</strong>, search- and user-friendly site — “game changer,” done <strong>in-house</strong>.</li>
+        <li><strong>Non-English:</strong> Site is <strong>English-only</strong>; audience large enough for now.</li>
+        <li><strong>Biggest worry:</strong> Factors <strong>outside control</strong> in international transactions — they’re early in funnel; chaos downstream — “go with the flow.”</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Q&amp;A — questions &amp; answers</h2>
+
+      <h3>Blaine — How do buyers discover Snow Only?</h3>
+      <p><em>Q:</em> How do you market so buyers know the niche exists?</p>
+      <p><strong>A:</strong> Little paid marketing in COVID period — invested in <strong>content</strong> and <strong>SEO</strong>. Strong organic + marketing to engaged subscribers. <strong>High-intent, low volume</strong> on purpose — not chasing masses of Thai (or random) traffic; want <strong>serious leads</strong>. Forms de-emphasise phone spam; they need to <strong>talk</strong> to qualify and tag <strong>urgency</strong> when passing leads to sellers/developers.</p>
+
+      <h3>Tung — Remove human from 24/7 support &amp; complex tax?</h3>
+      <p><em>Q:</em> AI faster for tax math / always-on support — take the human out?</p>
+      <p><strong>A:</strong> <strong>Tax / specialist topics:</strong> Not their expertise — <strong>defer to experts</strong>. <strong>Post-inquiry “support”:</strong> Must stay <strong>human</strong> — Mark’s calls are relationship and lifestyle (hours), not transactional FAQ. Buyers are affluent peers who want that conversation; AI doesn’t deliver it <strong>yet</strong>.</p>
+
+      <h3>Edmund — Users less sure what they’re looking for → search?</h3>
+      <p><em>Q:</em> (Obscured on slide.)</p>
+      <p class="muted-note">Not clearly answered in available transcript — add if you have notes.</p>
+
+      <h3>Jonathan — Know the sale happened / attribution?</h3>
+      <p><em>Q:</em> How do you know a sale closed and prove attribution?</p>
+      <p><strong>A:</strong> Always messy; they stay <strong>in the conversation</strong> with buyers and <strong>partners</strong> (sellers, developers). If someone hides a closed deal, they find out — relationship damage; not in seller’s interest to conceal.</p>
+
+      <h3>Extra (from end of session)</h3>
+      <p><strong>AI &amp; organic reach / SEO investment:</strong> AI materially helped SEO research, content quality, and site structure — strong ROI for organic.</p>
+    </section>
+
+    <section class="card">
+      <h2>One-liners</h2>
+      <ul>
+        <li>AI = <strong>scale product &amp; knowledge</strong>; humans = <strong>trust &amp; €1M lifestyle sale</strong>.</li>
+        <li><strong>Success fee</strong> forces owning the whole journey (education + partners).</li>
+        <li><strong>Few serious leads</strong> &gt; volume; English-first; experiment constantly.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Quick ref</h2>
+      <p><strong>Company:</strong> Snow Only — ski property marketplace</p>
+      <p><strong>Speaker:</strong> Steve Coleman, Product Manager (+ founder Mark in story)</p>
+      <p><strong>Topic:</strong> Automation vs human touch · where AI stops</p>
+      <p><strong>Model:</strong> Transaction commission · partner network · AI for data/SEO/content</p>
+    </section>
+
+    <p class="footer">
+      <strong>Talk + Q&amp;A</strong> from transcript. Related:
+      <code>jonathan-turpin-ai-property-portals-summary.html</code>,
+      <code>patrick-grove-fdv-summary.html</code>,
+      <code>malcolm-myers-ai-asia-portals-summary.html</code>,
+      <code>ryan-gallagher-iovox-ai-communications.html</code>,
+      <code>russell-wee-jean-yip-proptech-ai-real-estate.html</code>,
+      <code>satoshi-murakami-metaprop-investment-mandate.html</code>.
+    </p>
+  </main>
+</body>
+</html>

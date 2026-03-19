@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panel — Conference Learnings (PPW)</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5f3ff;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --accent: #6d28d9;
+      --accent-soft: #ede9fe;
+      --border: #e2e8f0;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #ede9fe 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 40px 20px 64px; }
+    header {
+      background: linear-gradient(135deg, #4c1d95 0%, #6d28d9 45%, #7c3aed 100%);
+      color: white;
+      border-radius: 24px;
+      padding: 36px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+    }
+    .session-badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.15);
+      color: #ddd6fe;
+      font-weight: 600;
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    header h1 {
+      margin: 0 0 12px;
+      font-size: clamp(1.15rem, 2.4vw, 1.65rem);
+      line-height: 1.2;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .headline-sub { margin: 0 0 16px; font-size: 1rem; color: rgba(255, 255, 255, 0.92); max-width: 72ch; }
+    .speaker-line { margin: 0; font-size: 1.05rem; font-weight: 600; }
+    header .conf {
+      margin: 18px 0 0;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 0.92rem;
+      color: rgba(255, 255, 255, 0.88);
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      margin-bottom: 20px;
+    }
+    h2 { margin: 0 0 14px; font-size: 1.2rem; color: #6d28d9; }
+    h3 { margin: 18px 0 10px; font-size: 1.05rem; color: #4c1d95; }
+    p { margin: 0 0 12px; }
+    ul { margin: 0; padding-left: 20px; }
+    li { margin-bottom: 10px; }
+    .muted-note { font-size: 0.9rem; color: var(--muted); }
+    .panel-speakers { display: grid; gap: 12px; margin-top: 14px; }
+    .panel-speaker {
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: var(--accent-soft);
+      border: 1px solid var(--border);
+      font-size: 0.95rem;
+    }
+    .panel-speaker strong { display: block; margin-bottom: 4px; color: #5b21b6; }
+    .panel-speaker span { color: var(--muted); font-size: 0.9rem; }
+    .notes-box {
+      min-height: 80px;
+      border: 2px dashed #c4b5fd;
+      border-radius: 16px;
+      padding: 18px;
+      background: #faf5ff;
+      color: #5b21b6;
+      font-size: 0.95rem;
+    }
+    .takeaway-list { list-style: none; padding-left: 0; }
+    .takeaway-list li {
+      padding: 10px 14px;
+      margin: 8px 0;
+      border-radius: 12px;
+      background: #f5f3ff;
+      border-left: 4px solid #7c3aed;
+      font-size: 0.95rem;
+    }
+    .footer { margin-top: 22px; color: var(--muted); font-size: 0.92rem; }
+    .transcript-section h3 { margin: 18px 0 8px; font-size: 1rem; color: #5b21b6; }
+    .transcript-section h3:first-of-type { margin-top: 0; }
+    @media (max-width: 820px) { header, .card { padding: 22px; } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="session-badge">PropTech &amp; PortalWatch · Bangkok · Mar 18–19, 2026</div>
+      <h1>Conference Learnings</h1>
+      <p class="headline-sub">Closing synthesis — takeaways from across the programme (AI, data, portals, due diligence, and where the industry is heading).</p>
+      <p class="speaker-line">Panel</p>
+      <p class="conf">Property Portal Watch Conference · The next wave of digital real estate · Online Marketplaces</p>
+    </header>
+
+    <section class="card" style="border-left:4px solid #a78bfa;background:#faf5ff;">
+      <h2 style="margin-top:0;">Also on the Day 2 master page</h2>
+      <p class="muted-note" style="margin-bottom:12px;">A short <strong>digest</strong> of this panel plus the full Day 2 index and themes lives on the consolidated summary — useful for sharing or printing one page.</p>
+      <p style="margin:0;"><a href="../ppw-bangkok-day-2-master-summary.html" style="font-weight:700;color:#5b21b6;">→ PPW Bangkok — Day 2 master summary</a> · <a href="../ppw-bangkok-day-1-master-summary.html" style="color:#6d28d9;">Day 1 master</a></p>
+    </section>
+
+    <section class="card">
+      <h2>Title slide (on-screen)</h2>
+      <div class="notes-box" style="border-style:solid;border-color:#c4b5fd;background:#faf5ff;">
+        <p style="margin:0 0 10px;"><strong>On-screen title:</strong> CONFERENCE LEARNINGS</p>
+        <p style="margin:0 0 8px;"><strong>Speakers listed:</strong> Malcolm Myers (eiv) · Jonathan Turpin (AIM Group) · Simon Baker (Founder &amp; Executive Chairman — Online Marketplaces)</p>
+        <p style="margin:0 0 8px;"><strong>Visual:</strong> Red/blue wave graphic (PPW motif); three chairs on stage; moderator with tablet.</p>
+        <p style="margin:0;" class="muted-note">Vertical banner on photo may show another date (e.g. Mar 13–14, 2024) — align with your actual PPW edition.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Panelists</h2>
+      <div class="panel-speakers">
+        <div class="panel-speaker">
+          <strong>Malcolm Myers</strong>
+          <span>Founder &amp; CEO · eiv</span>
+        </div>
+        <div class="panel-speaker">
+          <strong>Jonathan Turpin</strong>
+          <span>Principal · AIM Group</span>
+        </div>
+        <div class="panel-speaker">
+          <strong>Simon Baker</strong>
+          <span>Founder &amp; Executive Chairman · Online Marketplaces</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="card transcript-section">
+      <h2>Talk summary — voice transcription (ASR cleaned)</h2>
+      <p class="muted-note">Closing panel: <strong>Malcolm Myers</strong> (eiv), <strong>Jonathan Turpin</strong> (AIM Group), <strong>Simon Baker</strong> (Online Marketplaces). ~48 hours of PPW on <strong>AI</strong> and <strong>transactions</strong> (not only buyers/sellers marketing). Open Q&amp;A. Speaker tags below are <strong>best-effort</strong> from audio — correct if your recording differs.</p>
+
+      <h3>Framing</h3>
+      <p>Synthesis of what changed in the room: focus on <strong>AI</strong> across the <strong>transaction</strong> and operations, not a narrow marketing-only lens. Audience invited to surface “random” questions — panel reflects on <strong>patterns</strong> across sessions.</p>
+
+      <h3>Malcolm Myers — AI “super-users” and culture</h3>
+      <p>One blunt takeaway: people who are effective <strong>AI supervisors / power users</strong> are <strong>massively more productive</strong>. Practical advice for anyone in the room: <strong>surround yourself with AI-native operators</strong> (and become one if you can) — it will <strong>accelerate the business</strong>. Anecdotes about everyday life (e.g. trades, kitchen-table tasks) show how fast norms are shifting — but it still feels <strong>early</strong>.</p>
+      <p><strong>Org / product culture:</strong> Many “new minds” now sit at serious <strong>technical depth</strong>; product leadership must absorb <strong>cultural change</strong>, not only tools. Parallel to the <strong>newspaper → digital</strong> transition — incumbents who <strong>knew what was coming</strong> and <strong>lined up the pieces</strong> fared differently. Reference to conversations with industry leaders who are <strong>building for the wave</strong> even when imperfect today.</p>
+      <p><strong>Legacy + speed:</strong> Large portals have <strong>complex stacks and sign-off</strong>; meanwhile small teams <strong>ship on weekends</strong> with AI-assisted coding. Plausible future: <strong>old core</strong> still running, <strong>young teams</strong> bolting on AI experiments — <strong>micro</strong> releases and daily learning rather than one big “macro” replatform. Nordic / other markets already living <strong>weekend builder → Monday strategy</strong> tension.</p>
+
+      <h3>Jonathan Turpin — data beats “LLM alone” for search</h3>
+      <p>Across many sessions, the through-line is <strong>how much data portals already have or can acquire</strong> — and how essential that is for <strong>search that actually works</strong>. He leaves PPW <strong>more convinced than three years ago</strong> that raw <strong>LLMs are not enough</strong> for quality results: <strong>data capability in the portal’s hands</strong> is the <strong>strategic moat</strong>. UX ambition only converts if the <strong>underlying data layer</strong> is serious.</p>
+
+      <h3>Tension: traffic / LLMs vs exclusive content</h3>
+      <p>Contradiction surfaced in conference debates (e.g. Rhys / Ryan thread): on one hand you may need to <strong>expose exclusive content</strong> to win <strong>positioning and traffic</strong> in LLM-mediated discovery; on the other, strategy may call for keeping <strong>proprietary inventory and signals “under glass.”</strong> Possible resolution sketched as <strong>layered rules</strong> — what you expose at discovery vs what stays in authenticated / marketplace layers; <strong>speed</strong> to capture intent, then <strong>pull into</strong> controlled transaction environments.</p>
+
+      <h3>Simon Baker — “replay” of portals vs Google; Facebook; generations</h3>
+      <p><strong>Déjà vu:</strong> Feels like <strong>2004–2016-era</strong> fear when <strong>Google</strong> could “own” the user — portals worried about disintermediation. Story of <strong>listings on Google Maps</strong> — industry calls (e.g. <strong>Gary Shields</strong> named in anecdote): <em>will you let this happen?</em> Lesson: <strong>experience and response</strong> mattered as much as raw distribution.</p>
+      <p><strong>Facebook / social:</strong> Conference may still <strong>under-weight</strong> how “normal” massive social graphs are for discovery — <strong>tip of the iceberg</strong> vs what happens in DMs and groups. Example of a large <strong>community</strong> (hundreds of thousands) where only a <strong>small active core</strong> posts, yet that core still drives <strong>network effects</strong>. <strong>AI-generated content</strong> makes users more <strong>suspicious</strong>.</p>
+      <p><strong>Regional split:</strong> <strong>Facebook</strong> as commerce/discovery layer is a bigger phenomenon in some <strong>Asian</strong> markets than in <strong>Europe/US</strong> — maturity and habit differ; in developed markets users may prefer a <strong>trusted aggregator/portal</strong>. Thesis: <strong>portals that invest in trust, security, and brand</strong> can still <strong>win share back over time</strong> — others may disagree. Hard to read <strong>Facebook Marketplace revenue</strong> vs <strong>US portals</strong> on the same axis because <strong>monetization models</strong> differ (transactions vs ads vs off-platform developer spend).</p>
+      <p><strong>Generations &amp; skepticism:</strong> Younger <strong>buyers</strong> may reject listings that “look <strong>AI</strong>” (e.g. NYC rental search — fake-enough imagery → skip). <strong>High-stakes purchase</strong> vs <strong>rental</strong> behaves differently. Skepticism extends to <strong>engagement tricks</strong> — “smell test” / common sense. Longer-term: will <strong>AI agents</strong> fill gaps for the biggest financial decision? Will younger cohorts <strong>buy less</strong> (economics, savings, rent-with-parents)? Housing and <strong>generational wealth</strong> themes woven in.</p>
+      <p><strong>Voice &amp; paradigm shift:</strong> Claims he was <strong>skeptical on voice</strong> but spent extended time on a <strong>Homes.com</strong>-style conversational experience — <strong>speed of answers</strong> and <strong>navigation</strong> impressed; imagines a five-year-old with a screen. <strong>Voice + multimodal</strong> may be a real shift in how people <strong>search property</strong> (not “the whole answer” but a <strong>first step</strong> in new navigation). <strong>Specialist depth</strong> behind the AI layer still matters — analogy to <strong>hunting / discovery</strong> vs sterile one-click checkout (different categories and psychologies).</p>
+      <p><strong>Mobile precedent:</strong> Industry once assumed “digital = desktop”; <strong>mobile won</strong>. <strong>AI</strong> may become the <strong>default service layer</strong> across touchpoints — open questions are <strong>how value and margin</strong> accrue and how <strong>vertical stacks</strong> stay defensible.</p>
+
+      <h3>Employment, revolution vs evolution, vertical value</h3>
+      <p>We rarely know the <strong>next big thing</strong> until it hits — but <strong>AI</strong> is hard to ignore. Debate whether change is <strong>evolutionary</strong> or a <strong>revolution</strong> on par with <strong>pre-digital → digital</strong>; panel leans that for <strong>individual life experience</strong> (e.g. post–<strong>ChatGPT</strong> decade) the shift could feel <strong>larger than the early “digital news” era</strong>. <strong>Employment</strong> and social consequences may dwarf narrow property-tech worries.</p>
+      <p><strong>Property vertical:</strong> Not obvious that real estate becomes a <strong>low-margin passive</strong> sector — <strong>complexity of buying a home</strong> endures. <strong>Monetization changes</strong> (performance, new bundles) but <strong>deep vertical businesses</strong> that help buyers through complexity remain <strong>valuable</strong>. Underlying <strong>human needs and purposes</strong> of transacting stay; <strong>how</strong> we transact changes with AI.</p>
+
+      <h3>At a glance</h3>
+      <ul class="takeaway-list">
+        <li><strong>Hire / become AI-power users</strong> — productivity gap is real.</li>
+        <li><strong>Data &gt; naked LLM</strong> for search quality — moat is proprietary capture &amp; structure.</li>
+        <li><strong>Expose vs protect content</strong> in an LLM world — design layers, don’t pretend there’s one rule.</li>
+        <li><strong>Social / Facebook</strong> still under-discussed vs true share of “where people find property.”</li>
+        <li><strong>Trust, brand, anti-AI-slop UX</strong> — especially for high-stakes buyers.</li>
+        <li><strong>Voice / conversational search</strong> — credible paradigm shift; specialist backends still matter.</li>
+        <li><strong>Legacy stack + fast experiment teams</strong> — practical coping pattern for large portals.</li>
+        <li><strong>Revolution framing</strong> — AI’s societal impact may dwarf property-only concerns; vertical complexity keeps portals relevant if they adapt.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Related notes in this folder</h2>
+      <ul>
+        <li><a href="../ppw-bangkok-day-2-master-summary.html"><strong>Day 2 master summary</strong> (all sessions + conference learnings digest)</a></li>
+        <li><a href="../day%201/jonathan-turpin-ai-property-portals-summary.html">Day 1 — Jonathan Turpin (AIM Group)</a></li>
+        <li><a href="panel-can-traditional-portals-implement-ai-search-summary.html">Panel — Can traditional portals truly implement AI search?</a></li>
+        <li><a href="rhys-rogers-beforeyoubuy-expanding-search-due-diligence-summary.html">Rhys Rogers — Beforeyoubuy (search → DD)</a></li>
+        <li><a href="jonathan-liu-soho-ai-portals-to-partners-summary.html">Jonathan Liu — Soho.ai (agents &amp; portals)</a></li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Quick reference</h2>
+      <ul>
+        <li><strong>Session:</strong> Conference Learnings (closing / synthesis)</li>
+        <li><strong>Panel:</strong> Malcolm Myers · Jonathan Turpin · Simon Baker</li>
+        <li><strong>Purpose:</strong> Whole-conference takeaways</li>
+        <li><strong>Slot:</strong> Add time from agenda (typically final Day 2 block)</li>
+        <li><strong>ASR themes:</strong> AI power users · data moat vs LLM · Google/Facebook history · voice/conversational · gen-Z skepticism · employment · vertical still valuable</li>
+      </ul>
+    </section>
+
+    <p class="footer">Title slide photo + full panel summary from voice transcription (ASR cleaned).</p>
+  </main>
+</body>
+</html>

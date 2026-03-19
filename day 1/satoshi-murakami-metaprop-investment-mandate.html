@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Satoshi Murakami (Metaprop) — The new investment mandate</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f0f4fa;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --accent: #0284c7;
+      --accent-2: #e0f2fe;
+      --border: #e2e8f0;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #e0f2fe 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 40px 20px 64px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0c4a6e 0%, #0369a1 40%, #0e7490 100%);
+      color: white;
+      border-radius: 24px;
+      padding: 36px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+    }
+
+    .session-badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.15);
+      color: #7dd3fc;
+      font-weight: 600;
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    header h1 {
+      margin: 0 0 16px;
+      font-size: clamp(1.35rem, 3vw, 2rem);
+      line-height: 1.2;
+      font-weight: 800;
+      color: #e0f2fe;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .speaker-line {
+      margin: 0 0 12px;
+      font-size: 1.1rem;
+    }
+
+    .speaker-line strong { color: #fff; }
+
+    header .conf {
+      margin: 16px 0 0;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 1.2rem;
+      color: #0c4a6e;
+    }
+
+    h3 {
+      margin: 20px 0 10px;
+      font-size: 1.05rem;
+    }
+
+    p { margin: 0 0 12px; }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    li { margin-bottom: 10px; }
+
+    .tag {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--accent-2);
+      color: #0369a1;
+      font-weight: 600;
+      font-size: 0.88rem;
+      margin-right: 8px;
+      margin-bottom: 8px;
+    }
+
+    .callout {
+      background: #fff7ed;
+      border: 1px solid #fdba74;
+      border-radius: 18px;
+      padding: 18px 20px;
+      margin-top: 16px;
+    }
+
+    .callout strong { display: block; margin-bottom: 8px; color: #9a3412; }
+
+    .notes-box {
+      min-height: 120px;
+      border: 2px dashed #cbd5e1;
+      border-radius: 16px;
+      padding: 20px;
+      background: #f8fafc;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .subcard {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin-top: 14px;
+      background: #f8fafc;
+    }
+
+    .subcard h4 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+      color: #0c4a6e;
+    }
+
+    .visual-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    .pill-card {
+      border-radius: 16px;
+      padding: 16px;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, #fff 0%, #f8fafc 100%);
+    }
+
+    .pill-card h4 {
+      margin: 0 0 8px;
+      font-size: 0.95rem;
+      color: var(--accent);
+    }
+
+    .pill-card p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .footer {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    code {
+      font-size: 0.88em;
+      background: #e2e8f0;
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+
+    @media (max-width: 820px) {
+      .grid { grid-template-columns: 1fr; }
+      .visual-row { grid-template-columns: 1fr; }
+      header, .card { padding: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="session-badge">PropTech &amp; PortalWatch · 18–19 maart 2026</div>
+      <h1>The new investment mandate: AI, marketplaces, and the shift to alpha</h1>
+      <p class="speaker-line">
+        <strong>Satoshi Murakami</strong> — Director, Head of APAC · <strong>metaprop</strong>
+      </p>
+      <p style="margin:0;max-width:68ch;opacity:0.92;font-size:1rem;">
+        <strong>Metaprop</strong> (NY) investeert in tech die vastgoed transformeert. Shift naar <strong>zichtbare outcomes</strong> (NOI,
+        waarde) i.p.v. “coole tech”; bij AI extra focus op <strong>data</strong>, <strong>workflow</strong> en <strong>automatisering</strong>.
+        Onderstaande op basis van het <strong>volledige gesprek</strong> (voice notes, PPW Bangkok).
+      </p>
+      <p class="conf">
+        <strong>PropTech &amp; PortalWatch Conference</strong> — The next wave of digital real estate · Bangkok ·
+        Online Marketplaces
+      </p>
+    </header>
+
+    <section class="card" style="margin-bottom:20px;">
+      <h2>Metaprop &amp; APAC</h2>
+      <ul>
+        <li><strong>Basis:</strong> Global VC uit <strong>New York</strong>; investeert in tech die de vastgoedsector transformeert; sinds ~<strong>2015</strong> (10+ jaar).</li>
+        <li><strong>Stage:</strong> Vroeg — <strong>seed, pre-seed</strong> tot ca. <strong>Series A</strong>; founders koppelen aan <strong>grote vastgoedspelers</strong> en LPs met sectorachtergrond (real estate, finance).</li>
+        <li><strong>APAC-kantoor</strong> ~4 jaar geleden; Satoshi destijds ingestapt. Nu o.a. <strong>~20 LPs in Azië</strong>, <strong>~10 portfolio-startups</strong> in de regio. Opereren vanuit NY naar Azië is lastig (o.a. China, COVID); Satoshi vooral vanuit <strong>Tokyo</strong> met LPs en startups.</li>
+        <li><strong>Fonds:</strong> Inmiddels <strong>vier fondsen</strong>; nieuw fonds in voorbereiding dit jaar. <strong>AUM</strong> in de orde van <strong>een paar honderd miljoen</strong> dollar.</li>
+        <li><strong>Sectorfocus:</strong> Hoe de wereld <strong>bouwt en vastgoed realiseert</strong> — vastgoed en <strong>construction</strong> horen bij elkaar; ook smart city, infrastructuur, retail-tech, enz.</li>
+      </ul>
+      <div class="callout">
+        <strong>Shift to alpha (in dit gesprek)</strong>
+        Minder “is het coole tech?” — meer: <strong>bewijs het rendement</strong> (NOI, vastgoedwaarde). Hogere rente → markt wil <strong>echte financiële resultaten</strong>, niet alleen klantgroei.
+      </div>
+    </section>
+
+    <section class="card" style="margin-bottom:20px;">
+      <h2>Waar ze naar kijken bij een deal</h2>
+      <div class="visual-row">
+        <div class="pill-card">
+          <h4>1. Markt</h4>
+          <p>Omvang van de markt: niche vs breed; is er genoeg ruimte om te schalen?</p>
+        </div>
+        <div class="pill-card">
+          <h4>2. Product</h4>
+          <p>Team met veel <strong>real estate-ervaring</strong> (~helft): “kan ik dit zelf?” — is het product sterk genoeg om dat narratief te doorbreken?</p>
+        </div>
+        <div class="pill-card">
+          <h4>3. Mensen</h4>
+          <p><strong>Ondernemer/founder</strong> als belangrijkste: karakter, kunnen ze uitdagingen (hiring, sales, fundraising) overwinnen? Negativiteit werkt onbewust door de hele org.</p>
+        </div>
+      </div>
+      <div class="subcard">
+        <h4>Extra bij AI-startups (drie lagen)</h4>
+        <ul style="margin-bottom:0;">
+          <li><strong>Data:</strong> Hoe kom je aan data — ook “verborgen” of human-in-the-loop data; is het defensible?</li>
+          <li><strong>Workflow:</strong> Begrijp je de echte workflow? Traditioneel vastgoed verandert traag (20–30 jaar gewoontes) — hoe verander je gedrag?</li>
+          <li><strong>AI-automatisering:</strong> Waar zet je AI in; hoe overtuig je anderen om het te gebruiken?</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card" style="margin-bottom:20px;">
+      <h2>Tech kopen vs. outcome kopen</h2>
+      <ul>
+        <li><strong>2017–2018 PropTech-hype:</strong> Vergelijkbaar met fintech-momentum — vooral “cool factor”.</li>
+        <li><strong>Nu:</strong> Niet “is dit gave tech?” maar <strong>levert het echt bewijs</strong> — ROI op vastgoed / operatie.</li>
+        <li><strong>Voorbeeld Japan:</strong> Crowdfunding “voor een paar honderd dollar mede-eigenaar van een trophy asset” — mensen merkten dat ze <strong>geen echte ROI/NOI</strong> haalden; narratief kraakte.</li>
+        <li><strong>Focus Metaprop:</strong> Oplossingen die <strong>NOI en property value</strong> raken — of het nu AI is of construction tech (bv. H2).</li>
+        <li><strong>KPI’s:</strong> Financiële outcomes primeren; klantgroei alleen is niet genoeg om risico te rechtvaardigen in het huidige renteklimaat.</li>
+      </ul>
+    </section>
+
+    <section class="card" style="margin-bottom:20px;">
+      <h2>Voorbeelden uit Azië (genoemd in gesprek)</h2>
+      <div class="subcard">
+        <h4>H2 Corporation (construction tech)</h4>
+        <p style="margin:0;">Sterk voorbeeld in de regio: <strong>bouwtekeningen / quantity takeoff</strong> met AI; analyse van tekeningen, BOM, proces; platform richting snellere/volledigere digitale doorloop (o.a. “building” in zeer korte tijd genoemd). Groei in VS-kantoor, internationale expansie.</p>
+      </div>
+      <div class="subcard">
+        <h4>BMK (voorheen Koreaanse naam / Comical)</h4>
+        <p style="margin:0;"><strong>Property management software</strong> voor verhuur — vergelijkbaar met US-spelers als AppFolio; BMK meer op <strong>institutioneel eigendom</strong> (PE, developers) vs. particulier. Markt nog <strong>fragmented</strong>, veel spreadsheets. Kantoor in Tokyo, team ~10, verkoop naar Japans vastgoed-PE en developers.</p>
+      </div>
+      <ul>
+        <li>Ook genoemd: <strong>document management / scanning</strong> voor bouw — versnelling van het bouwproces.</li>
+        <li>Regionaal: investeringen in <strong>Zuid-Korea</strong>, <strong>4–5 deals in Japan</strong>, o.a. coworking (jaren geleden).</li>
+      </ul>
+    </section>
+
+    <section class="card" style="margin-bottom:20px;">
+      <h2>AI agents &amp; repetitieve processen</h2>
+      <ul>
+        <li>Agents werken vooral goed bij <strong>repetitief werk</strong> — in vastgoed is daar veel van.</li>
+        <li><strong>EliseAI (VS)</strong> met property managers / rental: huurder zoekt appartement → via chat <strong>tour inplannen</strong>, voorwaarden, bezoek, <strong>credit check / inkomen</strong>, <strong>lease tekenen</strong>, <strong>verhuizing</strong>, nutsvoorzieningen, internet — het hele stuk kan als <strong>één doorlopende flow</strong>; veel stappen die in veel landen door AI kunnen worden overgenomen.</li>
+      </ul>
+      <div class="subcard">
+        <h4>Tegenstelling: gewoonte vs. adoptie</h4>
+        <p style="margin:0;">Branche is <strong>diepgeworteld</strong> en weerstand tegen verandering is er. Niet iedereen is enthousiast (“AI sucks”). Strategie: focus op <strong>eerste pilot-klanten</strong>; als die het gebruiken, krijg je betere antwoorden op bezwaren. Product bouwen, <strong>goede eerste klanten</strong> vinden, dan opschalen — niet wachten tot iedereen het idee mooi vindt.</p>
+      </div>
+    </section>
+
+    <section class="card" style="margin-bottom:20px;">
+      <h2>Software-IP, vibecoding &amp; “moat”</h2>
+      <ul>
+        <li>Vraag: maakt AI / vibecoding <strong>software-IP</strong> minder waardevol? Antwoord: <strong>nog onzeker</strong>, maar IP was sowieso <strong>niet extreem sterk</strong>; concurrenten kunnen vergelijkbare tools snel bouwen.</li>
+        <li>Verandert dat waardering fundamenteel? <strong>Niet per se</strong> — kern is niet alleen patent/code.</li>
+        <li><strong>Sterkste “moat” nu:</strong> het <strong>bedrijf elke dag verbeteren</strong> — upsell, cross-sell, <strong>menselijke relaties</strong> met klanten; combinatie van die dingen. Anders kan “coole AI” snel worden ingehaald.</li>
+      </ul>
+    </section>
+
+    <section class="card" style="margin-bottom:20px;">
+      <h2>Meest spannende kans (laatste ~3 maanden)</h2>
+      <ul>
+        <li>Thema: <strong>nomadisch / meerdere woonbases</strong> voor vermogenden — mensen willen niet aan één plek gebonden zijn; <strong>meerdere residenties wereldwijd</strong>.</li>
+        <li>Startups die <strong>residenties beheren</strong> én helpen bij de <strong>volgende bestemming</strong> — mengsel van property management en lifestyle / mobility.</li>
+        <li><strong>Azië:</strong> veel rijke huishoudens met bv. woning in HK, business Singapore, kinderen naar school US/Europa, skiën in Japan — <strong>geen enkel platform</strong> dat al die cross-border vastgoed- en levenslogistiek unified beheert. Sterke <strong>unit economics</strong> bij dit segment.</li>
+      </ul>
+    </section>
+
+    <section class="card" style="margin-bottom:20px;">
+      <h2>Investeringen die minder goed gingen (leerpunten)</h2>
+      <div class="subcard">
+        <h4>Te afhankelijk van overheid</h4>
+        <p style="margin:0;">Rond <strong>2020</strong> focus op o.a. <strong>decarbonisatie / dekarbonisatie</strong>. Les: bedrijven die <strong>alleen op subsidies</strong> leunen, houden het <strong>niet lang vol</strong> — je moet <strong>betalende klanten</strong> bouwen, niet alleen grants.</p>
+      </div>
+      <div class="subcard">
+        <h4>Hardware / modulair bouwen</h4>
+        <p style="margin:0;">Modulaire bouw (o.a. Montreal) leek innovatief en “cool”, maar <strong>hoge capex</strong>. Lekker pakket is vaak <strong>software + hardware tegelijk</strong> (“double bet”) — kost veel geld; je hebt sterke <strong>marktdynamiek, marge en kapitaalstructuur</strong> nodig. <strong>Digital twins</strong> — vergelijkbare uitdagingen.</p>
+      </div>
+    </section>
+
+    <section class="card" style="margin-bottom:20px;">
+      <h2>AI in Japan: kantoorhuur &amp; “bestaande business”</h2>
+      <ul>
+        <li>Genoemd: Japans bedrijf in de trant van <strong>SD / ESTI</strong> (kantoor-/huurdata, marketplace-achtig) — data per locatie, <strong>optimalisatie van huurinschatting</strong>.</li>
+        <li><strong>Tokyo kantorenmarkt:</strong> toerisme, krappe markt, onderhandeling over <strong>hernieuwing huur</strong> — AI om <strong>huur te onderbouwen/verantwoorden</strong> (commercial rent justification).</li>
+        <li>Patroon: AI als <strong>tool binnen bestaande brokerage</strong> om een <strong>outcome</strong> te halen — niet per se dat AI <em>de</em> business <em>is</em>. Nog <strong>niet geïnvesteerd</strong>, wel interesse.</li>
+      </ul>
+    </section>
+
+    <section class="card" style="margin-bottom:20px;">
+      <h2>Vijf jaar vooruit: bubbel, platforms, mens</h2>
+      <ul>
+        <li>Geen harde voorspelling <strong>bubbel vs. revolutie</strong>; AI-rondes lijken op eerdere <strong>hype-cycli</strong> — veel AI-startups raken afgeleid of vallen weg; <strong>Big Tech</strong> (Google, OpenAI, e.d.) heeft overschot aan capaciteit.</li>
+        <li><strong>Grootste angst:</strong> dat <strong>LLM-platformen</strong> zo’n sterk <strong>substituut</strong> bouwen dat de <strong>hele PropTech-keten</strong> wordt verstoord — hij acht het <strong>niet het meest waarschijnlijk</strong>, maar ziet het wel als risico op termijn.</li>
+        <li><strong>Menselijk contact</strong> blijft essentieel — vastgoed is sociaal; “hallo zeggen”, vertrouwen, cultuur. Dat verdwijnt niet.</li>
+      </ul>
+    </section>
+
+    <div class="grid">
+      <div class="card">
+        <h2>Kernpunten (volledige samenvatting)</h2>
+        <ul>
+          <li><strong>Metaprop:</strong> NY, 10+ jr, seed–A, LPs met vastgoed; APAC Tokyo; 4 fondsen, ~honderden M$ AUM, ~20 LPs / ~10 deals Azië.</li>
+          <li><strong>DD:</strong> markt, product (doorbreken “doe ik zelf”), founder; bij AI: data, workflow, waar automatiseren.</li>
+          <li><strong>Outcome > cool:</strong> NOI/waarde; crowdfunding-voorbeeld Japan; rente omhoog → echte cash-resultaten.</li>
+          <li><strong>Portfolio:</strong> H2 (contech), BMK (inst. PM), bouw-documentatie; Korea/Japan.</li>
+          <li><strong>Agents:</strong> EliseAI-achtige end-to-end leasing; adoptie via pilots.</li>
+          <li><strong>Moat:</strong> dagelijks beter worden + relaties; IP niet de heilige graal.</li>
+          <li><strong>Kans:</strong> multi-residency / UHNW Azië — unified platform ontbreekt.</li>
+          <li><strong>Mislukt:</strong> subsidy-only, zware hardware zonder software/marges.</li>
+          <li><strong>Japan:</strong> AI voor kantoorhuuronderbouwing (SD/ESTI-type).</li>
+          <li><strong>5 jaar:</strong> hype sijpelt weg; angst voor mega-LLM-disruptie; mens blijft.</li>
+        </ul>
+      </div>
+      <aside class="card">
+        <h2>Snel overzicht</h2>
+        <p><strong>Spreker:</strong> Satoshi Murakami</p>
+        <p><strong>Rol:</strong> Director, Head of APAC</p>
+        <p><strong>Organisatie:</strong> Metaprop (New York)</p>
+        <p><strong>Event:</strong> PPW Bangkok · maart 2026</p>
+        <p><strong>Fonds:</strong> 4 fondsen · AUM ~couple hundred M$ · nieuw fonds 2026</p>
+        <p><strong>APAC:</strong> ~20 LPs · ~10 startups · hub Tokyo</p>
+      </aside>
+    </div>
+
+    <section class="card">
+      <h2>Transcript</h2>
+      <div class="notes-box" style="font-style:normal;">
+        Dit document dekt het <strong>volledige beschikbare transcript</strong> van het interview (inclusief Q&amp;A over agents, IP/moat,
+        mislukte deals, Japan kantoor-AI, en 5-jaar-outlook). Einde gesprek: moderator bedankt; opmerking dat operatoren in de industrie
+        vaak anders praten dan investeerders.
+      </div>
+    </section>
+
+    <p class="footer">
+      Document aangemaakt op basis van de conferentieslide. Gerelateerd:
+      <code>jonathan-turpin-ai-property-portals-summary.html</code>,
+      <code>patrick-grove-fdv-summary.html</code>,
+      <code>malcolm-myers-ai-asia-portals-summary.html</code>.
+    </p>
+  </main>
+</body>
+</html>

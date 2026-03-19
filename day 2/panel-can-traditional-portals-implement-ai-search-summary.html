@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panel — Can traditional portals truly implement AI search?</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #fefce8;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --accent: #ca8a04;
+      --accent-soft: #fef9c3;
+      --border: #e2e8f0;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #fef9c3 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 40px 20px 64px; }
+    header {
+      background: linear-gradient(135deg, #713f12 0%, #ca8a04 50%, #eab308 100%);
+      color: white;
+      border-radius: 24px;
+      padding: 36px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+    }
+    .session-badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.15);
+      color: #fef08a;
+      font-weight: 600;
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    header h1 {
+      margin: 0 0 12px;
+      font-size: clamp(1.1rem, 2.3vw, 1.5rem);
+      line-height: 1.25;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+    .headline-sub { margin: 0 0 16px; font-size: 1rem; color: rgba(255, 255, 255, 0.92); max-width: 68ch; }
+    .speaker-line { margin: 0; font-size: 1.05rem; font-weight: 600; }
+    header .conf {
+      margin: 18px 0 0;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 0.92rem;
+      color: rgba(255, 255, 255, 0.88);
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      margin-bottom: 20px;
+    }
+    h2 { margin: 0 0 14px; font-size: 1.2rem; color: #a16207; }
+    h3 { margin: 20px 0 10px; font-size: 1.05rem; color: #713f12; }
+    p { margin: 0 0 12px; }
+    ul { margin: 0; padding-left: 20px; }
+    li { margin-bottom: 10px; }
+    .muted-note { font-size: 0.9rem; color: var(--muted); }
+    .panel-speakers {
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .panel-speaker {
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: #fefce8;
+      border: 1px solid var(--border);
+      font-size: 0.95rem;
+    }
+    .panel-speaker strong { display: block; margin-bottom: 4px; color: #713f12; }
+    .panel-speaker span { color: var(--muted); font-size: 0.9rem; }
+    .notes-box {
+      min-height: 100px;
+      border: 2px dashed #fde047;
+      border-radius: 16px;
+      padding: 18px;
+      background: var(--accent-soft);
+      color: #713f12;
+      font-size: 0.95rem;
+    }
+    .footer { margin-top: 22px; color: var(--muted); font-size: 0.92rem; }
+    .transcript-section h3 { margin: 18px 0 8px; font-size: 1rem; color: #713f12; }
+    .transcript-section h3:first-of-type { margin-top: 0; }
+    .qa-answer { margin: 10px 0 16px; padding: 12px 14px; background: #fefce8; border-left: 4px solid #ca8a04; border-radius: 0 10px 10px 0; font-size: 0.92rem; }
+    @media (max-width: 820px) { header, .card { padding: 22px; } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="session-badge">PropTech &amp; PortalWatch · Day 2 · Bangkok · Mar 18–19, 2026</div>
+      <h1>Can traditional portals truly implement AI search?</h1>
+      <p class="headline-sub">Panel — Whether incumbent portals can ship real AI search (data, semantic index, legacy stack) or are stuck at “slap an LLM on filters.”</p>
+      <p class="speaker-line">Panel</p>
+      <p class="conf">Property Portal Watch Conference · The next wave of digital real estate · Online Marketplaces</p>
+    </header>
+
+    <section class="card">
+      <h2>Title slide (on-screen)</h2>
+      <div class="notes-box" style="border-style:solid;border-color:#fde047;background:#fefce8;">
+        <p style="margin:0 0 8px;"><strong>On-screen title:</strong> Can traditional portals truly implement AI search?</p>
+        <p style="margin:0;"><strong>Visual:</strong> Red/blue wave graphic, PPW branding, three speakers in chairs.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Panelists</h2>
+      <div class="panel-speakers">
+        <div class="panel-speaker">
+          <strong>Mathew Heywood</strong>
+          <span>CEO · NeuralIndex</span>
+        </div>
+        <div class="panel-speaker">
+          <strong>Edmund Keith</strong>
+          <span>Head of Content · Online Marketplaces</span>
+        </div>
+        <div class="panel-speaker">
+          <strong>Simon Baker</strong>
+          <span>Founder &amp; Executive Chairman · Online Marketplaces</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="card transcript-section">
+      <h2>Talk summary — voice transcription (ASR cleaned)</h2>
+      <p class="muted-note">Panel: Mathew Heywood (NeuralIndex), Edmund Keith, Simon Baker. Theme: <strong>retrofitting</strong> AI into existing portal experience — conversational search, "provisions for AI search."</p>
+      <h3>What does NeuralIndex do? (Mathew)</h3>
+      <p>"We build AI products on top of property data. We are basically <strong>rich cards for portals</strong>." They run a service that takes a portal's data and enriches it with on- and off-platform datasets to enable <strong>semantic search</strong>. The biggest challenge in the AI era: portals have enormous datasets (millions of listings, cities, etc.); when somebody searches, surfacing the right results is hard. NeuralIndex enriches that data and makes it searchable.</p>
+      <h3>What is AI search? (Ed)</h3>
+      <p>It comes down to <strong>user expectation</strong>. If you say "AI," users expect a "wow moment" like ChatGPT. When a portal says "we have AI search," the experience has to live up to that. First time he was genuinely wowed: <strong>computer vision</strong> that could identify something in a kitchen (e.g. granite countertops) — "that was when I was like, okay, this is actually AI." AI has come to mean many things; in that sense it also means <strong>expectation</strong>.</p>
+      <h3>Velocity vs session time (panel)</h3>
+      <p>AI can increase the <strong>speed to result</strong> — "get to the answer they want faster." But it's controversial: increasing velocity to result doesn't necessarily decrease session time; if users find a result quicker, they may scroll more. So it can be "negative" for engagement at this point. <strong>Property search isn't transactional</strong> — it's emotional: "I've got my furniture, my expectations, my family… I've never known many people in on Monday and bought by Friday." So "velocity" matters more for some segments (e.g. investors, short-term rentals) than for long discovery cycles.</p>
+      <h3>US and data (Simon / Ed)</h3>
+      <p>US is interesting: same listing data, same feeds — so no content advantage, you compete on <strong>user experience</strong>. Zillow 20 years ago went down the path of layering crime stats, insurance, etc., so consumers could do a deeper level of query. "So the US was 20 years ago, short [version]."</p>
+      <h3>Disabled-friendly as the test (Ed)</h3>
+      <p>When he feels himself getting carried away by "we have all these data sets," he brings himself back to <strong>disabled-friendly</strong>. "If you need it, you really need it. Real estate portals do such a bad job — 'we have a disabled-friendly filter' — usually it's not very good, and usually that's the tag that agents game." Where he wants this to go: <strong>the portal itself makes a judgment</strong> on whether a property is disabled-friendly, regardless of what the agent claims. So don't get carried away by "no crime neighborhood" (what does that mean?) — "being able to show somebody who needs disabled-friendly and actually [only show] disabled-friendly is what's exciting. If you're having trouble conceptualizing what we're talking about, that's what to think about."</p>
+      <h3>It's not a search problem — it's data and business model (Simon / Mathew)</h3>
+      <p>"It's not a search experience [problem]. It's a <strong>data and business model</strong> problem." There must be a "golden ratio": what % of listings get top-page visibility? If the average search goes from 25 results to 5, what's the acceptable loss of visibility for advertisers? Some traffic will go to "adjacent" listings (99%, 98%, 70% matches). Ed pushed back: in a utopia you'd get five perfect results — but "aren't you only showing five? I feel like missing out on the sixth that may be adjacent." "You don't know what you don't know." Discussion of <strong>hard vs soft parameters</strong>.</p>
+      <h3>Homegate example (Switzerland)</h3>
+      <p>A platform (e.g. <strong>Homegate</strong>) does "always on" search: you define <strong>hard and soft parameters</strong>; instead of showing a list it "goes off and emails you when there are results" and gives a <strong>confidence score</strong> based on how well results match hard vs soft. Next evolution: at viewing — "these are my hard parameters, these are my soft."</p>
+      <h3>Objective vs subjective; strong / medium / weak matches</h3>
+      <p>Property search is a <strong>series of tradeoffs</strong> (budget, when to sell, school, size) — "usually arrived at by crunch time." How do you code emotional decisions? <strong>Objective</strong> = where is it, does it have three beds — not up for debate. <strong>Subjective</strong> = "I want a modern kitchen" — what's modern to you? So you weight results: <strong>strong matches, medium matches, weak matches</strong>, and be transparent. "You never want 10 parameters and get one listing — you want 20 results that hit different combinations of the 10. Seven out of 10 might actually be better than the one that hits all 10."</p>
+      <h3>AI as parallel; filters don't go away</h3>
+      <p>Portals "put all the data in and said go" — people search differently (filters, favorites, natural language). "Everyone does it slightly differently — one problem, multiple solutions." So AI or an agentic layer — "AI sort of lives around the outside" — you can do it this way or that. For a while it's a <strong>parallel existence</strong>; over time as AI gets better on results it will "just become search." Filters won't go away — "slowly transition."</p>
+      <h3>Retrofitted portals — can they do it? (Ed)</h3>
+      <p>Agentic/agent-type solutions — will people trust portal brands or go to ChatGPT? "Probably <strong>retrofitted</strong> — Homes.com etc. We're in the middle of this. Share price found this [AI narrative] — they're retro designing. I think we <strong>underestimate how good [portals] are</strong> — they have really good tech; I've been looking at these situations for five years, I'd be quite embarrassed [by some]. They have such good in-house talent — I just can't see them losing out." So yes, retrofitted — "they just need the talent." What's holding them up is <strong>not portals themselves — it's expectations from investors</strong>. Eventually investors will catch on.</p>
+      <h3>Challenger portals (Simon)</h3>
+      <p>"People who say LLMs will completely [displace] — I don't challenge that [sceptically]. It's such an easy soundbite — I don't see it." Conversation: have challenger portals ever won on user experience? "Very short list… in Italy, for example, but never due to user experience — it's distribution, marketing." Zillow 2004/5: premise was "how much is your house worth" — everything else was behind. Then Zillow said "we'll tell you what the house is worth" — that was an <strong>untapped need</strong>. "That's user experience, but it's not good search UX — it's the how much, it's a side door."</p>
+      <h3>Challenges of retrofit — missing infrastructure (Ed)</h3>
+      <p>"It's not just put a mic and say 'number four.'" You're missing "<strong>fundamental infrastructure</strong> to support that experience." In his testing, 22 portals have "performed dramatically better" when they have the right foundations — semantic index of images, neighbourhood data, two-sided conversation, ability to communicate with that data.</p>
+      <h3>Attention spans / digital overload?</h3>
+      <p>Q: Will decreasing attention spans change property search? Ed: "My opinion is property is <strong>too important</strong>. But I'm the guy who talks to portals — my opinion is framed by who I am. No one's talking to 20-year-olds in the audience — we may be wrong."</p>
+      <h3>AI importance by segment (Mathew)</h3>
+      <p>Default is primary dwelling — but there's rentals, shared accommodation, <strong>investment</strong>. As you go through that spectrum, AI becomes more or less important. <strong>For investors, AI is critical</strong>: scan properties, data, estimated rental yield, capital growth — "pure data play," do it across residential/commercial, likelihood of yield, how fast it's selling. <strong>Short-term / sharing</strong>: speed is important (tight timeline, 2% vacancy — "you're not hanging around for deep analysis over six months"). <strong>Primary dwelling</strong>: more emotional, exploration. <strong>New developments</strong>: somewhere in between, more data-driven (terms, financing).</p>
+      <h3>Agents and LLMs — who owns the conversation? (Mathew)</h3>
+      <p>"Really nuanced." NeuralIndex has elements that could redirect to non-portal business. It will matter "when the stock isn't available for [portal]-style information." Key challenge for traditional portals: <strong>remain relevant in the conversation</strong>. It's not about "LLM bypassing search" — it's "LLM bypassing each interaction." Risk: over time, user has an AI pilot that does search, guides them, then "I'm interested — set up a viewing." <strong>How will it contact the agent?</strong> Through portal channels or around? Agents have contact details everywhere. So portals need to be in the flow — "instead of going to [portal] I searched 15,000 to find the one" — help people research, be in the consideration set, build trust. "Probably safe space right now."</p>
+    </section>
+
+
+
+    <section class="card">
+      <h2>Quick reference</h2>
+      <ul>
+        <li><strong>Session:</strong> Can traditional portals truly implement AI search? (panel)</li>
+        <li><strong>Day:</strong> 2 · PPW Bangkok 2026</li>
+        <li><strong>Panel:</strong> Mathew Heywood (NeuralIndex) · Edmund Keith · Simon Baker</li>
+        <li><strong>NeuralIndex:</strong> "Rich cards for portals" — enrich portal data with on/off platform datasets for semantic search.</li>
+        <li><strong>Ed's test:</strong> Disabled-friendly — portal should judge, not trust agent tag; "if you need to conceptualize, think about that."</li>
+        <li><strong>Simon:</strong> It's a data and business model problem, not just search UX; golden ratio of visibility.</li>
+        <li><strong>Ed:</strong> Portals have strong talent; bottleneck = investor expectations; 22 portals improved when they had semantic index + neighbourhood data + two-sided conversation.</li>
+        <li><strong>Mathew:</strong> AI critical for investors; by segment (primary vs rental vs investment); portals must stay in the conversation as LLM bypasses "each interaction."</li>
+      </ul>
+    </section>
+
+    <p class="footer">Summary from panel transcript (ASR cleaned). Link: <a href="edmund-keith-ai-real-estate-search-summary.html">Ed's solo talk</a> (semantic index, 420 tests, Gy).</p>
+  </main>
+</body>
+</html>

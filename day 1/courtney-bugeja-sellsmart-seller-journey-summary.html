@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Courtney Bugeja (SellSmart) — The new point of control in the seller journey</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --accent: #c2410c;
+      --accent-soft: #fff7ed;
+      --border: #e2e8f0;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #fffbeb 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 40px 20px 64px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1c1917 0%, #431407 45%, #c2410c 100%);
+      color: white;
+      border-radius: 24px;
+      padding: 36px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+    }
+
+    .session-badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      color: #fed7aa;
+      font-weight: 600;
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .brand {
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+      opacity: 0.95;
+    }
+
+    header h1 {
+      margin: 0 0 12px;
+      font-size: clamp(1.2rem, 2.5vw, 1.75rem);
+      line-height: 1.25;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .headline-sub {
+      margin: 0 0 16px;
+      font-size: 1.02rem;
+      color: rgba(255, 255, 255, 0.9);
+      max-width: 68ch;
+    }
+
+    .speaker-line { margin: 0; font-size: 1.05rem; font-weight: 600; }
+
+    header .conf {
+      margin: 18px 0 0;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 0.92rem;
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 1.2rem;
+      color: #9a3412;
+    }
+
+    h3 {
+      margin: 20px 0 10px;
+      font-size: 1.05rem;
+      color: #431407;
+    }
+
+    p { margin: 0 0 12px; }
+    ul { margin: 0; padding-left: 20px; }
+    li { margin-bottom: 10px; }
+
+    .muted-note { font-size: 0.9rem; color: var(--muted); }
+
+    .notes-box {
+      min-height: 120px;
+      border: 2px dashed #fdba74;
+      border-radius: 16px;
+      padding: 18px;
+      background: var(--accent-soft);
+      color: #78350f;
+      font-size: 0.95rem;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .pill {
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #ffedd5;
+      color: #9a3412;
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+
+    .journey-flow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin: 16px 0;
+      font-size: 0.92rem;
+    }
+
+    .journey-step {
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: #f1f5f9;
+      border: 1px solid var(--border);
+    }
+
+    .journey-arrow { color: var(--muted); font-weight: 700; }
+
+    .whova-q {
+      border-left: 4px solid #c2410c;
+      padding: 10px 14px;
+      margin: 12px 0;
+      background: #fff7ed;
+      border-radius: 0 10px 10px 0;
+      font-size: 0.92rem;
+    }
+
+    .whova-meta { font-size: 0.82rem; color: var(--muted); margin-top: 4px; }
+
+    .qa-section-title {
+      margin: 18px 0 8px;
+      font-size: 1rem;
+      color: #431407;
+    }
+
+    .qa-section-title:first-of-type { margin-top: 0; }
+
+    .qa-answer {
+      margin: 10px 0 18px;
+      padding: 12px 14px;
+      background: #f0fdf4;
+      border-left: 4px solid #22c55e;
+      border-radius: 0 10px 10px 0;
+      font-size: 0.92rem;
+    }
+
+    .qa-answer strong { color: #166534; }
+
+    .transcript-section h3 {
+      margin: 20px 0 10px;
+      font-size: 1.02rem;
+      color: #431407;
+    }
+
+    .transcript-section h3:first-of-type { margin-top: 0; }
+
+    .footer {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 820px) {
+      header, .card { padding: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="session-badge">PropTech &amp; PortalWatch · Bangkok · Mar 18–19, 2026</div>
+      <div class="brand">SELLSMART</div>
+      <h1>The new point of control in the seller journey</h1>
+      <p class="headline-sub">
+        <strong>Thesis:</strong> The seller journey starts <strong>up to 12 months before</strong> the listing. Homeowners spend more on prep than on agent commission — yet that activity is <strong>off-platform</strong>. Digital twins + ecosystem = new point of control; <strong>who captures seller intent earliest</strong> controls the next generation of property transactions.
+      </p>
+      <p class="speaker-line"><strong>Courtney Bugeja</strong> — Co-Founder &amp; CEO, SellSmart</p>
+      <p class="conf">
+        <strong>Property Portal Watch Conference</strong> — The next wave of digital real estate · Online Marketplaces
+      </p>
+    </header>
+
+    <section class="card">
+      <h2>Title slide (deck)</h2>
+      <div class="notes-box" style="border-style:solid;border-color:#fed7aa;background:#fffbeb;">
+        <p style="margin:0 0 8px;"><strong>On-screen title:</strong> The new point of control in the seller journey</p>
+        <p style="margin:0 0 8px;"><strong>Speaker:</strong> Courtney Bugeja · Co-Founder &amp; CEO, SellSmart</p>
+        <p style="margin:0;"><strong>Visual:</strong> PPW wave graphic (blue/red), conference branding · Bangkok, Mar 18–19, 2026</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Session — journey and thesis (from talk)</h2>
+      <p><strong>Core question (last year / Pitch Club):</strong> What if the home could be captured with a <strong>digital twin</strong> and everyone worked from the same dataset? SellSmart = first platform to build an <strong>ecosystem</strong> around the digital twin to eliminate pain points of preparing for sale.</p>
+      <h3>Where the journey really starts</h3>
+      <div class="journey-flow" aria-label="Seller journey from transcript">
+        <span class="journey-step">Up to 12 months before listing</span>
+        <span class="journey-arrow">→</span>
+        <span class="journey-step">Questions: Where do I sit? What to improve? Cost? Which agent?</span>
+        <span class="journey-arrow">→</span>
+        <span class="journey-step">1–2 agents in for valuation · trades · advice</span>
+        <span class="journey-arrow">→</span>
+        <span class="journey-step">Listing = final step</span>
+      </div>
+      <p><strong>Problem today:</strong> 8–10+ people often walk through the property (agents, trades, photographers, inspectors…) — everyone collecting data independently. <strong>Digital twin</strong> = capture once → trades quote remotely, agents submit proposals, one platform.</p>
+      <p><strong>New point of control:</strong> In most markets homeowners spend <strong>more on prep than on agent commission</strong> ($5k–$50k+). Almost none of that is on-platform. <strong>Companies that capture seller intent earliest</strong> (months before listing) control the next generation of transactions.</p>
+      <div class="pill-row">
+        <span class="pill">Digital twin</span>
+        <span class="pill">AI Home Maximization Report</span>
+        <span class="pill">Agent as strategic adviser</span>
+        <span class="pill">Structured proposals</span>
+        <span class="pill">Post-sale → home OS</span>
+      </div>
+    </section>
+
+    <section class="card transcript-section">
+      <h2>Talk summary — voice transcription (ASR cleaned)</h2>
+      <p class="muted-note">Courtney Bugeja · PPW Bangkok · Final session of the day. Previous Pitch Club winner (~3 years ago).</p>
+
+      <h3>Origin &amp; positioning</h3>
+      <p>Won Pitch Club last year; introduced idea: <strong>SellSmart</strong> = first platform to build an ecosystem around the <strong>digital twin</strong> to eliminate pain points of preparing for sale. Initially <strong>free tool for agents</strong> + consumers (efficient, transparent). Agent distribution still a core channel — but <strong>homeowners now actively seek this info themselves</strong>; behavior has moved <strong>upstream</strong>. Surprise: how early they prepare and how much <strong>money and decision-making happens before a listing exists</strong>.</p>
+
+      <h3>Seller journey (reality)</h3>
+      <p>Journey doesn’t start with the listing — starts <strong>up to 12 months earlier</strong>. Homeowners ask: Where does my property sit? What improvements? How much will it cost? Which agent will get the best result? They may invite one or two agents for a valuation; then prep begins — trades, advice, ideas. <strong>Listing = final step</strong> in a long process. Today: multiple agents, trades, photographers, copywriters, inspectors all visit and collect data independently — inefficient and time-consuming. Room poll: “How many people walked through before the listing went live?” — usually <strong>8, 10, sometimes more</strong>. Digital twin eliminates that: one capture → everyone works from same dataset; trades quote remotely, agents submit proposals.</p>
+
+      <h3>Digital twin ≠ marketing; ecosystem = opportunity</h3>
+      <p>“Digital twin like a Porsche in the garage — without roads it goes nowhere.” Without an ecosystem, it stays a <strong>marketing asset</strong>; the real opportunity is the <strong>infrastructure around it</strong>. Past year focused on that. Customer journey: property captured once → homeowner can prepare and understand what it looks like. <strong>AI Home Maximization Report</strong>: AI analyzes the digital twin → recommendations on what to do, should do, cost estimates; benchmarked against local properties sold above market average = <strong>strategic blueprint</strong>. Homeowner moves from insight → action: quotes from trades (who assess the twin), model value of scenarios, engage agents with <strong>context</strong> (property + preparation strategy). Single ecosystem instead of chasing multiple agents and providers.</p>
+
+      <h3>Spend &amp; visibility</h3>
+      <p>In most markets homeowners spend <strong>more preparing for sale than they pay in agent commission</strong>. Almost none of that prep happens on a platform today — that’s where the next major layer of the property ecosystem will emerge. Discovery: <strong>$5,000–$50,000+</strong> (repairs, renovations, styling, maintenance) — and decisions are made <strong>months before</strong> the listing. Yet trades are contacted individually, advice fragmented; the <strong>largest portals don’t see</strong> this phase — they see the listing, not the months of preparation that shape valuation.</p>
+
+      <h3>Agents: strategic advisers, not fee-extractors</h3>
+      <p>Not “spray and pray” to agents. Position agents as <strong>strategic advisers</strong>, not transaction processors. Through the platform they submit <strong>structured proposals</strong>: target market, recommended improvements/repairs, go-to-market and marketing strategy, why they’re the best. When sellers compare, “the difference becomes clear — it separates <strong>charisma from strategy</strong>.” Sentiment from agents has been very good.</p>
+
+      <h3>New data layer</h3>
+      <p>Ecosystem unlocks data that <strong>doesn’t exist on portals or trade directories</strong>. Because the process happens on-platform: trade pricing across property types, renovation decisions, order homeowners prioritize improvements, agent strategies and how they influence other decisions, property condition, improvement cycles, when homeowners are preparing to enter the market. When digital twin is the <strong>starting point</strong>, it becomes <strong>infrastructure</strong>, not marketing. Emerging patterns: how cohorts behave over time, what they prioritize, what improvements influence sale outcome — <strong>new layer of property intelligence</strong>.</p>
+
+      <h3>After the sale</h3>
+      <p>Homeowners who used the platform in the presale phase want to keep using it — in their <strong>new</strong> home. They request another digital twin; purpose shifts to <strong>managing improvements, upgrades, renovations</strong> → infrastructure becomes more like a <strong>home operating system</strong>.</p>
+
+      <h3>Implication for portals</h3>
+      <p>Portals today capture the <strong>listing moment</strong>. The most important decisions happen <strong>months earlier</strong>. Digital twins create the infrastructure; the real opportunity is what happens around it. If portals could see the preparation stage they’d gain extraordinary insight into <strong>seller intent, property improvements, market readiness</strong>. “This data changes everything.”</p>
+
+      <h3>Revenue (Australia example)</h3>
+      <p><strong>Trade / retail economy</strong> ~<strong>$5B</strong> (excl. conveyancing, renovations, utilities). <strong>Post-sale trade &amp; improvement</strong> ~<strong>$24B</strong> per year. Plus agent-intro revenue; plus <strong>data &amp; insights</strong> (e.g. insurers). Stacked on an existing listing business = <strong>not just incremental — a multiplier</strong> on the entire platform.</p>
+
+      <h3>Closing</h3>
+      <p>Digital twins will become <strong>standard infrastructure</strong>. But long-term value isn’t in the infrastructure — it’s in <strong>platforms that capture seller intent earliest</strong>. That moment is <strong>months before</strong> the listing reaches the portal. “The companies that control that signal control the next generation of property transactions.”</p>
+    </section>
+
+    <section class="card">
+      <h2>Audience Q&amp;A — Whova + answers (transcription)</h2>
+      <p class="muted-note">Session: <em>Questions for The New Point of Co…</em> (SellSmart).</p>
+
+      <p><strong>Q (Tung):</strong> Is your solution like an <strong>AI scorecard</strong> for potential sellers before they list?</p>
+      <div class="qa-answer"><strong>A:</strong> Moderator noted there are many ways SellSmart engages with sellers to determine <strong>readiness to come to market</strong>, and the same is applied to supply-side businesses on the platform; asked if the question could be rephrased more directly. No full answer from Courtney to the “scorecard” framing.</div>
+
+      <p><strong>Q (Harvey):</strong> If I spend <strong>10k on staging and improving</strong> my property before listing, how much more can I sell it for?</p>
+      <div class="qa-answer"><strong>A:</strong> “How long is a piece of string” — lots of factors, every market different. If the home is vacant, styling generally helps sell <strong>faster and for more</strong> (emotional connection for buyer). Without knowing the market it’s hard to give a number. Staging is “quite important” — e.g. the room example in the talk would “absolutely decimate” value if left as-is; staging that room would “release a lot of value.” <strong>Bottom line:</strong> we don’t give a single number, but if you’re selling, definitely stage your house.</div>
+
+      <p><strong>Q:</strong> Does it have to be <strong>your own digital twin</strong> you analyse, or can you ingest [another]?</p>
+      <div class="qa-answer"><strong>A:</strong> “We use <strong>Matterport</strong> at the moment — we find them the best solution in the market. We are analyzing the Matterport digital twin.” So they can ingest Matterport twins.</div>
+
+      <p><strong>Q (Harvey):</strong> Repositioning agents as <strong>strategic advisor</strong> vs “fee-extractor” — are agents enjoying this evolution or stuck in the mud?</p>
+      <div class="qa-answer"><strong>A:</strong> Some agents rise, some keep doing the same. On the platform, <strong>fee is the last thing we look at</strong> — if an agent demonstrates they understand your market, have the right strategy, will get the best price, their fee is irrelevant. “When you have three [proposals] in front of you you can see the stock standard that came through AI, the best guy in market with most knowledge, and the guy in the middle” — the tool helps bridge the gap. Evolution from “fee extractor” to strategic advisor has to happen across the industry (portals, agents, developers) — <strong>be more knowledgeable</strong>, otherwise AI does the “knowledge” and sometimes the answers are wrong (anecdote: son put diesel in petrol car because ChatGPT told him to). Best agents have strong market knowledge; on-screen example showed one proposal very specific on target buyer market vs one generalist “targeting everyone” — “you see the differences when you read the proposals.”</div>
+
+      <p><strong>Q (Jonathan):</strong> How many <strong>digital twins</strong> have you created so far?</p>
+      <div class="qa-answer"><strong>A:</strong> “A <strong>few thousand</strong> now. Business has grown … from where we were a year ago, good year.”</div>
+
+      <p><strong>Q (Harvey, rephrased):</strong> What <strong>uplift in selling prices</strong> have you seen when sellers improve their property?</p>
+      <div class="qa-answer"><strong>A:</strong> “<strong>Massive</strong> improvements. Different markets, different things — sometimes spending [e.g. $2.5k], sometimes spending $10k might give you <strong>$80k more</strong>. It’s about being strategic about improvements and repairs to position it in the best way and <strong>not over-capitalizing</strong>. On our website there’s a section with before/after case studies — you see the uplift they achieved.”</div>
+
+      <h3 class="qa-section-title">Moderator (Simon) — funding &amp; roadmap</h3>
+      <p><strong>Q:</strong> Have you raised money?</p>
+      <div class="qa-answer"><strong>A:</strong> Yes; “liked the clothes in my round”; now up for another round, looking forward to the next 12 months.</div>
+
+      <p><strong>Q:</strong> How much did you raise?</p>
+      <div class="qa-answer"><strong>A:</strong> “I ended up raising about <strong>$1M</strong> last year. I still got about <strong>12 months runway</strong> because revenues kept growing and burn reduced — capital efficiency kept expanding. 12 months runway in the bank.”</div>
+
+      <p><strong>Q:</strong> How do you plan to deploy the capital?</p>
+      <div class="qa-answer"><strong>A:</strong> Investment in <strong>technology</strong>, <strong>marketing / brand</strong>, and <strong>people</strong>. Two focus points: (1) <strong>Nailing the top of funnel</strong> — marketing and strategic partners. (2) What keeps him up at night: <strong>how we use AI so the funnel doesn’t leak</strong> — e.g. if we catch someone 9–12 months out from a decision, how do systems nurture them until they’re ready without the team having to do it?</div>
+
+      <p><strong>Q:</strong> Is that your biggest headache?</p>
+      <div class="qa-answer"><strong>A:</strong> “It feels like my biggest headache right now. Yeah.”</div>
+    </section>
+
+    <section class="card">
+      <h2>Quick reference</h2>
+      <ul>
+        <li><strong>Speaker:</strong> Courtney Bugeja · SellSmart · Co-Founder &amp; CEO</li>
+        <li><strong>Talk:</strong> The new point of control in the seller journey</li>
+        <li><strong>Event:</strong> PPW Bangkok 2026 · Previous Pitch Club winner</li>
+        <li><strong>Digital twins:</strong> “A few thousand” to date</li>
+        <li><strong>Raised:</strong> ~$1M last year · ~12 months runway (revenue growth + lower burn)</li>
+        <li><strong>Australia (slide):</strong> Trade economy ~$5B · Post-sale trade/improvement ~$24B/yr</li>
+        <li><strong>Tech:</strong> Matterport digital twins ingested and analyzed</li>
+      </ul>
+    </section>
+
+    <p class="footer">Summary from title slide, Whova Q&amp;A, and voice transcription — ASR cleaned.</p>
+  </main>
+</body>
+</html>

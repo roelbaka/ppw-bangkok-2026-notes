@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lukas Rose (ProperBird) — AI, data &amp; the intelligence layer</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f1f5f9;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #ecfdf5 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 40px 20px 64px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #134e4a 0%, #0f766e 50%, #115e59 100%);
+      color: white;
+      border-radius: 24px;
+      padding: 36px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+    }
+
+    .session-badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      color: #5eead4;
+      font-weight: 600;
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .brand {
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      margin-bottom: 10px;
+      opacity: 0.95;
+    }
+
+    header h1 {
+      margin: 0 0 10px;
+      font-size: clamp(1.35rem, 3vw, 2rem);
+      line-height: 1.2;
+      font-weight: 800;
+    }
+
+    .headline-sub {
+      margin: 0 0 16px;
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.92);
+      font-weight: 600;
+    }
+
+    .speaker-line { margin: 0; font-size: 1.02rem; }
+
+    header .conf {
+      margin: 18px 0 0;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 0.92rem;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      margin-bottom: 20px;
+    }
+
+    h2 { margin: 0 0 14px; font-size: 1.2rem; color: #134e4a; }
+    p { margin: 0 0 12px; }
+    ul { margin: 0; padding-left: 20px; }
+    li { margin-bottom: 10px; }
+
+    .muted-note { font-size: 0.9rem; color: var(--muted); }
+
+    h3 { margin: 16px 0 8px; font-size: 1.02rem; }
+
+    .callout {
+      background: #ecfeff;
+      border: 1px solid #67e8f9;
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin: 12px 0;
+      font-size: 0.95rem;
+    }
+
+    .callout strong { color: #0e7490; }
+
+    .notes-box {
+      min-height: 80px;
+      border: 2px dashed #cbd5e1;
+      border-radius: 16px;
+      padding: 18px;
+      background: #f8fafc;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .footer { margin-top: 22px; color: var(--muted); font-size: 0.92rem; }
+
+    code {
+      font-size: 0.88em;
+      background: #e2e8f0;
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+
+    @media (max-width: 820px) {
+      header, .card { padding: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="session-badge">PropTech &amp; PortalWatch · March 18–19, 2026 · Bangkok</div>
+      <div class="brand">ProperBird</div>
+      <h1>AI, data and the intelligence layer for property marketplaces</h1>
+      <p class="headline-sub">Agent intelligence across portals · raw data vs analytics · scrape + structure · trust + traffic layer.</p>
+      <p class="speaker-line">
+        <strong>Lukas Rose</strong> — CEO &amp; Co-founder
+      </p>
+      <p class="conf">
+        <strong>PropTech &amp; PortalWatch Conference</strong> — The next wave of digital real estate · Online Marketplaces
+      </p>
+    </header>
+
+    <section class="card">
+      <h2>Session</h2>
+      <p>Fireside with <strong>Lukas Rose</strong> — ties to a prior <strong>“provocative” Madrid</strong> presentation on dominance, data, and intelligence. Below: <strong>voice memo</strong> summary (ASR cleaned).</p>
+    </section>
+
+    <section class="card">
+      <h2>What ProperBird does</h2>
+      <ul>
+        <li>Helps real estate players understand the <strong>agent landscape</strong> in a country: scans major <strong>portals</strong>, maps <strong>which agents are active where</strong> and how they show up across sites.</li>
+        <li><strong>Product:</strong> Both <strong>raw data</strong> (for clients with large analytics teams) and increasingly <strong>intelligence / analysis</strong> — especially for <strong>smaller or challenger portals</strong> with less in-house analytical power.</li>
+        <li><strong>Reproducibility:</strong> B2B PropTech clients expect analyses to be <strong>repeatable</strong> (run today → same logic tomorrow). Hard to slap non-deterministic AI on <strong>every</strong> query without breaking trust in reports.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>AI inside ProperBird</h2>
+      <ul>
+        <li>Small, <strong>engineering-heavy</strong> team; Lukas’s example: ~2.5 years ago a few lines of code + AI → coin flip if useful; recently a large feature (~15k lines) largely <strong>AI-written</strong> in ~a week vs an estimated <strong>~2 months</strong> manual.</li>
+        <li><strong>Stack culture:</strong> Many models; <strong>Claude</strong> called out for precise coding; also OpenAI, Gemini, <strong>Cursor</strong>-style agents; everyone experiments — hard to stay on top.</li>
+        <li><strong>Roadmap:</strong> Massive structured datasets → <strong>surface anomalies and insights</strong> with models (and eventually agent-style “worth looking at these 10 agents”); may change <strong>how decisions are prepared</strong>, not only made.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Raw data vs intelligence layer</h2>
+      <div class="callout">
+        <strong>Two customer tracks:</strong> <strong>Mature</strong> first-tier portals → likely keep consuming <strong>raw data</strong> for a long time. <strong>Smaller / challenger</strong> portals → need a partner for <strong>analytics on top of ingest</strong>.
+      </div>
+      <ul>
+        <li>Vision: unified ingest + <strong>NL-style questions</strong> for leadership — e.g. which segments are we strong in, duplication, where to focus.</li>
+        <li>Today’s strength: <strong>public listing data</strong> and <strong>agent activity patterns across portals</strong>. <strong>Growth edge:</strong> add <strong>traffic + monetization</strong> signals (hard to obtain) for richer, trust-bound partnerships.</li>
+        <li>Many large portals still run sales/ops with <strong>limited data rigour</strong> day-to-day — room to “get started” on data-driven ops.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Collection, structure, market picture</h2>
+      <ul>
+        <li><strong>Hardest part</strong> is often not scraping but <strong>unstructured → structured</strong> and reliable dedupe/entity resolution.</li>
+        <li><strong>Cold start (new country):</strong> Start collecting from portals; meaningful dataset in <strong>weeks</strong>. New portal in market: use <strong>aggregated existing market data</strong>. Even without a dominant portal, <strong>agency sites</strong> can be aggregated.</li>
+        <li><strong>Listing leakage:</strong> Listings sometimes appear on <strong>agency sites weeks before</strong> the big portal — worth watching <strong>agencies</strong> as well as “primary” portals.</li>
+        <li>Many deals never hit the main portals (exclusive / off-market) — true picture may need <strong>many</strong> sources, not half a dozen. AI may eventually reduce bespoke scraper cost per site.</li>
+        <li><strong>Tension:</strong> As portals push pricing, some agents keep inventory <strong>off platform</strong> — creates both noise and <strong>opportunity</strong> for intelligence vendors.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Trust, pricing, “iPhone 1 vs 17”</h2>
+      <ul>
+        <li>Portals are <strong>protective</strong> of internal data; early talks on combining <strong>external (ProperBird) + internal (traffic, pricing, audience)</strong> in a <strong>firewalled</strong> way — trust is the bottleneck.</li>
+        <li>Moderator: ultimate portal insight might be <strong>willingness-to-pay / optimal price per customer</strong> — would need listings + traffic + agent behaviour combined.</li>
+        <li>Lukas: current AI in portals (e.g. Home.com-style) like <strong>iPhone 1–2</strong>; lots still to come. ProperBird’s own maturity on the “full stack insight” journey: <strong>early innings</strong>, long road — <strong>MySpace-era</strong> analogy for how much can still change.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Q&amp;A — questions &amp; answers</h2>
+
+      <h3>1. Cold start / no historical data / new projects</h3>
+      <p><strong>A:</strong> Entering a <strong>new country</strong> is not a big cold-start problem: begin collecting from portals (and agencies), have a usable base in <strong>a few weeks</strong>. For a <strong>new portal</strong> entering a market, ProperBird can aggregate <strong>existing market data</strong> so they see where to focus. Alternative sources include <strong>agency sites</strong> when national portals are weak.</p>
+
+      <h3>2. Who is the true market leader in France?</h3>
+      <p class="muted-note">Not answered in the captured transcript (provocative audience question).</p>
+
+      <h3>3. Do portals feed you data, or scrape? Industry standards?</h3>
+      <p><strong>A:</strong> They prefer to keep <strong>data collection under their own control</strong> (scraping / ingestion they run). There are standards for e.g. <strong>CRM → portal</strong> feeds — that’s <strong>not</strong> the main mode ProperBird relies on for their core product.</p>
+    </section>
+
+    <section class="card">
+      <h2>One-liners</h2>
+      <ul>
+        <li><strong>Structure &gt; scrape</strong> as the hard problem.</li>
+        <li><strong>Big portals</strong> buy raw data; <strong>challengers</strong> need the intelligence layer.</li>
+        <li><strong>Next unlock:</strong> traffic + monetization + trust.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Notes / scratch</h2>
+      <div class="notes-box">Optional extra quotes.</div>
+    </section>
+
+    <section class="card">
+      <h2>Quick ref</h2>
+      <p><strong>Company:</strong> ProperBird</p>
+      <p><strong>Speaker:</strong> Lukas Rose, CEO &amp; Co-founder</p>
+      <p><strong>Topic:</strong> Agent intelligence · data + AI · marketplace layer</p>
+      <p><strong>Talk:</strong> Madrid thread · Claude/Cursor · two customer tracks · scrape vs feed · trust</p>
+    </section>
+
+    <p class="footer">
+      <strong>Talk + Q&amp;A</strong>. Related:
+      <code>paruey-anadirekkul-spacely-ai-adoption-outcomes.html</code>,
+      <code>lamerton-gray-proptexx-ai-retail-media-portal-intelligence.html</code>,
+      <code>jonathan-turpin-ai-property-portals-summary.html</code>,
+      <code>ryan-gallagher-iovox-ai-communications.html</code>,
+      <code>steve-coleman-snow-only-ai-human-touch.html</code>,
+      <code>russell-wee-jean-yip-proptech-ai-real-estate.html</code>,
+      <code>malcolm-myers-ai-asia-portals-summary.html</code>,
+      <code>patrick-grove-fdv-summary.html</code>,
+      <code>satoshi-murakami-metaprop-investment-mandate.html</code>.
+    </p>
+  </main>
+</body>
+</html>

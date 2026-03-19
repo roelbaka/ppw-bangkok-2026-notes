@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Edmund Keith — So, where are we with AI real estate search?</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #faf5ff;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --accent: #7c3aed;
+      --accent-soft: #f3e8ff;
+      --border: #e2e8f0;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #f5f3ff 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 40px 20px 64px; }
+    header {
+      background: linear-gradient(135deg, #5b21b6 0%, #7c3aed 50%, #8b5cf6 100%);
+      color: white;
+      border-radius: 24px;
+      padding: 36px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+    }
+    .session-badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.15);
+      color: #e9d5ff;
+      font-weight: 600;
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    header h1 {
+      margin: 0 0 12px;
+      font-size: clamp(1.15rem, 2.4vw, 1.6rem);
+      line-height: 1.25;
+      font-weight: 800;
+    }
+    .headline-sub { margin: 0 0 16px; font-size: 1rem; color: rgba(255, 255, 255, 0.92); max-width: 68ch; }
+    .speaker-line { margin: 0; font-size: 1.05rem; font-weight: 600; }
+    header .conf {
+      margin: 18px 0 0;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 0.92rem;
+      color: rgba(255, 255, 255, 0.88);
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      margin-bottom: 20px;
+    }
+    h2 { margin: 0 0 14px; font-size: 1.2rem; color: #6d28d9; }
+    h3 { margin: 20px 0 10px; font-size: 1.05rem; color: #5b21b6; }
+    p { margin: 0 0 12px; }
+    ul { margin: 0; padding-left: 20px; }
+    li { margin-bottom: 10px; }
+    .muted-note { font-size: 0.9rem; color: var(--muted); }
+    .slide-data {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 20px;
+      background: linear-gradient(180deg, #faf5ff 0%, #fff 100%);
+      margin: 14px 0;
+    }
+    .slide-data .utopian-item {
+      padding: 8px 0;
+      border-bottom: 1px dashed #e9d5ff;
+      font-size: 0.95rem;
+    }
+    .slide-data .utopian-item:last-child { border-bottom: 0; }
+    .takeaway-list { list-style: none; padding-left: 0; }
+    .takeaway-list li {
+      padding: 10px 14px;
+      margin: 8px 0;
+      border-radius: 12px;
+      background: #f5f3ff;
+      border-left: 4px solid #7c3aed;
+      font-size: 0.95rem;
+    }
+    .chart-rows { margin: 12px 0; }
+    .chart-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 8px 0;
+      font-size: 0.92rem;
+    }
+    .chart-row .label { flex: 0 0 220px; }
+    .chart-row .bar {
+      flex: 1;
+      max-width: 200px;
+      height: 20px;
+      background: #e9d5ff;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .chart-row .bar span { display: block; height: 100%; background: #7c3aed; border-radius: 6px; }
+    .chart-row .val { flex: 0 0 40px; font-weight: 600; color: #5b21b6; }
+    .notes-box {
+      min-height: 100px;
+      border: 2px dashed #c4b5fd;
+      border-radius: 16px;
+      padding: 18px;
+      background: var(--accent-soft);
+      color: #5b21b6;
+      font-size: 0.95rem;
+    }
+    .footer { margin-top: 22px; color: var(--muted); font-size: 0.92rem; }
+    .transcript-section h3 { margin: 18px 0 8px; font-size: 1rem; color: #5b21b6; }
+    .transcript-section h3:first-of-type { margin-top: 0; }
+    .qa-answer { margin: 10px 0 16px; padding: 12px 14px; background: #f5f3ff; border-left: 4px solid #7c3aed; border-radius: 0 10px 10px 0; font-size: 0.92rem; }
+    @media (max-width: 820px) { header, .card { padding: 22px; } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="session-badge">PropTech &amp; PortalWatch · Day 2 · Thu Mar 19 · 09:30–09:55</div>
+      <h1>So, where are we with AI real estate search?</h1>
+      <p class="headline-sub">Presentation — As Ed’s data shows, AI is the idea that has come to dominate industry narratives and valuations. The discourse around it isn’t always grounded in what’s actually shipping.</p>
+      <p class="speaker-line"><strong>Edmund Keith</strong> — Head of Content, Online Marketplaces</p>
+      <p class="conf">Property Portal Watch Conference · Greater Madrid Metropolitan Area · Online Marketplaces</p>
+    </header>
+
+    <section class="card">
+      <h2>Session (from app)</h2>
+      <p><strong>Slot:</strong> Thursday, March 19 · 09:30–09:55</p>
+      <p class="muted-note">Whova: “Add to My Agenda” · Q&amp;A, Polls, Like, Chat · 11 attending (from screenshot).</p>
+    </section>
+
+    <section class="card">
+      <h2>From deck — “We need big, utopian ideas”</h2>
+      <div class="slide-data">
+        <p><strong>Slide title:</strong> WE NEED BIG, UTOPIAN IDEAS</p>
+        <p class="muted-note">Reference: <em>Utopia for Realists</em> by Rutger Bregman (Universal Basic Income · The 15-Hour Workweek · Open Borders).</p>
+        <p><strong>Bullets on slide:</strong></p>
+        <ul style="margin-top:8px;">
+          <li>Female suffrage</li>
+          <li>Gay marriage</li>
+          <li>The 15-hour work week</li>
+          <li><strong>Matching people with their perfect home the first time they search — without showing them irrelevant premium listings</strong></li>
+        </ul>
+      </div>
+      <p class="muted-note">Framing: AI real estate search as a “big idea” in the same lineage as historic policy and lifestyle shifts — and a critique of relevance/premium bias in today’s search.</p>
+    </section>
+
+    <section class="card">
+      <h2>From deck — Four key takeaways</h2>
+      <div class="slide-data">
+        <p class="muted-note">Slide: AI icon = asterisk (what we think we know vs reality).</p>
+        <ol class="takeaway-list" start="1">
+          <li><strong>Trust what companies are doing</strong> over what experts like me are saying.</li>
+          <li><strong>If you don’t have semantic image indexing, you don’t really have AI search yet.</strong></li>
+          <li><strong>Portals aren’t going anywhere.</strong></li>
+          <li><strong>The implementation will be as messy and varied</strong> as the world’s real estate markets.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>From deck — “The incredible conclusion metaphor”</h2>
+      <div class="slide-data">
+        <p>Two equations comparing platform “car” + “engine”:</p>
+        <ul>
+          <li><strong>Immovweb:</strong> Sports car (Porsche 911–style) + old industrial engine — legacy UI with legacy backend.</li>
+          <li><strong>jitty</strong> (blue lowercase): SUV (Volvo XC90–style) + modern high-tech engine — modern UI with modern stack.</li>
+        </ul>
+        <p class="muted-note">Metaphor: same category (property search) but very different underlying infrastructure; the “engine” matters as much as the “car.”</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>From deck — Accuracy by output type</h2>
+      <div class="slide-data">
+        <p><strong>Chart (Ed’s data):</strong> Accuracy varies sharply by how the AI delivers results. Format matters for reliability.</p>
+        <div class="chart-rows">
+          <div class="chart-row"><span class="label">Email with listing links</span><div class="bar"><span style="width:100%;"></span></div><span class="val">~50</span></div>
+          <div class="chart-row"><span class="label">Mixed (chat + results page)</span><div class="bar"><span style="width:80%;"></span></div><span class="val">~40</span></div>
+          <div class="chart-row"><span class="label">Search results page only</span><div class="bar"><span style="width:50%;"></span></div><span class="val">~25</span></div>
+          <div class="chart-row"><span class="label">Chat with listing links</span><div class="bar"><span style="width:40%;"></span></div><span class="val">~20</span></div>
+        </div>
+        <p class="muted-note">Structured email with links = highest accuracy; chat with links = lowest. Implications for product design and how to surface AI answers.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>From deck — Most common failures by query type</h2>
+      <div class="slide-data">
+        <p><strong>Heatmap:</strong> Failure types (Y) × query categories (X).</p>
+        <p><strong>Failure types:</strong> UI limitation · Wrong location · False positives · Hallucination · <strong>Ignored parameter</strong> · Other · Overgeneralisation.</p>
+        <p><strong>Query categories:</strong> Property/attribute · Location/lifestyle · Other.</p>
+        <p><strong>Highlighted on slide:</strong> The biggest cluster is <strong>property/attribute</strong> queries where the AI <strong>ignores a parameter</strong>.</p>
+        <p><strong>Example on slide:</strong> “2 bedroom houses with high ceilings” → AI returns results for 2 bedroom houses only and <strong>drops “high ceilings”</strong> — overgeneralisation and ignored constraint.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>From deck — AI-powered filters &amp; smart tags</h2>
+      <div class="slide-data">
+        <p><strong>99.co</strong> (quote on slide): “AI Tags and keyword-style labels added to each listing. They highlight features that buyers and renters care about.”</p>
+        <p><strong>Zoopla</strong> (quote on slide): “Smart tags are an additional layer of property attributes extracted from property descriptions using AI.”</p>
+        <p><strong>Concepts:</strong> AI tags / keyword-style labels on listings; smart tags = attributes <strong>extracted from descriptions</strong> by AI to make inventory more searchable and filterable.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>From deck — “Slap an LLM over filters”</h2>
+      <div class="slide-data">
+        <p><strong>Slide title:</strong> SLAP AN LLM OVER FILTERS — PEOPLE CAN SEARCH CONVERSATIONALLY</p>
+        <p><strong>Mockup (Immoweb):</strong> Traditional filters (transaction type, countries, postal codes, property types) plus a <strong>conversational chat</strong> panel.</p>
+        <p><strong>Example dialogue:</strong></p>
+        <ul>
+          <li><strong>User:</strong> “houses for sale in Brussels 2–4 beds, garden/pool”</li>
+          <li><strong>AI:</strong> “I’ve found 154 houses for sale in Brussels. While I don’t see specific filters for gardens/pools, you still have a great selection of properties to explore. Would you like to refine your search further, perhaps by specifying a budget or the number of bedrooms?”</li>
+          <li>CTA: “See 154 results” · Input placeholder: “Describe your dream home…”</li>
+        </ul>
+        <p class="muted-note">Point: You can add conversational search on top of existing filters, but the AI is <strong>limited by the underlying filter set</strong> (e.g. no garden/pool filter → AI can’t fulfil that part of the query).</p>
+      </div>
+    </section>
+
+    <section class="card transcript-section">
+      <h2>Talk summary — voice transcription (ASR cleaned)</h2>
+      <p class="muted-note">Edmund Keith · PPW Bangkok · ~20 min. Editor of Online Marketplaces 6 years; ex-aggregator (formerly Zoopla Group). Opened with joke: asked an LLM to add three credentials → “world-renowned expert on AI search” — don’t trust experts blindly.</p>
+
+      <h3>Utopia for Realists &amp; the fourth idea</h3>
+      <p>Concept from Rutger Bregman: society needs to embrace <strong>big utopian ideas</strong> that seem unachievable. Slide listed female suffrage, gay marriage, 15-hour work week — and a fourth, not in the book: <strong>matching people with a home without showing them irrelevant premium listings</strong> at the top of search. Ed as “someone on the sidelines” can champion that.</p>
+
+      <h3>Overton window</h3>
+      <p>Overton window = the band where an idea moves from unthinkable/radical to acceptable. You move it by <strong>discussing</strong> it or by <strong>doing it</strong>. Example he used: portal monetization tactics. Policy = “everybody does it” (e.g. mortgage leads). Acceptable = e.g. % of commission to sell. Radical = e.g. pay-for-advertising. Unthinkable = e.g. becoming an actual brokerage. (Later he caveats: FSBO isn’t policy everywhere — forbidden in UK, Japan, Australia; pay-for-ad isn’t radical in Sweden/Australia; iBuying still happens in Turkey — so “portals” aren’t one block; view through your market.)</p>
+
+      <h3>AI dominates the narrative</h3>
+      <p>NLP analysis of all content they’ve put out + keywords from conferences: <strong>AI has gone from buzzword to “very big deal”</strong> over the last few years. Overton for AI ideas: policy = “AI is a big deal,” “AI is enabler not threat.” Acceptable = “we don’t have to panic; LLMs won’t put portals out of business.” (He “exclusively reveals” he asked two LLMs trained on their content whether they’d take over — they said no.) Radical = making portals “content makers for an OpenAI interface.” Unthinkable = “just take over and assign everybody a home.” He wrote “Five reasons ChatGPT isn’t going to take over real estate search” — got pushback (emails, comments). <strong>Net: uncertainty around these ideas is still very high.</strong> Sentiment in their content around “AI” = mostly opportunity but a big chunk uncertainty, and <strong>uncertainty isn’t dropping</strong>. His own writing/speaking is “very uncertain.”</p>
+
+      <h3>Don’t trust experts — including him</h3>
+      <p>Showed slide: him in Barcelona confidently saying natural language search would go voice-assisted; one year later saying he preferred conversation. Same for other experts: he asked an LLM for contradictory quotes from various speakers and “it does a very good job.” <strong>What moves ideas through the Overton window is people doing things, not people saying things</strong> — e.g. New Zealand gave women the vote in 1893, then everyone did it. So to see where we are with AI search, look at what portals are <strong>doing</strong>.</p>
+
+      <h3>What portals are doing — the numbers</h3>
+      <p>At start of 2025, <strong>~10 portals</strong> had claims to AI search. That has “more than doubled” since (so ~24–25 when he made the slide). “The vast majority of people looking for a new home are not looking at any kind of AI-powered search.” Among the ~25, there’s a <strong>very broad spectrum</strong> of what the claim means.</p>
+
+      <h3>Bottom rung: “Slap an AI logo”</h3>
+      <p>See what people search for, slap an LLM over existing filters — conversational front end. He tested two big portals who’d done that: <strong>the only accurate answers were for parameters they have filters for</strong>. Immoweb (Belgium, now in Melbourne): looks like “sensational ChatGPT-style” search, but ask for same neighbourhood, countertops, kitchen island, double garage, etc. — “it has no idea.”</p>
+
+      <h3>Next rung: AI-powered filters</h3>
+      <p>Using AI to improve filter-based search (e.g. 99.co, Zoopla — tags/labels from descriptions). “Less disingenuous”; they’re not reinventing the wheel, just improving what they’ve had for 20 years. “Fair enough,” “a bit interesting.”</p>
+
+      <h3>Where it gets good: visual semantic index</h3>
+      <p><strong>Gy</strong> (person who built it possibly in audience): has <strong>visual semantic indexing</strong> — “actually knows what’s inside the home.” Example: “homes for sale with granite countertops” → accurate results and <strong>thumbnails show the granite countertops</strong> so you can verify. He ran <strong>420 tests</strong>. The most common and most annoying error: <strong>portals dropping a parameter</strong> because they didn’t know — “almost always things that are in the house that you could see if you did visual semantic index.” Example: “two bedroom houses with high ceilings” → results for two-bed only, “high ceilings” ignored. Gy also does well on <strong>neighbourhood / environment</strong> (e.g. “houses near school with low noise pollution”). “This is gold. Please everybody aim for this.”</p>
+
+      <h3>Output format vs accuracy</h3>
+      <p>He tried to be objective in testing. Subjective take: people say we’re at an inflection point (conversational, WhatsApp, “search results don’t look like search results”). <strong>There was no correlation between input/output format and accuracy</strong> — “it made no difference.” Another subjective view: <strong>search results pages have been homogenized and optimized by product managers for 20 years</strong>; they display the right amount of information. “Search results pages are like crocodiles — they don’t need to evolve. They’re perfect. Stop messing with them.”</p>
+
+      <h3>Incredible conclusion metaphor (spoken)</h3>
+      <p>Two ways of doing AI search. <strong>Flashy way:</strong> conversational search on top without upgrading the data — “Porsche body on a steam engine.” Fine for simple queries (beds, location, price) — “most of the time you do the speed limit.” But as soon as someone asks for kitchen island, double garage, etc., you’ve created expectations you can’t fulfil and done “damage to the brand.” <strong>Better way:</strong> Gy — no conversational interface, even “full bore on the outside,” but <strong>proper engine</strong>; user searches for “apartment, ground floor, disabled access” and doesn’t get disappointed.</p>
+
+      <h3>Overton slide — where AI search is now</h3>
+      <p>Policy: we have filters, everybody likes filters. Acceptable: “chats that work” (finally, in the last few weeks). Popular: “telling investors we’re doing something about it.” Radical (for now): <strong>semantic index of images</strong> (what’s inside the home, in index space); <strong>great neighbourhood / environment data</strong> (like Gy). He wants those two to move from radical to acceptable.</p>
+
+      <h3>Final caveat</h3>
+      <p>Portals aren’t one homogeneous block. Implementation will be as messy and varied as the world’s real estate markets. When you hear anyone (including him) talk about “portals” as one group, take it with a pinch of salt and view through your market.</p>
+    </section>
+
+    <section class="card">
+      <h2>Audience Q&amp;A (transcription)</h2>
+      <p><strong>Q:</strong> Which portals are doing semantic indexing well in the world?</p>
+      <div class="qa-answer"><strong>A:</strong> Gy; REA (Australia) — “someone from REA” in the room; Idealista; there’s a challenge in Spain, <strong>Idealista</strong> (or a local player — he said “Calatite” in transcript), who he tested on a Monday, they didn’t score very high, then they said “test again tomorrow, we’re about to do the semantic index in the backend” — <strong>accuracy went from ~30% to ~65%</strong>. So it’s possible to add it and see a big jump. For now it’s in the “radical” column, not policy.</div>
+
+      <p><strong>Q (Judi, ~1,000 visits/month):</strong> What should we conclude? <strong>Jonathan (moderator):</strong> Provocative or pragmatic answer? <strong>Judi:</strong> Provocative.</p>
+      <div class="qa-answer"><strong>A (Ed):</strong> “I think you should ask Scott from REA.” Then: REA have never overpromised; they have resources to keep building; eventually they’ll need to make money; there’s a portal out there without great AI search that could use their tech — “might be REA cashing in, or in another market.” “Bottom line: there’s an evolutionary element — we’re going to talk about that next session.”</div>
+    </section>
+
+    <section class="card">
+      <h2>Quick reference</h2>
+      <ul>
+        <li><strong>Speaker:</strong> Edmund Keith · Head of Content · Online Marketplaces</li>
+        <li><strong>Talk:</strong> So, where are we with AI real estate search?</li>
+        <li><strong>Day:</strong> 2 · Thu Mar 19 · 09:30–09:55</li>
+        <li><strong>Framework:</strong> Overton window (policy → acceptable → radical → unthinkable); “what people do” moves ideas, not just debate.</li>
+        <li><strong>Data:</strong> ~10 portals with AI search claims start 2025 → 24–25 now; 420 tests; most common failure = <strong>ignored parameter</strong> (often things visible in images → need semantic image index).</li>
+        <li><strong>Takeaways:</strong> Trust what companies do · semantic image indexing = real AI search · portals aren’t going away · implementation messy and varied.</li>
+        <li><strong>Metaphor:</strong> Porsche body on steam engine (conversational UI, no data upgrade) vs Volvo with proper engine (Gy-style).</li>
+        <li><strong>Q&amp;A:</strong> Gy, REA, Idealista, Calatite (30%→65% after adding semantic index); “ask Scott from REA” (provocative).</li>
+      </ul>
+    </section>
+
+    <p class="footer">Summary from Whova, slide captures, and voice transcription (ASR cleaned).</p>
+  </main>
+</body>
+</html>

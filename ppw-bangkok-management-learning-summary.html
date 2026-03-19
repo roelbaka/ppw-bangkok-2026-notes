@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PPW Bangkok 2026 — Management &amp; learning summary</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card: #fff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+      --exec: #0f172a;
+      --accent: #334155;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+      font-size: 0.98rem;
+    }
+    .wrap { max-width: 800px; margin: 0 auto; padding: 40px 22px 64px; }
+    header {
+      border-bottom: 3px solid #0f172a;
+      padding-bottom: 24px;
+      margin-bottom: 28px;
+    }
+    .doc-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    header h1 {
+      margin: 0 0 12px;
+      font-size: 1.65rem;
+      line-height: 1.2;
+      color: var(--exec);
+      font-weight: 800;
+    }
+    .meta {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin: 0 0 14px;
+    }
+    .nav-links { font-size: 0.9rem; margin: 0; }
+    .nav-links a { color: #1d4ed8; font-weight: 600; margin-right: 14px; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px 24px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow);
+    }
+    h2 {
+      margin: 0 0 14px;
+      font-size: 0.85rem;
+      color: var(--exec);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    h3 { margin: 0 0 10px; font-size: 1.02rem; color: #1e293b; font-weight: 700; }
+    p { margin: 0 0 12px; }
+    ul { margin: 8px 0 0; padding-left: 1.15rem; }
+    li { margin-bottom: 10px; }
+    .exec-box {
+      background: #f1f5f9;
+      border-left: 4px solid #0f172a;
+      padding: 16px 18px;
+      margin: 0 0 8px;
+      border-radius: 0 8px 8px 0;
+    }
+    .exec-box ul { margin-top: 4px; }
+    .exec-box li { margin-bottom: 8px; }
+    .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .pill {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #e2e8f0;
+      color: #334155;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.86rem;
+      margin-top: 8px;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: #f8fafc; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.03em; color: var(--muted); }
+    .muted { font-size: 0.88rem; color: var(--muted); }
+    footer {
+      margin-top: 32px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    code { font-size: 0.82em; background: #f1f5f9; padding: 2px 6px; border-radius: 4px; }
+    a { color: #1d4ed8; }
+    /* “AI” word-count infographic */
+    .ai-lex { background: linear-gradient(160deg, #fefce8 0%, #fff 45%); border: 1px solid #fde68a; }
+    .ai-lex h2 { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; color: #854d0e !important; }
+    .ai-lex-grid { display: grid; grid-template-columns: 1fr; gap: 22px; margin-top: 16px; }
+    @media (min-width: 640px) {
+      .ai-lex-grid { grid-template-columns: 160px 1fr; align-items: start; }
+    }
+    .ai-donut-wrap {
+      width: 140px;
+      height: 140px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .ai-donut {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      position: relative;
+      background: conic-gradient(#2563eb 0 55.79%, #0d9488 55.79% 100%);
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.06);
+    }
+    .ai-donut::after {
+      content: "";
+      position: absolute;
+      inset: 34px;
+      background: var(--card);
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .ai-donut-label {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .ai-donut-label .big { font-size: 1.65rem; font-weight: 800; color: #0f172a; line-height: 1; }
+    .ai-donut-label .sm { font-size: 0.68rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 4px; max-width: 8em; }
+    .ai-legend { display: flex; flex-direction: column; gap: 10px; font-size: 0.86rem; margin-top: 12px; }
+    .ai-legend span { display: flex; align-items: center; gap: 8px; }
+    .ai-swatch { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
+    .ai-stack-bar { display: flex; height: 22px; border-radius: 8px; overflow: hidden; margin: 12px 0 6px; font-size: 0.72rem; font-weight: 700; color: #fff; }
+    .ai-stack-d1 { background: #2563eb; display: flex; align-items: center; justify-content: center; width: 55.79%; }
+    .ai-stack-d2 { background: #0d9488; display: flex; align-items: center; justify-content: center; flex: 1; }
+    .ai-lead-table { width: 100%; font-size: 0.84rem; margin-top: 8px; }
+    .ai-lead-table td:first-child { font-weight: 600; }
+    .ai-lead-table .n { font-variant-numeric: tabular-nums; text-align: right; color: #1e293b; font-weight: 700; }
+    .ai-mini-bar { height: 6px; background: #e2e8f0; border-radius: 999px; margin-top: 4px; overflow: hidden; }
+    .ai-mini-fill { height: 100%; border-radius: 999px; background: linear-gradient(90deg, #fbbf24, #d97706); }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <p class="doc-label">Learning document · internal use</p>
+      <h1>PPW Bangkok — management summary</h1>
+      <p class="meta">Property Portal Watch, Bangkok · 18–19 March 2026. Synthesis of documented sessions in <code>day 1/</code> and <code>day 2/</code> (speaker notes, decks, panels).</p>
+      <p class="nav-links">
+        <a href="ppw-bangkok-day-1-master-summary.html">Day 1 synthesis</a>
+        <a href="ppw-bangkok-day-2-master-summary.html">Day 2 synthesis</a>
+        <a href="day%202/panel-conference-learnings-summary.html">Conference learnings (panel)</a>
+        <a href="#ai-lexicon">“AI” counts &amp; charts</a>
+      </p>
+    </header>
+
+    <section class="card">
+      <h2>Executive takeaway</h2>
+      <div class="exec-box">
+        <ul>
+          <li><strong>AI is not replacing portals overnight</strong> — but discovery behaviour, SEO economics, and “being in the answer” are shifting; complacency is the real risk (Day 1: moats &amp; “stuck in the mud”; Day 2: data on search layers &amp; citations).</li>
+          <li><strong>Competitive advantage = data + workflow + trust</strong>, not a chatbot skin: structured listings, comms/lead intelligence, pre-listing seller journeys, and transaction depth matter more than generic LLM features.</li>
+          <li><strong>Monetisation is diversifying</strong>: retail media, staging/visual UX, transactions and brokerage-marketplace models — alongside classic classifieds — with geography-specific execution (emerging Asia vs high-ticket lifestyle).</li>
+          <li><strong>Organisations must run AI like any strategic programme</strong>: measurable outcomes, governance, talent, and honest assessment of what is “theatre” vs what moves P&amp;L.</li>
+          <li><strong>Closing panel (Malcolm / Turpin / Simon)</strong> reinforced <strong>AI power-user culture</strong>, <strong>data in portal hands</strong> as moat vs naked LLMs, and <strong>layered</strong> choices on exposing vs protecting content for discovery — see <a href="day%202/panel-conference-learnings-summary.html">conference learnings notes</a> and the digest on the <a href="ppw-bangkok-day-2-master-summary.html">Day 2 master</a>.</li>
+        </ul>
+      </div>
+      <div class="pill-row">
+        <span class="pill">Portals &amp; AI</span>
+        <span class="pill">Search &amp; discovery</span>
+        <span class="pill">Agents &amp; marketplaces</span>
+        <span class="pill">Data &amp; trust</span>
+        <span class="pill">Capital &amp; strategy</span>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>What the conference was really about</h2>
+      <p>Across two days, speakers and panels converged on a single strategic question: <strong>how property platforms stay relevant when AI changes how consumers search, how agents work, and how money is made</strong> — without mistaking demos for durable advantage.</p>
+      <p class="muted">Day 1 leaned toward <strong>strategy, capital, operating models, and vertical product</strong> (portals, PropTech, global platforms, seller journey, transactions). Day 2 deepened <strong>AI search mechanics, implementation, portal–agent economics, new-build marketplaces, due diligence, marketing effectiveness, and AI-native operating models</strong>. The <strong>conference learnings</strong> panel tied threads together (talent, data, distribution history, voice/conversational UX, legacy vs fast teams).</p>
+    </section>
+
+    <section class="card ai-lex" id="ai-lexicon">
+      <h2>Conference “AI” lexicon <span aria-hidden="true">📊</span> <span style="font-weight:500;font-size:0.78rem;text-transform:none;letter-spacing:0;color:var(--muted);">(tongue-in-cheek)</span></h2>
+      <p class="muted">Raw counts of the whole word <strong>AI</strong> in documented session HTML (<code>day 1/</code> + <code>day 2/</code>). Includes titles, slide text, and Q&amp;A — so it tracks <em>lexical obsession</em>, not importance. Snapshot for these notes as of Mar 2026.</p>
+
+      <div class="ai-lex-grid">
+        <div>
+          <div class="ai-donut-wrap" aria-hidden="true">
+            <div class="ai-donut"></div>
+            <div class="ai-donut-label">
+              <span class="big">466</span>
+              <span class="sm">total “AI” hits</span>
+            </div>
+          </div>
+          <div class="ai-legend">
+            <span><span class="ai-swatch" style="background:#2563eb;"></span> Day 1 · <strong>260</strong> (55.8%)</span>
+            <span><span class="ai-swatch" style="background:#0d9488;"></span> Day 2 · <strong>206</strong> (44.2%)</span>
+          </div>
+        </div>
+        <div>
+          <p style="margin:0 0 6px;font-size:0.88rem;"><strong>Split by day</strong> — stacked bar (same data as the donut)</p>
+          <div class="ai-stack-bar" title="260 vs 206">
+            <div class="ai-stack-d1">55.8%</div>
+            <div class="ai-stack-d2">44.2%</div>
+          </div>
+          <p class="muted" style="font-size:0.8rem;margin:0 0 14px;">26 session files · ~17.9 mentions/file average · Day 2 has fewer files but slightly higher per-file intensity (~18.7 vs ~17.3).</p>
+          <p style="margin:0 0 8px;font-size:0.88rem;"><strong>Conference leaderboard</strong> (top files)</p>
+          <table class="ai-lead-table">
+            <tbody>
+              <tr><td>1. Mike van der Heijden (Day 2)</td><td class="n">57</td></tr>
+              <tr><td colspan="2"><div class="ai-mini-bar"><div class="ai-mini-fill" style="width:100%"></div></div></td></tr>
+              <tr><td>2. Jonathan Turpin (Day 1)</td><td class="n">40</td></tr>
+              <tr><td colspan="2"><div class="ai-mini-bar"><div class="ai-mini-fill" style="width:70.2%"></div></div></td></tr>
+              <tr><td>3. Hannah Parker / Inoki (Day 1)</td><td class="n">33</td></tr>
+              <tr><td colspan="2"><div class="ai-mini-bar"><div class="ai-mini-fill" style="width:57.9%"></div></div></td></tr>
+              <tr><td>4. Edmund Keith (Day 2)</td><td class="n">30</td></tr>
+              <tr><td colspan="2"><div class="ai-mini-bar"><div class="ai-mini-fill" style="width:52.6%"></div></div></td></tr>
+              <tr><td>5. Panel — AI-native business (Day 2)</td><td class="n">29</td></tr>
+              <tr><td colspan="2"><div class="ai-mini-bar"><div class="ai-mini-fill" style="width:50.9%"></div></div></td></tr>
+              <tr><td>6. Malcolm Myers (Day 1)</td><td class="n">28</td></tr>
+              <tr><td colspan="2"><div class="ai-mini-bar"><div class="ai-mini-fill" style="width:49.1%"></div></div></td></tr>
+            </tbody>
+          </table>
+          <p class="muted" style="font-size:0.8rem;margin-top:12px;">Per-day bar charts: <a href="ppw-bangkok-day-1-master-summary.html">Day 1 master</a> · <a href="ppw-bangkok-day-2-master-summary.html">Day 2 master</a>. Re-count with <code>rg '\bAI\b' day\ */*.html</code> after edits.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Strategic themes (both days merged)</h2>
+
+      <h3>1. Moats, traffic, and “being in the answer”</h3>
+      <p>Portals defend through <strong>brand, structured data, and embedded workflows</strong> — not by assuming LLMs will send traffic the old way. Day 2 added an operational lens: <strong>layers from classic SEO → answer-ready content → citation-worthy authority</strong>, with behavioural shifts (e.g. zero-click, AI surfaces) compounding over time.</p>
+
+      <h3>2. AI as discipline: outcomes, not access</h3>
+      <p>Wide access to models is table stakes; value is in <strong>execution, workflow change, and measured impact on revenue and cost</strong>. Several sessions warned against rebranding existing filters as “AI” without moving business metrics.</p>
+
+      <h3>3. Listings vs transactions vs trust</h3>
+      <p>Emerging and scaled markets show <strong>transaction-led</strong> and ecosystem plays; high-ticket segments still need <strong>human trust at the close</strong>. The stack spans listings, fulfilment, verification, and agent quality — not only inventory display.</p>
+
+      <h3>4. Before the listing &amp; after the click</h3>
+      <p>Major spend and seller decisions happen <strong>before</strong> a listing hits a portal; the journey also extends into <strong>due diligence and confidence</strong> (verification, risk, buyer readiness) — product whitespace beyond core search results.</p>
+
+      <h3>5. Agents, brokerages, and platform power</h3>
+      <p>Tools that expose <strong>strategy and substance</strong> push agents toward trusted-adviser positioning. Separately, <strong>brokerage-as-marketplace</strong> and portal–partner models redistribute who owns the customer, data, and margin.</p>
+
+      <h3>6. Data layer &amp; monetisation beyond classifieds</h3>
+      <p><strong>Call/lead data, agent mapping, analytics,</strong> and intelligence layers sit alongside listings. <strong>Retail media</strong> and richer visual/staging experiences turn media from cost to revenue and shorten decisions.</p>
+
+      <h3>7. Capital, global scale, and portfolio logic</h3>
+      <p>Investor and operator lenses on <strong>AI-era marketplaces, emerging-market portals, M&amp;A, and full-stack global platforms</strong> (including cross-border and regional nuances).</p>
+
+      <h3>8. Marketing &amp; organisation</h3>
+      <p><strong>Off-portal marketing effectiveness</strong> and <strong>AI-native business design</strong> (culture, hiring, governance) round out the agenda — i.e. how to ship and sell in parallel with technical roadmaps.</p>
+    </section>
+
+    <section class="card">
+      <h2>Implications for leadership</h2>
+      <table>
+        <thead>
+          <tr><th>Area</th><th>Question for management</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Strategy</td><td>Are we optimising for traffic, citations, transactions, or ecosystem control — and does our roadmap match?</td></tr>
+          <tr><td>Product</td><td>Where is our <strong>structured data</strong> and <strong>workflow</strong> moat vs commodity search UI?</td></tr>
+          <tr><td>Commercial</td><td>Which revenue lines (classifieds, retail media, services, transactions) are we deliberately growing vs inheriting?</td></tr>
+          <tr><td>Technology</td><td>What is our “middle mile” (matching, explainability, data quality) before we invest in conversational layers?</td></tr>
+          <tr><td>People</td><td>Do we have governance and skills for an <strong>AI-native operating model</strong>, not only experiments?</td></tr>
+          <tr><td>Risk</td><td>Where would <strong>complacency</strong> or <strong>AI theatre</strong> hide — and what KPIs expose it?</td></tr>
+        </tbody>
+      </table>
+      <p class="muted" style="margin-top:12px;">Use the thematic tables in the <a href="ppw-bangkok-day-1-master-summary.html">Day 1</a> and <a href="ppw-bangkok-day-2-master-summary.html">Day 2</a> master pages for session-level pointers and deep links into each HTML note.</p>
+    </section>
+
+    <section class="card">
+      <h2>Suggested follow-through</h2>
+      <ul>
+        <li>Align exec team on <strong>one or two north-star metrics</strong> per pillar (e.g. discovery: citation/answer visibility; commercial: attach rate on non-listing revenue; product: time-to-trust in the funnel).</li>
+        <li>Run a <strong>gap analysis</strong>: structured data / schema, lead &amp; comms intelligence, pre-listing touchpoints, agent tools, vs what peers and panels described.</li>
+        <li>Charter a <strong>short AI governance note</strong>: what ships, what is pilot-only, and how ROI is reviewed — consistent with “outcomes not theatre.”</li>
+        <li>Socialise this doc with <strong>product, marketing, and data leads</strong> using the day-level syntheses for drill-down.</li>
+      </ul>
+    </section>
+
+    <footer>
+      <p><strong>Source material:</strong> PPW Bangkok session summaries in <code>bangkok2026/day 1/</code> and <code>bangkok2026/day 2/</code>, consolidated in <a href="ppw-bangkok-day-1-master-summary.html">ppw-bangkok-day-1-master-summary.html</a> and <a href="ppw-bangkok-day-2-master-summary.html">ppw-bangkok-day-2-master-summary.html</a>. This page is a non-exhaustive management distillation; defer to individual session notes for quotes, data, and Q&amp;A.</p>
+    </footer>
+  </main>
+</body>
+</html>

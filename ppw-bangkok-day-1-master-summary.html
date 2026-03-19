@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PPW Bangkok — Day 1 consolidated summary</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card: #fff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --accent: #1d4ed8;
+      --border: #e2e8f0;
+      --shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+      background: linear-gradient(180deg, #eff6ff 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.55;
+      font-size: 0.98rem;
+    }
+    .wrap { max-width: 920px; margin: 0 auto; padding: 36px 20px 56px; }
+    header {
+      background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #7c3aed 100%);
+      color: #fff;
+      border-radius: 20px;
+      padding: 32px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow);
+    }
+    header h1 { margin: 0 0 10px; font-size: 1.55rem; line-height: 1.2; }
+    header p { margin: 0; opacity: 0.92; max-width: 65ch; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px 24px;
+      margin-bottom: 18px;
+      box-shadow: var(--shadow);
+    }
+    h2 { margin: 0 0 12px; font-size: 1.12rem; color: #1e40af; }
+    h3 { margin: 18px 0 8px; font-size: 1rem; color: #3730a3; }
+    p { margin: 0 0 10px; }
+    ul { margin: 8px 0; padding-left: 1.2rem; }
+    li { margin-bottom: 8px; }
+    .muted { font-size: 0.88rem; color: var(--muted); }
+    a.ref {
+      display: inline;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #2563eb;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    a.ref:hover { text-decoration: underline; }
+    .ref::before { content: "→ "; opacity: 0.6; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin-top: 10px;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: #f1f5f9; }
+    .theme {
+      border-left: 4px solid #6366f1;
+      padding-left: 14px;
+      margin: 16px 0;
+    }
+    footer { margin-top: 28px; font-size: 0.88rem; color: var(--muted); }
+    /* Unofficial “AI” word-count viz (whole-word \bAI\b in session HTML) */
+    .ai-fun { background: linear-gradient(145deg, #fffbeb 0%, #fff 50%); border: 1px dashed #fbbf24; }
+    .ai-fun h2 { color: #b45309; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .ai-fun .muted { margin-bottom: 0; }
+    .ai-big { display: flex; flex-wrap: wrap; gap: 24px; margin: 18px 0 8px; }
+    .ai-big > div { min-width: 100px; }
+    .ai-stat-num { font-size: 2.25rem; font-weight: 800; color: #1d4ed8; line-height: 1.1; letter-spacing: -0.02em; }
+    .ai-stat-label { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.07em; margin-top: 4px; }
+    .ai-bar-block { margin-bottom: 14px; }
+    .ai-bar-labels { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; font-size: 0.86rem; }
+    .ai-bar-labels a { color: inherit; font-weight: 600; text-decoration: none; }
+    .ai-bar-labels a:hover { text-decoration: underline; color: #2563eb; }
+    .ai-bar-labels strong { font-variant-numeric: tabular-nums; color: #1e40af; }
+    .ai-bar-track { height: 11px; background: #e2e8f0; border-radius: 999px; overflow: hidden; margin-top: 6px; }
+    .ai-bar-fill { height: 100%; border-radius: 999px; background: linear-gradient(90deg, #a5b4fc, #2563eb); }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <h1>PPW Bangkok — Day 1 · one-page synthesis</h1>
+      <p>Condensed themes across all session write-ups in <code>day 1/</code>. Each theme links to the full HTML notes — no duplicate long copy here.</p>
+      <p style="margin:14px 0 0;font-size:0.9rem;opacity:0.95;">Also see: <a href="ppw-bangkok-day-2-master-summary.html" style="color:#bfdbfe;font-weight:600;">Day 2 consolidated summary</a> · <a href="ppw-bangkok-management-learning-summary.html" style="color:#bfdbfe;font-weight:600;">Management &amp; learning summary</a></p>
+    </header>
+
+    <section class="card">
+      <h2>Index — full write-ups</h2>
+      <p class="muted">Open these for decks, Q&amp;A, and transcripts.</p>
+      <table>
+        <thead>
+          <tr><th>Speaker / org</th><th>Session focus</th><th>File</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Patrick Grove</td><td>FDV — AI, emerging-market portals, strategy</td><td><a class="ref" href="day%201/patrick-grove-fdv-summary.html">patrick-grove-fdv-summary</a></td></tr>
+          <tr><td>Malcolm Myers</td><td>Will AI build or break Asia’s property portals?</td><td><a class="ref" href="day%201/malcolm-myers-ai-asia-portals-summary.html">malcolm-myers</a></td></tr>
+          <tr><td>Satoshi Murakami</td><td>Metaprop — investment mandate, AI &amp; marketplaces</td><td><a class="ref" href="day%201/satoshi-murakami-metaprop-investment-mandate.html">satoshi-murakami</a></td></tr>
+          <tr><td>Ryan Gallagher</td><td>iovox — data, AI &amp; communications</td><td><a class="ref" href="day%201/ryan-gallagher-iovox-ai-communications.html">ryan-gallagher</a></td></tr>
+          <tr><td>Russell Wee</td><td>Jean Yip — what industry wants from PropTech / AI (P&amp;L)</td><td><a class="ref" href="day%201/russell-wee-jean-yip-proptech-ai-real-estate.html">russell-wee</a></td></tr>
+          <tr><td>Steve Coleman</td><td>Snow Only — automation vs human touch, high-ticket deals</td><td><a class="ref" href="day%201/steve-coleman-snow-only-ai-human-touch.html">steve-coleman</a></td></tr>
+          <tr><td>Lamerton Gray</td><td>PropTexx — retail media &amp; portal intelligence</td><td><a class="ref" href="day%201/lamerton-gray-proptexx-ai-retail-media-portal-intelligence.html">lamerton-gray</a></td></tr>
+          <tr><td>Paruey Anadirekkul</td><td>Spacely AI — adoption → outcomes, imagination friction</td><td><a class="ref" href="day%201/paruey-anadirekkul-spacely-ai-adoption-outcomes.html">paruey-spacely</a></td></tr>
+          <tr><td>Lukas Rose</td><td>ProperBird — intelligence layer, agent landscape, AI in product</td><td><a class="ref" href="day%201/lukas-rose-properbird-ai-data-intelligence-layer.html">lukas-rose</a></td></tr>
+          <tr><td>Hannah Parker</td><td>Inoki — humans &amp; AI agents, structured data</td><td><a class="ref" href="day%201/hannah-parker-inoki-humans-and-ai-agents.html">hannah-parker</a></td></tr>
+          <tr><td>Daniel Ho</td><td>Juwai IQI — global platform, ecosystem, geo, ATLAS</td><td><a class="ref" href="day%201/daniel-ho-juwai-iq-global-platform-summary.html">daniel-ho</a></td></tr>
+          <tr><td>Mike Kenner</td><td>Lifull Connect — SEA transactions-first, M&amp;A, AI as tool</td><td><a class="ref" href="day%201/mike-kenner-lifull-connect-scaling-ai-summary.html">mike-kenner</a></td></tr>
+          <tr><td>Jonathan Turpin</td><td>AI threat vs opportunity for property portals</td><td><a class="ref" href="day%201/jonathan-turpin-ai-property-portals-summary.html">jonathan-turpin</a></td></tr>
+          <tr><td>Courtney Bugeja</td><td>SellSmart — seller journey, digital twins, pre-listing control</td><td><a class="ref" href="day%201/courtney-bugeja-sellsmart-seller-journey-summary.html">courtney-bugeja</a></td></tr>
+          <tr><td>Haider Ali Khan</td><td>Winning with product (Tru* stack) — <em>Oct 2025 meeting note</em></td><td><a class="ref" href="day%201/haider-ali-khan-winning-with-product-summary.html">haider-ali-khan</a></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card ai-fun">
+      <h2>Unofficial “AI” mention meter <span aria-hidden="true">🤖</span></h2>
+      <p class="muted">Silly but literal: how many times the word <strong>AI</strong> appears (whole-word match) in each session’s HTML under <code>day 1/</code>. Not science — copy, titles, and Q&amp;A all count.</p>
+      <div class="ai-big">
+        <div><div class="ai-stat-num">260</div><div class="ai-stat-label">“AI” in Day 1 notes</div></div>
+        <div><div class="ai-stat-num">15</div><div class="ai-stat-label">Session files</div></div>
+        <div><div class="ai-stat-num">17.3</div><div class="ai-stat-label">Avg per file</div></div>
+      </div>
+      <p class="muted" style="font-size:0.82rem;margin-top:4px;">Champion (Day 1): <strong>Turpin</strong> — see <a href="ppw-bangkok-day-2-master-summary.html">Day 2 meter</a> for the overall conference peak, or <a href="ppw-bangkok-management-learning-summary.html#ai-lexicon">management “AI” lexicon</a> for the full donut.</p>
+      <h3 style="margin-top:20px;font-size:0.95rem;">Top sessions by “AI” count</h3>
+      <div class="ai-bar-block">
+        <div class="ai-bar-labels"><span><a href="day%201/jonathan-turpin-ai-property-portals-summary.html">Jonathan Turpin</a></span><strong>40</strong></div>
+        <div class="ai-bar-track"><div class="ai-bar-fill" style="width:100%"></div></div>
+      </div>
+      <div class="ai-bar-block">
+        <div class="ai-bar-labels"><span><a href="day%201/hannah-parker-inoki-humans-and-ai-agents.html">Hannah Parker (Inoki)</a></span><strong>33</strong></div>
+        <div class="ai-bar-track"><div class="ai-bar-fill" style="width:82.5%"></div></div>
+      </div>
+      <div class="ai-bar-block">
+        <div class="ai-bar-labels"><span><a href="day%201/malcolm-myers-ai-asia-portals-summary.html">Malcolm Myers</a></span><strong>28</strong></div>
+        <div class="ai-bar-track"><div class="ai-bar-fill" style="width:70%"></div></div>
+      </div>
+      <div class="ai-bar-block">
+        <div class="ai-bar-labels"><span><a href="day%201/paruey-anadirekkul-spacely-ai-adoption-outcomes.html">Paruey Anadirekkul (Spacely)</a></span><strong>21</strong></div>
+        <div class="ai-bar-track"><div class="ai-bar-fill" style="width:52.5%"></div></div>
+      </div>
+      <div class="ai-bar-block">
+        <div class="ai-bar-labels"><span><a href="day%201/patrick-grove-fdv-summary.html">Patrick Grove</a></span><strong>21</strong></div>
+        <div class="ai-bar-track"><div class="ai-bar-fill" style="width:52.5%"></div></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Cross-cutting themes (merged)</h2>
+
+      <div class="theme">
+        <h3>1 · Portals, AI &amp; moats</h3>
+        <p><strong>One line:</strong> Winners combine <strong>brand + structured data + behaviour/workflow</strong>; generic AI search is not enough; LLMs won’t prioritise property first.</p>
+        <p><strong>Where to go deeper:</strong> <a class="ref" href="day%201/jonathan-turpin-ai-property-portals-summary.html">Turpin</a> · <a class="ref" href="day%201/malcolm-myers-ai-asia-portals-summary.html">Myers</a> · <a class="ref" href="day%201/hannah-parker-inoki-humans-and-ai-agents.html">Parker (schema / agents)</a></p>
+      </div>
+
+      <div class="theme">
+        <h3>2 · AI: outcomes &amp; discipline, not theatre</h3>
+        <p><strong>One line:</strong> Access to AI is table stakes; value = execution, workflow change, measured revenue/cost — not “everyone has ChatGPT.”</p>
+        <p><strong>Where to go deeper:</strong> <a class="ref" href="day%201/mike-kenner-lifull-connect-scaling-ai-summary.html">Kenner (second mover, move the needle)</a> · <a class="ref" href="day%201/paruey-anadirekkul-spacely-ai-adoption-outcomes.html">Anadirekkul</a> · <a class="ref" href="day%201/hannah-parker-inoki-humans-and-ai-agents.html">Parker (filters rebranded as AI)</a> · <a class="ref" href="day%201/russell-wee-jean-yip-proptech-ai-real-estate.html">Wee (P&amp;L first)</a></p>
+      </div>
+
+      <div class="theme">
+        <h3>3 · Listings / ads vs transactions &amp; trust</h3>
+        <p><strong>One line:</strong> Scale and margin in emerging markets often favour <strong>transaction-led</strong> models and execution depth over portal-only; high-ticket lifestyle still needs humans at the close.</p>
+        <p><strong>Where to go deeper:</strong> <a class="ref" href="day%201/mike-kenner-lifull-connect-scaling-ai-summary.html">Kenner</a> · <a class="ref" href="day%201/steve-coleman-snow-only-ai-human-touch.html">Coleman</a> · <a class="ref" href="day%201/russell-wee-jean-yip-proptech-ai-real-estate.html">Wee</a></p>
+      </div>
+
+      <div class="theme">
+        <h3>4 · Before the listing: seller intent &amp; prep</h3>
+        <p><strong>One line:</strong> Major spend and decisions happen <strong>months before</strong> a listing hits a portal; platforms that own that phase own a new data and revenue layer.</p>
+        <p><strong>Where to go deeper:</strong> <a class="ref" href="day%201/courtney-bugeja-sellsmart-seller-journey-summary.html">Bugeja (digital twin ecosystem)</a> · <a class="ref" href="day%201/mike-kenner-lifull-connect-scaling-ai-summary.html">Kenner (portals blind to prep phase)</a></p>
+      </div>
+
+      <div class="theme">
+        <h3>5 · Agents: adviser, not commodity</h3>
+        <p><strong>One line:</strong> Tools that surface <strong>strategy vs charisma</strong> push agents toward trusted adviser positioning; fee becomes secondary if value is clear.</p>
+        <p><strong>Where to go deeper:</strong> <a class="ref" href="day%201/courtney-bugeja-sellsmart-seller-journey-summary.html">Bugeja (structured proposals)</a> · <a class="ref" href="day%201/haider-ali-khan-winning-with-product-summary.html">Khan (TruBroker gamification)</a> · <a class="ref" href="day%201/mike-kenner-lifull-connect-scaling-ai-summary.html">Kenner (low-tech broker Q&amp;A)</a></p>
+      </div>
+
+      <div class="theme">
+        <h3>6 · Data layer: comms, agents, intelligence</h3>
+        <p><strong>One line:</strong> Portals and PropTech need <strong>call/lead data, agent mapping, and reproducible analytics</strong> — not only raw listings.</p>
+        <p><strong>Where to go deeper:</strong> <a class="ref" href="day%201/ryan-gallagher-iovox-ai-communications.html">Gallagher</a> · <a class="ref" href="day%201/lukas-rose-properbird-ai-data-intelligence-layer.html">Rose</a></p>
+      </div>
+
+      <div class="theme">
+        <h3>7 · Monetisation beyond classifieds</h3>
+        <p><strong>One line:</strong> <strong>Retail media</strong> and richer listing UX (e.g. furnished visuals) can turn media from cost centre to revenue and speed decisions.</p>
+        <p><strong>Where to go deeper:</strong> <a class="ref" href="day%201/lamerton-gray-proptexx-ai-retail-media-portal-intelligence.html">Gray</a> · <a class="ref" href="day%201/paruey-anadirekkul-spacely-ai-adoption-outcomes.html">Anadirekkul (staging / Bangkok Asset)</a></p>
+      </div>
+
+      <div class="theme">
+        <h3>8 · Global platform &amp; cross-border scale</h3>
+        <p><strong>One line:</strong> Full-stack global real estate platform — listings, agents, fulfilment, tech stack, China/regional nuances.</p>
+        <p><strong>Where to go deeper:</strong> <a class="ref" href="day%201/daniel-ho-juwai-iq-global-platform-summary.html">Ho</a></p>
+      </div>
+
+      <div class="theme">
+        <h3>9 · Capital, emerging markets &amp; strategy</h3>
+        <p><strong>One line:</strong> VC/investor lens on AI-era marketplaces; FDV-style portfolio view on emerging-market portals.</p>
+        <p><strong>Where to go deeper:</strong> <a class="ref" href="day%201/satoshi-murakami-metaprop-investment-mandate.html">Murakami</a> · <a class="ref" href="day%201/patrick-grove-fdv-summary.html">Grove</a> · <a class="ref" href="day%201/mike-kenner-lifull-connect-scaling-ai-summary.html">Kenner (M&amp;A / cap tables)</a></p>
+      </div>
+
+      <div class="theme">
+        <h3>10 · Product-led trust (verification &amp; valuation)</h3>
+        <p><strong>One line:</strong> Official data partnerships, verified availability, gamified broker quality, and AI-assisted valuation build trust loops.</p>
+        <p><strong>Where to go deeper:</strong> <a class="ref" href="day%201/haider-ali-khan-winning-with-product-summary.html">Khan (TruEstimate, TruCheck, TruBroker, TrueGP)</a> — same product philosophy as several PPW themes but from a different session date.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Stuck in the mud (shared meme)</h2>
+      <p><strong>Kenner</strong> explicitly references <strong>Turpin’s</strong> “portals stuck in the mud” diagnostic on stage. Full Turpin argument: <a class="ref" href="day%201/jonathan-turpin-ai-property-portals-summary.html">jonathan-turpin</a> · Kenner deck + transcript: <a class="ref" href="day%201/mike-kenner-lifull-connect-scaling-ai-summary.html">mike-kenner</a></p>
+    </section>
+
+    <footer>
+      <p>Generated synthesis · PPW Bangkok Mar 18–19, 2026 (Day 1 sessions as documented in <code>day 1/</code>). <a href="ppw-bangkok-day-2-master-summary.html">Day 2</a> · <a href="ppw-bangkok-management-learning-summary.html">Management summary</a>. PDF export: run <code>node export-html-to-pdf.js</code> from the <code>day 1</code> folder; add this file to that script if you want a PDF of this page too.</p>
+    </footer>
+  </main>
+</body>
+</html>
