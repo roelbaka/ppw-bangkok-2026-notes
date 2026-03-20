@@ -24,7 +24,6 @@ const HTML_FILES = [
   'daniel-ho-juwai-iq-global-platform-summary.html',
   'mike-kenner-lifull-connect-scaling-ai-summary.html',
   'courtney-bugeja-sellsmart-seller-journey-summary.html',
-  'haider-ali-khan-winning-with-product-summary.html',
 ];
 
 async function main() {

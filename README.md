@@ -1,5 +1,6 @@
 # PPW Bangkok 2026 — notes
 
+- **`index.html`** — **navigation hub** (start here): management summary, Day 1/2 masters, and every session link in one page. Use as the homepage when hosting on GitHub Pages or opening the folder locally.
 - **`ppw-bangkok-day-1-master-summary.html`** — one-page synthesis of all Day 1 talks (themes + links to full notes in `day 1/`).
 - **`ppw-bangkok-day-2-master-summary.html`** — Day 2 index, AI stats, themes, and a **Conference learnings** digest (links into `day 2/`).
 - Session write-ups, slide assets, and PDF export: **`day 1/`**.
@@ -25,7 +26,4 @@ Other Day 2 write-ups:
 - [`panel-building-ai-native-business-summary.html`](day%202/panel-building-ai-native-business-summary.html)
 - [`panel-can-traditional-portals-implement-ai-search-summary.html`](day%202/panel-can-traditional-portals-implement-ai-search-summary.html)
 
-```bash
-cd "bangkok2026/day 1"
-node export-html-to-pdf.js
-```
+**PDF-export (optioneel):** het script `day 1/export-html-to-pdf.js` kan sessie-HTML naar PDF omzetten (vereist o.a. Node en Puppeteer — zie commentaar in het script).
